@@ -158,13 +158,13 @@
     <div class="widget">
       <h3 class="widget-title">Categories</h3>
       <div class="category-box">
-            <a class="category-link" href="/categories/%E6%A0%8F%E7%9B%AE2/">
-                栏目2
+            <a class="category-link" href="/categories/%E6%A0%8F%E7%9B%AE1/">
+                栏目1
                 <div class="category-count">1</div>
             </a>
         
-            <a class="category-link" href="/categories/%E6%A0%8F%E7%9B%AE1/">
-                栏目1
+            <a class="category-link" href="/categories/%E6%A0%8F%E7%9B%AE2/">
+                栏目2
                 <div class="category-count">1</div>
             </a>
         
@@ -210,9 +210,9 @@
       <h3 class="widget-title">Recent Posts</h3>
       <ul>
         
-          <a class="recent-link" href="/2024/05/06/Games104/index/" title="五：光、材质、着色器" >
+          <a class="recent-link" href="/2024/05/06/Games104/Games104-05/" title="【Games104-5】光、材质、着色器" >
             <div class="recent-link-text">
-              五：光、材质、着色器
+              【Games104-5】光、材质、着色器
             </div>
           </a>
         
@@ -247,7 +247,7 @@
    
 
 
-<article id="post-Games104/index" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+<article id="post-Games104/Games104-05" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
    
   <div class="article-inner">
     <div class="article-main">
@@ -258,7 +258,7 @@
   
     
       <h1 itemprop="name">
-        <a class="p-name article-title" href="/2024/05/06/Games104/index/">五：光、材质、着色器</a>
+        <a class="p-name article-title" href="/2024/05/06/Games104/Games104-05/">【Games104-5】光、材质、着色器</a>
       </h1>
     
   
@@ -277,7 +277,7 @@
   
           </div>
           <div class="wordcount need-seperator meta-info">
-            440 words 
+            572 words 
           </div>
         </div>
         
@@ -288,19 +288,17 @@
         
           <div class="truncate-text">
             
-              光、材质、着色器渲染方程
+               光、材质、着色器
+ 渲染方程
 
-L_o(x, \omega_o) = L_e(x, \omega_o) + \int_{\mathbb{H}^2} f_r(x, \omega_o, \omega_i)L_i(x, \omega_i)\cos\theta_id\omega_i核心：双向反射分布函数（BRDF）
-三个挑战
+双向反射分布函数（BRDF）
+Lo(x,ωo)=Le(x,ωo)+∫H2fr(x,ωo,ωi)Li(x,ωi)cosθidωiL_o(x, \omega_o) = L_e(x, \omega_o) + \int_{\mathbb{H}^2} f_r(x, \omega_o, \omega_i)L_i(x, \omega_i)\cos\theta_id\omega_i
+L​o​​(x,ω​o​​)=L​e​​(x,ω​o​​)+∫​H​2​​​​f​r​​(x,ω​o​​,ω​i​​)L​i​​(x,ω​i​​)cosθ​i​​dω​i​​
+ 三个挑战
+
 第一个挑战是如何获取任何给定入射方向的入射辐射。这涉及到如何准确计算来自场景中每一个方向光的亮度。
 第二个挑战是照明和散射函数在半球上的积分计算成本很高。由于需要对所有可能的入射方向进行积分，这个计算是非常复杂和耗时的。
-第三个挑战是为了评估入射辐射，我们必须计算另一个积分，也就是说渲染方程是递归的。这意味着为了计算一个方向上的光亮度，我们可能需要计算由这个光再次反射到其他物体上的光亮度，这样就形成了一个复杂的递归过程。
-
-Blinn-Phong模型
-
-光强 = 环境光(Ambient)+漫反射光(Diffuse)+高光(Specular)阴影
-阴影映射，光源位置进行MVP变换进行生成Shadow Map
-
+第三个挑战是为了评估入射辐射，我们必须计算另一个积分，也就是说渲染方程是递归的。这意味着为了计算一个方向上的光亮度，我们可能需要计算由这个光再次反射到其他物体上的光亮度，这样就形...
             
           </div>
         
@@ -312,7 +310,7 @@ Blinn-Phong模型
      
     <a class="right-panel  non-pic  "
       
-      href="/2024/05/06/Games104/index/" 
+      href="/2024/05/06/Games104/Games104-05/" 
     >
        
       <i class="fa-solid fa-angle-right non-pic"></i>
