@@ -14,24 +14,24 @@
   
 
   
-  <title>【Games104-5】光、材质、着色器 | Scorpio-Gyh_WYK</title>
+  <title>Games104-5 光、材质、着色器 | Scorpio-Gyh_WYK</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
   <link rel="preload" href="/css/fonts/Roboto-Regular.ttf" as="font" type="font/ttf" crossorigin="anonymous">
   <link rel="preload" href="/css/fonts/Roboto-Bold.ttf" as="font" type="font/ttf" crossorigin="anonymous">
 
-  <meta name="description" content="光、材质、着色器  渲染方程  双向反射分布函数（BRDF） Lo(x,ωo)&#x3D;Le(x,ωo)+∫H2fr(x,ωo,ωi)Li(x,ωi)cosθidωiL_o(x, \omega_o) &#x3D; L_e(x, \omega_o) + \int_{\mathbb{H}^2} f_r(x, \omega_o, \omega_i)L_i(x, \omega_i)\cos\theta_id\omega_">
+  <meta name="description" content="光、材质、着色器渲染方程 双向反射分布函数（BRDF）  L_o(x, \omega_o) &#x3D; L_e(x, \omega_o) + \int_{\mathbb{H}^2} f_r(x, \omega_o, \omega_i)L_i(x, \omega_i)\cos\theta_id\omega_i三个挑战 第一个挑战是如何获取任何给定入射方向的入射辐射。这涉及到如何准确计算来自场景中每一个方向光">
 <meta property="og:type" content="article">
-<meta property="og:title" content="【Games104-5】光、材质、着色器">
+<meta property="og:title" content="Games104-5 光、材质、着色器">
 <meta property="og:url" content="https://scorpio-gyh.github.io/2024/05/06/Games104/Games104-05/index.html">
 <meta property="og:site_name" content="Scorpio-Gyh_WYK">
-<meta property="og:description" content="光、材质、着色器  渲染方程  双向反射分布函数（BRDF） Lo(x,ωo)&#x3D;Le(x,ωo)+∫H2fr(x,ωo,ωi)Li(x,ωi)cosθidωiL_o(x, \omega_o) &#x3D; L_e(x, \omega_o) + \int_{\mathbb{H}^2} f_r(x, \omega_o, \omega_i)L_i(x, \omega_i)\cos\theta_id\omega_">
+<meta property="og:description" content="光、材质、着色器渲染方程 双向反射分布函数（BRDF）  L_o(x, \omega_o) &#x3D; L_e(x, \omega_o) + \int_{\mathbb{H}^2} f_r(x, \omega_o, \omega_i)L_i(x, \omega_i)\cos\theta_id\omega_i三个挑战 第一个挑战是如何获取任何给定入射方向的入射辐射。这涉及到如何准确计算来自场景中每一个方向光">
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="https://scorpio-gyh.github.io/2024/05/06/Games104/Games104-05/BRDF.png">
 <meta property="og:image" content="https://scorpio-gyh.github.io/2024/05/06/Games104/Games104-05/blinn-phong.png">
 <meta property="og:image" content="https://scorpio-gyh.github.io/2024/05/06/Games104/Games104-05/shadow.png">
 <meta property="article:published_time" content="2024-05-06T07:46:01.000Z">
-<meta property="article:modified_time" content="2024-05-06T09:22:03.757Z">
+<meta property="article:modified_time" content="2024-05-13T13:13:14.120Z">
 <meta property="article:author" content="John Doe">
 <meta property="article:tag" content="游戏引擎">
 <meta name="twitter:card" content="summary">
@@ -242,9 +242,9 @@
             </div>
           </a>
         
-          <a class="recent-link" href="/2024/05/06/Games104/Games104-05/" title="【Games104-5】光、材质、着色器" >
+          <a class="recent-link" href="/2024/05/06/Games104/Games104-05/" title="Games104-5 光、材质、着色器" >
             <div class="recent-link-text">
-              【Games104-5】光、材质、着色器
+              Games104-5 光、材质、着色器
             </div>
           </a>
         
@@ -273,7 +273,7 @@
   
     
       <h1 class="p-name article-title" itemprop="headline name">
-        【Games104-5】光、材质、着色器
+        Games104-5 光、材质、着色器
       </h1>
     
   
@@ -292,7 +292,7 @@
   
           </div>
           <div class="wordcount need-seperator meta-info">
-            572 words 
+            437 words 
           </div>
         </div>
         
@@ -301,24 +301,17 @@
       </header>
       <div class="e-content article-entry" itemprop="articleBody">
         
-          <h1 id="光-材质-着色器"><a class="markdownIt-Anchor" href="#光-材质-着色器"></a> 光、材质、着色器</h1>
-<h2 id="渲染方程"><a class="markdownIt-Anchor" href="#渲染方程"></a> 渲染方程</h2>
-<p><img src="BRDF.png" alt="0" /></p>
+          <h1 id="光、材质、着色器"><a href="#光、材质、着色器" class="headerlink" title="光、材质、着色器"></a>光、材质、着色器</h1><h2 id="渲染方程"><a href="#渲染方程" class="headerlink" title="渲染方程"></a>渲染方程</h2><p><img src="BRDF.png" alt="0"></p>
 <p><strong>双向反射分布函数（BRDF）</strong></p>
-<p><span class="katex-display"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>L</mi><mi>o</mi></msub><mo>(</mo><mi>x</mi><mo separator="true">,</mo><msub><mi>ω</mi><mi>o</mi></msub><mo>)</mo><mo>=</mo><msub><mi>L</mi><mi>e</mi></msub><mo>(</mo><mi>x</mi><mo separator="true">,</mo><msub><mi>ω</mi><mi>o</mi></msub><mo>)</mo><mo>+</mo><msub><mo>∫</mo><mrow><msup><mrow><mi mathvariant="double-struck">H</mi></mrow><mn>2</mn></msup></mrow></msub><msub><mi>f</mi><mi>r</mi></msub><mo>(</mo><mi>x</mi><mo separator="true">,</mo><msub><mi>ω</mi><mi>o</mi></msub><mo separator="true">,</mo><msub><mi>ω</mi><mi>i</mi></msub><mo>)</mo><msub><mi>L</mi><mi>i</mi></msub><mo>(</mo><mi>x</mi><mo separator="true">,</mo><msub><mi>ω</mi><mi>i</mi></msub><mo>)</mo><mi>cos</mi><msub><mi>θ</mi><mi>i</mi></msub><mi>d</mi><msub><mi>ω</mi><mi>i</mi></msub></mrow><annotation encoding="application/x-tex">L_o(x, \omega_o) = L_e(x, \omega_o) + \int_{\mathbb{H}^2} f_r(x, \omega_o, \omega_i)L_i(x, \omega_i)\cos\theta_id\omega_i
-</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:1.36em;"></span><span class="strut bottom" style="height:2.27225em;vertical-align:-0.91225em;"></span><span class="base displaystyle textstyle uncramped"><span class="mord"><span class="mord mathit">L</span><span class="vlist"><span style="top:0.15em;margin-right:0.05em;margin-left:0em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">​</span></span><span class="reset-textstyle scriptstyle cramped"><span class="mord mathit">o</span></span></span><span class="baseline-fix"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">​</span></span>​</span></span></span><span class="mopen">(</span><span class="mord mathit">x</span><span class="mpunct">,</span><span class="mord"><span class="mord mathit" style="margin-right:0.03588em;">ω</span><span class="vlist"><span style="top:0.15em;margin-right:0.05em;margin-left:-0.03588em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">​</span></span><span class="reset-textstyle scriptstyle cramped"><span class="mord mathit">o</span></span></span><span class="baseline-fix"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">​</span></span>​</span></span></span><span class="mclose">)</span><span class="mrel">=</span><span class="mord"><span class="mord mathit">L</span><span class="vlist"><span style="top:0.15em;margin-right:0.05em;margin-left:0em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">​</span></span><span class="reset-textstyle scriptstyle cramped"><span class="mord mathit">e</span></span></span><span class="baseline-fix"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">​</span></span>​</span></span></span><span class="mopen">(</span><span class="mord mathit">x</span><span class="mpunct">,</span><span class="mord"><span class="mord mathit" style="margin-right:0.03588em;">ω</span><span class="vlist"><span style="top:0.15em;margin-right:0.05em;margin-left:-0.03588em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">​</span></span><span class="reset-textstyle scriptstyle cramped"><span class="mord mathit">o</span></span></span><span class="baseline-fix"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">​</span></span>​</span></span></span><span class="mclose">)</span><span class="mbin">+</span><span class="mop"><span class="op-symbol large-op mop" style="margin-right:0.44445em;top:-0.0011249999999999316em;">∫</span><span class="vlist"><span style="top:0.91225em;margin-right:0.05em;margin-left:-0.44445em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">​</span></span><span class="reset-textstyle scriptstyle cramped"><span class="mord scriptstyle cramped"><span class=""><span class="mord scriptstyle cramped"><span class="mord mathbb">H</span></span><span class="vlist"><span style="top:-0.30289em;margin-right:0.07142857142857144em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">​</span></span><span class="reset-scriptstyle scriptscriptstyle cramped"><span class="mord mathrm">2</span></span></span><span class="baseline-fix"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">​</span></span>​</span></span></span></span></span></span><span class="baseline-fix"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">​</span></span>​</span></span></span><span class="mord"><span class="mord mathit" style="margin-right:0.10764em;">f</span><span class="vlist"><span style="top:0.15em;margin-right:0.05em;margin-left:-0.10764em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">​</span></span><span class="reset-textstyle scriptstyle cramped"><span class="mord mathit" style="margin-right:0.02778em;">r</span></span></span><span class="baseline-fix"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">​</span></span>​</span></span></span><span class="mopen">(</span><span class="mord mathit">x</span><span class="mpunct">,</span><span class="mord"><span class="mord mathit" style="margin-right:0.03588em;">ω</span><span class="vlist"><span style="top:0.15em;margin-right:0.05em;margin-left:-0.03588em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">​</span></span><span class="reset-textstyle scriptstyle cramped"><span class="mord mathit">o</span></span></span><span class="baseline-fix"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">​</span></span>​</span></span></span><span class="mpunct">,</span><span class="mord"><span class="mord mathit" style="margin-right:0.03588em;">ω</span><span class="vlist"><span style="top:0.15em;margin-right:0.05em;margin-left:-0.03588em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">​</span></span><span class="reset-textstyle scriptstyle cramped"><span class="mord mathit">i</span></span></span><span class="baseline-fix"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">​</span></span>​</span></span></span><span class="mclose">)</span><span class="mord"><span class="mord mathit">L</span><span class="vlist"><span style="top:0.15em;margin-right:0.05em;margin-left:0em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">​</span></span><span class="reset-textstyle scriptstyle cramped"><span class="mord mathit">i</span></span></span><span class="baseline-fix"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">​</span></span>​</span></span></span><span class="mopen">(</span><span class="mord mathit">x</span><span class="mpunct">,</span><span class="mord"><span class="mord mathit" style="margin-right:0.03588em;">ω</span><span class="vlist"><span style="top:0.15em;margin-right:0.05em;margin-left:-0.03588em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">​</span></span><span class="reset-textstyle scriptstyle cramped"><span class="mord mathit">i</span></span></span><span class="baseline-fix"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">​</span></span>​</span></span></span><span class="mclose">)</span><span class="mop">cos</span><span class="mord"><span class="mord mathit" style="margin-right:0.02778em;">θ</span><span class="vlist"><span style="top:0.15em;margin-right:0.05em;margin-left:-0.02778em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">​</span></span><span class="reset-textstyle scriptstyle cramped"><span class="mord mathit">i</span></span></span><span class="baseline-fix"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">​</span></span>​</span></span></span><span class="mord mathit">d</span><span class="mord"><span class="mord mathit" style="margin-right:0.03588em;">ω</span><span class="vlist"><span style="top:0.15em;margin-right:0.05em;margin-left:-0.03588em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">​</span></span><span class="reset-textstyle scriptstyle cramped"><span class="mord mathit">i</span></span></span><span class="baseline-fix"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">​</span></span>​</span></span></span></span></span></span></span></p>
-<h2 id="三个挑战"><a class="markdownIt-Anchor" href="#三个挑战"></a> 三个挑战</h2>
-<ul>
+<script type="math/tex; mode=display">
+L_o(x, \omega_o) = L_e(x, \omega_o) + \int_{\mathbb{H}^2} f_r(x, \omega_o, \omega_i)L_i(x, \omega_i)\cos\theta_id\omega_i</script><h2 id="三个挑战"><a href="#三个挑战" class="headerlink" title="三个挑战"></a>三个挑战</h2><ul>
 <li>第一个挑战是如何获取任何给定入射方向的入射辐射。这涉及到如何准确计算来自场景中每一个方向光的亮度。</li>
 <li>第二个挑战是照明和散射函数在半球上的积分计算成本很高。由于需要对所有可能的入射方向进行积分，这个计算是非常复杂和耗时的。</li>
 <li>第三个挑战是为了评估入射辐射，我们必须计算另一个积分，也就是说渲染方程是递归的。这意味着为了计算一个方向上的光亮度，我们可能需要计算由这个光再次反射到其他物体上的光亮度，这样就形成了一个复杂的递归过程。</li>
 </ul>
-<h2 id="blinn-phong模型"><a class="markdownIt-Anchor" href="#blinn-phong模型"></a> Blinn-Phong模型</h2>
-<p><img src="blinn-phong.png" alt="1" /></p>
-光强 = 环境光(Ambient)+漫反射光(Diffuse)+高光(Specular)
-
-<h2 id="阴影"><a class="markdownIt-Anchor" href="#阴影"></a> 阴影</h2>
-<p><img src="shadow.png" alt="2" /></p>
+<h2 id="Blinn-Phong模型"><a href="#Blinn-Phong模型" class="headerlink" title="Blinn-Phong模型"></a>Blinn-Phong模型</h2><p><img src="blinn-phong.png" alt="1"></p>
+<script type="math/tex; mode=display">
+光强 = 环境光(Ambient)+漫反射光(Diffuse)+高光(Specular)</script><h2 id="阴影"><a href="#阴影" class="headerlink" title="阴影"></a>阴影</h2><p><img src="shadow.png" alt="2"></p>
 <p>阴影映射，光源位置进行MVP变换进行生成Shadow Map</p>
 
         
