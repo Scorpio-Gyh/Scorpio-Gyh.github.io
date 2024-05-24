@@ -4,6 +4,8 @@ date: 2024-05-21 18：48：20
 tags:
 categories: The Missing Semester
 ---
+# 中文讲义：[计算机教育中缺失的一课 · the missing semester of your cs education (missing-semester-cn.github.io)](https://missing-semester-cn.github.io/)
+
 # 变量声明
 
 注意不能有空格
