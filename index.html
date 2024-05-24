@@ -180,7 +180,7 @@
         
             <a class="category-link" href="/categories/The-Missing-Semester/">
                 The Missing Semester
-                <div class="category-count">2</div>
+                <div class="category-count">3</div>
             </a>
         </div>
     </div>
@@ -206,7 +206,7 @@
       
         <a class="archive-link" href="/archives/2024/05 ">
           May 2024 
-          <div class="archive-count">6 </div>
+          <div class="archive-count">7 </div>
         </a>
       
     </div>
@@ -219,6 +219,12 @@
     <div class="widget">
       <h3 class="widget-title">Recent Posts</h3>
       <ul>
+        
+          <a class="recent-link" href="/2024/05/24/The%20Missing%20Semester/The%20Missing%20Semester%20-%2001%20copy%202/" title="git" >
+            <div class="recent-link-text">
+              git
+            </div>
+          </a>
         
           <a class="recent-link" href="/2024/05/21/The%20Missing%20Semester/The%20Missing%20Semester%20-%2001%20copy/" title="Shell工具和脚本" >
             <div class="recent-link-text">
@@ -244,12 +250,6 @@
             </div>
           </a>
         
-          <a class="recent-link" href="/2024/05/13/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/UE4/UE4/" title="Unreal Engine 4" >
-            <div class="recent-link-text">
-              Unreal Engine 4
-            </div>
-          </a>
-        
       </ul>
     </div>
   </div>
@@ -260,6 +260,92 @@
     </div>
     <div id="content-body">
       
+   
+
+
+<article id="post-The Missing Semester/The Missing Semester - 01 copy 2" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+   
+  <div class="article-inner">
+    <div class="article-main">
+      <header class="article-header">
+        
+<div class="main-title-bar">
+  <div class="main-title-dot"></div>
+  
+    
+      <h1 itemprop="name">
+        <a class="p-name article-title" href="/2024/05/24/The%20Missing%20Semester/The%20Missing%20Semester%20-%2001%20copy%202/">git</a>
+      </h1>
+    
+  
+</div>
+
+        <div class='meta-info-bar'>
+          <div class="meta-info">
+  <time class="dt-published" datetime="2024-05-24T08:20:08.000Z" itemprop="datePublished">2024-05-24</time>
+</div>
+          <div class="need-seperator meta-info">
+            <div class="meta-cate-flex">
+  
+  <a class="meta-cate-link" href="/categories/The-Missing-Semester/">The Missing Semester</a>
+   
+</div>
+  
+          </div>
+          <div class="wordcount need-seperator meta-info">
+            597 words 
+          </div>
+        </div>
+        
+      </header>
+      <div class="e-content article-entry" itemprop="articleBody">
+        
+          <div class="truncate-text">
+            
+               中文讲义：计算机教育中缺失的一课 · the missing semester of your cs education (missing-semester-cn.github.io)
+ Git的数据结构
+ 文件、文件夹模型
+
+文件夹：树
+文件：“blob”对象
+
+ 历史记录模型
+git通过有向无环图来构建数据
+跟踪历史文件夹，形成文件夹快照
+fork：从某个历史节点分叉，创建对象副本
+merge：合并不同分支
+ 模型的具体实现
+12345678910type blob = array&lt;byte&gt;type tree = map&lt;string,tree|blob&gt;type commit = struct &#123;	parents: array&lt;commit&gt;	author: string	message:string	snapshot:tree&#125;type object = blob|tree|commit
+每一个object通过SHA-1哈希函数存储在一个哈希表中，映射到磁盘上
+git中的所有内容，都有自己的哈希值，用于寻址
+gi...
+            
+          </div>
+        
+      </div>
+
+         
+    </div>
+    
+     
+    <a class="right-panel  non-pic  "
+      
+      href="/2024/05/24/The%20Missing%20Semester/The%20Missing%20Semester%20-%2001%20copy%202/" 
+    >
+       
+      <i class="fa-solid fa-angle-right non-pic"></i>
+       
+    </a>
+     
+  </div>
+  
+</article>
+
+
+
+
+
+
    
 
 
@@ -293,7 +379,7 @@
   
           </div>
           <div class="wordcount need-seperator meta-info">
-            477 words 
+            560 words 
           </div>
         </div>
         
@@ -302,7 +388,8 @@
         
           <div class="truncate-text">
             
-               变量声明
+               中文讲义：计算机教育中缺失的一课 · the missing semester of your cs education (missing-semester-cn.github.io)
+ 变量声明
 注意不能有空格
 1234var1=barecho $fooecho &quot;value is $foo&quot;    # value is barecho &#x27;value is $foo&#x27;    # value is $foo
 脚本示例
@@ -320,13 +407,7 @@ $? 错误代码
 $@ 展开所有参数
 Shell命令支持通配符，类似正则表达式，但存在一定区别
  展开关键字
-foo{a,b,c} = fooa foob fooc
-类似的foo{a,b,c}goo{d,e}会按照笛卡尔积展开
- shellcheck shell检查
- 查找文件
-ls
-find
-1find .name &q...
+foo{a,b,c} = ...
             
           </div>
         
@@ -387,7 +468,7 @@ find
   
           </div>
           <div class="wordcount need-seperator meta-info">
-            526 words 
+            609 words 
           </div>
         </div>
         
@@ -396,7 +477,8 @@ find
         
           <div class="truncate-text">
             
-               常用命令
+               中文讲义：计算机教育中缺失的一课 · the missing semester of your cs education (missing-semester-cn.github.io)
+ 常用命令
 
 cd 进入目录
 cd - 上一目录
@@ -419,7 +501,7 @@ cat打印命令
  管道 |
 1ls -l / | tail -n1 将前一个命令的输出作为后一个命令的输入，实现不同程序的通信
 
-sudo echo 500 &gt; brightness 如果在系统sys内核中改变文件内容，会提示被deny，这是因为内核只是获取sudo echo 500得到的输出结果，它并不关注这个输出结果是以root权限运行，要执行该命令，需要实现通过root权限...
+sudo echo 500 &gt; brightness 如果在系统...
             
           </div>
         
