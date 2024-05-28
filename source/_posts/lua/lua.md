@@ -26,7 +26,7 @@ and
 
 break
 
-do 
+do
 
 else
 
@@ -77,3 +77,83 @@ Lua变量为动态类型，可随时改变类型
 变量默认为全局变量
 
 局部变量以 local 声明
+
+# 运算符
+
+大部分与C++相同，需要具体注意的：
+
+^  幂乘
+
+// 整除  在5.3版本后可用
+
+~= 不等于
+
+and or not分别对应 && 、|| 、！与或非
+
+.. 字符串连接符   a..b即连接
+
+#返回字符串长度或表长度
+
+# 函数
+
+以function开头，以end结尾
+
+## 固定参数函数
+
+```
+function f (a,b)
+	print(a,b)
+end
+```
+
+下列调用均合法，若多于定义，则舍弃，若少于定义，则以nil补充
+
+```
+f()
+f(0)
+f(0,0)
+f(0,0,0)
+```
+
+## 可变参数
+
+```
+function f(...)
+	local a,b,c,d = ...
+	print (a,b,c,d)
+```
+
+## 多返回值
+
+```
+function f(a,b)
+	return a,b
+end
+
+m,n = f(3,5)
+```
+
+## 函数为参数
+
+直接传递即可
+
+```
+function sum(a,b)
+	return a+b
+end
+
+function f(m,n,fun)
+	local res = fun(m,n)
+	print(res)
+end
+```
+
+可以传递匿名函数
+
+```
+f(3,5,
+function(a,b)
+	return a+b
+end
+)
+```
