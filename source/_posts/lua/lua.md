@@ -1,7 +1,7 @@
 ---
 title: lua
 date: 2024-05-27 15:30:41
-tags:游戏引擎
+tags: 游戏引擎
 ---
 # 注释
 
@@ -22,49 +22,12 @@ tags:游戏引擎
 
 # 保留字
 
-and
-
-break
-
-do
-
-else
-
-elseif
-
-end
-
-false
-
-for
-
-function
-
-if
-
-in
-
-local
-
-nil
-
-not
-
-or
-
-repeat
-
-return
-
-then
-
-true
-
-until
-
-while
-
-goto
+| and    | break  | do   | else     | elseif |
+| ------ | ------ | ---- | -------- | ------ |
+| end    | false  | for  | function | if     |
+| in     | local  | nil  | not      | or     |
+| repeat | return | then | true     | until  |
+| while  | goto   |      |          |        |
 
 除此之外，Lua定义了很多内置全局变量以 _ + 大写字母构成，如_ABC
 
@@ -156,4 +119,70 @@ function(a,b)
 	return a+b
 end
 )
+```
+
+# 流程控制语句
+
+## if 语句
+
+if..then表示条件判断
+
+false，nil为假
+
+true，非nil为真（0也是真）
+
+```
+if a > 0 then
+	print("")
+elseif then
+	print("")
+else
+	print("")
+end
+```
+
+# 循环语句
+
+## while..do
+
+```
+while a > 0 do
+	print(a)
+end
+```
+
+# repeat..until
+
+```
+repeat
+	print(a)
+	a = a - 1
+until a <= 0
+```
+
+# for循环
+
+意为for(int i = 10;i <= 50 ;)
+
+```
+for i = 10, 50 ,20 do
+	print(i)
+end
+```
+
+# break 同C++
+
+# goto
+
+实现循环
+
+```
+function f(a)
+	::flag:: print("------")
+	if(a > 0) then
+		print(a)
+		a = a - 1
+		goto flag
+	end
+end
 ```
