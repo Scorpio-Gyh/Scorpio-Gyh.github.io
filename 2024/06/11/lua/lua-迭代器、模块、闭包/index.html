@@ -14,22 +14,23 @@
   
 
   
-  <title>Shell工具和脚本 | Scorpio-Gyh_WYK</title>
+  <title>lua-迭代器、模块、闭包 | Scorpio-Gyh_WYK</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
   <link rel="preload" href="/css/fonts/Roboto-Regular.ttf" as="font" type="font/ttf" crossorigin="anonymous">
   <link rel="preload" href="/css/fonts/Roboto-Bold.ttf" as="font" type="font/ttf" crossorigin="anonymous">
 
-  <meta name="description" content="中文讲义：计算机教育中缺失的一课 · the missing semester of your cs education (missing-semester-cn.github.io)  变量声明 注意不能有空格 1234var1&#x3D;barecho $fooecho &quot;value is $foo&quot;    # value is barecho &#x27;value is $fo">
+  <meta name="description" content="迭代器  pairs 用于遍历表的所有元素的迭代器。它返回两个值：键和值。这个迭代器不保证元素的顺序 1234t &#x3D; &#123;name &#x3D; &quot;WYK&quot;, age &#x3D; 16, gender &#x3D; &quot;男&quot;, office &#x3D; &quot;深圳&quot;&#125;for k, v in pairs(t) do    print(k, v)end  ipai">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Shell工具和脚本">
-<meta property="og:url" content="https://scorpio-gyh.github.io/2024/05/21/The%20Missing%20Semester/The%20Missing%20Semester%20-%2001%20copy/index.html">
+<meta property="og:title" content="lua-迭代器、模块、闭包">
+<meta property="og:url" content="https://scorpio-gyh.github.io/2024/06/11/lua/lua-%E8%BF%AD%E4%BB%A3%E5%99%A8%E3%80%81%E6%A8%A1%E5%9D%97%E3%80%81%E9%97%AD%E5%8C%85/index.html">
 <meta property="og:site_name" content="Scorpio-Gyh_WYK">
-<meta property="og:description" content="中文讲义：计算机教育中缺失的一课 · the missing semester of your cs education (missing-semester-cn.github.io)  变量声明 注意不能有空格 1234var1&#x3D;barecho $fooecho &quot;value is $foo&quot;    # value is barecho &#x27;value is $fo">
+<meta property="og:description" content="迭代器  pairs 用于遍历表的所有元素的迭代器。它返回两个值：键和值。这个迭代器不保证元素的顺序 1234t &#x3D; &#123;name &#x3D; &quot;WYK&quot;, age &#x3D; 16, gender &#x3D; &quot;男&quot;, office &#x3D; &quot;深圳&quot;&#125;for k, v in pairs(t) do    print(k, v)end  ipai">
 <meta property="og:locale" content="en_US">
-<meta property="article:published_time" content="2024-05-21T10:48:41.099Z">
-<meta property="article:modified_time" content="2024-05-24T09:31:53.792Z">
+<meta property="article:published_time" content="2024-06-11T07:30:41.000Z">
+<meta property="article:modified_time" content="2024-06-25T13:12:53.208Z">
 <meta property="article:author" content="John Doe">
+<meta property="article:tag" content="lua">
 <meta name="twitter:card" content="summary">
   
     <link rel="alternate" href="/atom.xml" title="Scorpio-Gyh_WYK" type="application/atom+xml">
@@ -271,7 +272,7 @@
        
 
 
-<article id="post-The Missing Semester/The Missing Semester - 01 copy" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+<article id="post-lua/lua-迭代器、模块、闭包" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
   
     
    
@@ -284,7 +285,7 @@
   
     
       <h1 class="p-name article-title" itemprop="headline name">
-        Shell工具和脚本
+        lua-迭代器、模块、闭包
       </h1>
     
   
@@ -292,51 +293,46 @@
 
         <div class='meta-info-bar'>
           <div class="meta-info">
-  <time class="dt-published" datetime="2024-05-21T10:48:41.099Z" itemprop="datePublished">2024-05-21</time>
+  <time class="dt-published" datetime="2024-06-11T07:30:41.000Z" itemprop="datePublished">2024-06-11</time>
 </div>
           <div class="need-seperator meta-info">
             <div class="meta-cate-flex">
   
-  <a class="meta-cate-link" href="/categories/The-Missing-Semester/">The Missing Semester</a>
+    Uncategorized 
    
 </div>
   
           </div>
           <div class="wordcount need-seperator meta-info">
-            560 words 
+            1.1k words 
           </div>
         </div>
         
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/lua/" rel="tag">lua</a></li></ul>
+
       </header>
       <div class="e-content article-entry" itemprop="articleBody">
         
-          <h1 id="中文讲义计算机教育中缺失的一课-the-missing-semester-of-your-cs-education-missing-semester-cngithubio"><a class="markdownIt-Anchor" href="#中文讲义计算机教育中缺失的一课-the-missing-semester-of-your-cs-education-missing-semester-cngithubio"></a> 中文讲义：<a target="_blank" rel="noopener" href="https://missing-semester-cn.github.io/">计算机教育中缺失的一课 · the missing semester of your cs education (missing-semester-cn.github.io)</a></h1>
-<h1 id="变量声明"><a class="markdownIt-Anchor" href="#变量声明"></a> 变量声明</h1>
-<p>注意不能有空格</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">var1=bar</span><br><span class="line">echo $foo</span><br><span class="line">echo &quot;value is $foo&quot;    # value is bar</span><br><span class="line">echo &#x27;value is $foo&#x27;    # value is $foo</span><br></pre></td></tr></table></figure>
-<p>脚本示例</p>
-<p>如果有一个mcd.sh文件，它是如下定义的：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">mcd ()&#123;</span><br><span class="line">	mkdir -p &quot;$1&quot;</span><br><span class="line">	cd &quot;$1&quot;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>这表示：定义名为mcd的函数，接收一个参数，创建文件夹并进入该路径</p>
-<p>随后，在Shell中使用</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">source mcd.sh</span><br><span class="line">mcd test</span><br></pre></td></tr></table></figure>
-<p>即可使用该脚本</p>
-<h1 id="各种关键字"><a class="markdownIt-Anchor" href="#各种关键字"></a> 各种关键字</h1>
-<p>有很多作用</p>
-<p>$_ 上一个参数</p>
-<p>!! 上一个命令</p>
-<p>$? 错误代码</p>
-<p>$@ 展开所有参数</p>
-<p><strong>Shell命令支持通配符，类似正则表达式，但存在一定区别</strong></p>
-<h1 id="展开关键字"><a class="markdownIt-Anchor" href="#展开关键字"></a> 展开关键字</h1>
-<p>foo{a,b,c} = fooa foob fooc</p>
-<p>类似的foo{a,b,c}goo{d,e}会按照笛卡尔积展开</p>
-<h1 id="shellcheck-shell检查"><a class="markdownIt-Anchor" href="#shellcheck-shell检查"></a> shellcheck shell检查</h1>
-<h1 id="查找文件"><a class="markdownIt-Anchor" href="#查找文件"></a> 查找文件</h1>
-<p>ls</p>
-<p>find</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">find .name &quot;*.tmp&quot; -exec rm &#123;&#125; \</span><br></pre></td></tr></table></figure>
-<p>找到所有tmp后缀文件并删除</p>
+          <h1 id="迭代器"><a class="markdownIt-Anchor" href="#迭代器"></a> 迭代器</h1>
+<h2 id="pairs"><a class="markdownIt-Anchor" href="#pairs"></a> pairs</h2>
+<p>用于遍历表的所有元素的迭代器。它返回两个值：键和值。这个迭代器不保证元素的顺序</p>
+<figure class="highlight lua"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">t = &#123;name = <span class="string">&quot;WYK&quot;</span>, age = <span class="number">16</span>, gender = <span class="string">&quot;男&quot;</span>, office = <span class="string">&quot;深圳&quot;</span>&#125;</span><br><span class="line"><span class="keyword">for</span> k, v <span class="keyword">in</span> <span class="built_in">pairs</span>(t) <span class="keyword">do</span></span><br><span class="line">    <span class="built_in">print</span>(k, v)</span><br><span class="line"><span class="keyword">end</span></span><br></pre></td></tr></table></figure>
+<h2 id="ipairs"><a class="markdownIt-Anchor" href="#ipairs"></a> ipairs</h2>
+<p>用于遍历数组部分（即键为整数的部分）的迭代器。它返回两个值：索引和值。这个迭代器按照索引的升序遍历元素，从1开始，直到遇到第一个nil值。</p>
+<figure class="highlight lua"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">t = &#123;<span class="string">&quot;apple&quot;</span>, name = <span class="string">&quot;banana&quot;</span>, <span class="string">&quot;cherry&quot;</span>,[<span class="string">&quot;1&quot;</span>] = <span class="string">&quot;pairs&quot;</span>&#125;</span><br><span class="line"><span class="keyword">for</span> i, v <span class="keyword">in</span> <span class="built_in">ipairs</span>(t) <span class="keyword">do</span></span><br><span class="line">    <span class="built_in">print</span>(i, v)</span><br><span class="line"><span class="keyword">end</span></span><br></pre></td></tr></table></figure>
+<p>这里只会输出apple和banana</p>
+<h1 id="模块"><a class="markdownIt-Anchor" href="#模块"></a> 模块</h1>
+<p>wykrec.lua文件：</p>
+<figure class="highlight lua"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">rectangle = &#123;&#125;</span><br><span class="line">rectangle.<span class="built_in">pi</span> = <span class="number">3.14</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">rectangle.perimeter</span><span class="params">(a,b)</span></span></span><br><span class="line">    <span class="keyword">return</span> (a + b) * <span class="number">2</span></span><br><span class="line"><span class="keyword">end</span></span><br><span class="line"></span><br><span class="line">rectangle.area = <span class="function"><span class="keyword">function</span><span class="params">(a,b)</span></span></span><br><span class="line">    <span class="keyword">return</span> a * b</span><br><span class="line"><span class="keyword">end</span></span><br><span class="line"></span><br><span class="line">aaawww = <span class="number">1</span></span><br><span class="line"><span class="keyword">return</span> rectangle</span><br></pre></td></tr></table></figure>
+<p>main.lua文件：</p>
+<figure class="highlight lua"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"> <span class="built_in">require</span> <span class="string">&quot;wykrec&quot;</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">print</span>(aaawww)</span><br><span class="line"><span class="built_in">print</span>(rectangle.<span class="built_in">pi</span>)</span><br><span class="line"><span class="built_in">print</span>(rectangle.perimeter(<span class="number">2</span>,<span class="number">3</span>))</span><br><span class="line"><span class="built_in">print</span>(rectangle.area(<span class="number">2</span>,<span class="number">3</span>))</span><br></pre></td></tr></table></figure>
+<p>会得到如下输出：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">1</span><br><span class="line">3.14</span><br><span class="line">10</span><br><span class="line">6</span><br></pre></td></tr></table></figure>
+<p>模块可以实现快速的代码复用，其导入方式类似TS 的export</p>
+<h1 id="闭包"><a class="markdownIt-Anchor" href="#闭包"></a> 闭包</h1>
+<p>闭包是一种特殊类型的函数，它可以访问其外部作用域中的变量，即使这个函数在其外部作用域已经结束的情况下也是如此</p>
+<figure class="highlight lua"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">outerFunction</span><span class="params">(x)</span></span></span><br><span class="line">    <span class="keyword">local</span> y = <span class="number">10</span></span><br><span class="line">    <span class="keyword">return</span> <span class="function"><span class="keyword">function</span><span class="params">(z)</span></span>  <span class="comment">-- 这个匿名函数就是一个闭包</span></span><br><span class="line">        <span class="keyword">return</span> x + y + z</span><br><span class="line">    <span class="keyword">end</span></span><br><span class="line"><span class="keyword">end</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">local</span> closure = outerFunction(<span class="number">5</span>)</span><br><span class="line"><span class="built_in">print</span>(closure(<span class="number">3</span>))  <span class="comment">-- 输出18</span></span><br></pre></td></tr></table></figure>
+<p><code>outerFunction</code>函数返回了一个匿名函数，这个匿名函数就是一个闭包。这个闭包可以访问 <code>outerFunction</code>的局部变量 <code>x</code>和 <code>y</code>，即使在 <code>outerFunction</code>已经返回之后。当我们调用 <code>closure(3)</code>时，它会返回 <code>x + y + z</code>的结果，即 <code>5 + 10 + 3</code>，所以输出是18。</p>
 
         
       </div>
@@ -351,25 +347,25 @@
 <nav id="article-nav">
   <a class="article-nav-btn left "
     
-      href="/2024/05/24/The%20Missing%20Semester/The%20Missing%20Semester%20-%2001%20copy%202/"
-      title="git"
+      href="/2024/06/15/lua/lua-%E5%85%83%E8%A1%A8%E5%92%8C%E5%85%83%E6%96%B9%E6%B3%95/"
+      title="lua-元表和元方法"
      >
     <i class="fa-solid fa-angle-left"></i>
     <p class="title-text">
       
-        git
+        lua-元表和元方法
         
     </p>
   </a>
   <a class="article-nav-btn right "
     
-      href="/2024/05/14/The%20Missing%20Semester/The%20Missing%20Semester%20-%2001/"
-      title="Shell"
+      href="/2024/06/07/lua/lua-table/"
+      title="lua-Table"
      >
 
     <p class="title-text">
       
-        Shell
+        lua-Table
         
     </p>
     <i class="fa-solid fa-angle-right"></i>

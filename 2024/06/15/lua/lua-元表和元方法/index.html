@@ -14,23 +14,23 @@
   
 
   
-  <title>lua | Scorpio-Gyh_WYK</title>
+  <title>lua-元表和元方法 | Scorpio-Gyh_WYK</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
   <link rel="preload" href="/css/fonts/Roboto-Regular.ttf" as="font" type="font/ttf" crossorigin="anonymous">
   <link rel="preload" href="/css/fonts/Roboto-Bold.ttf" as="font" type="font/ttf" crossorigin="anonymous">
 
-  <meta name="description" content="注释 注释：— 多行注释: —[[           ]]—  数据类型    类型 解释     nil 同null，在条件表达式中同false   boolean false true   string 单行：用单引号、双引号多行：用[[ ]]括起来   table 类似数组，但更强大   function 函数   thread 协同线程   userdata 自定义数据类型，一般由C&#x2F;C">
+  <meta name="description" content="元表和元方法  元表（metatable）是一种特殊的表，它可以改变另一个表的行为。元表可以定义一些特殊的函数，这些函数被称为元方法，元表即table的元数据表 元方法可以改变表的一些基本行为，例如算术运算（+，-，*，&#x2F;等）、比较运算（&#x3D;&#x3D;，&lt;，&gt;等）、长度运算（#）、索引运算（[]）等。当你对一个表执行这些操作时，Lua会查找这个表的元表，如果元表中定义了对应的元方法，Lua就会">
 <meta property="og:type" content="article">
-<meta property="og:title" content="lua">
-<meta property="og:url" content="https://scorpio-gyh.github.io/2024/05/27/lua/lua/index.html">
+<meta property="og:title" content="lua-元表和元方法">
+<meta property="og:url" content="https://scorpio-gyh.github.io/2024/06/15/lua/lua-%E5%85%83%E8%A1%A8%E5%92%8C%E5%85%83%E6%96%B9%E6%B3%95/index.html">
 <meta property="og:site_name" content="Scorpio-Gyh_WYK">
-<meta property="og:description" content="注释 注释：— 多行注释: —[[           ]]—  数据类型    类型 解释     nil 同null，在条件表达式中同false   boolean false true   string 单行：用单引号、双引号多行：用[[ ]]括起来   table 类似数组，但更强大   function 函数   thread 协同线程   userdata 自定义数据类型，一般由C&#x2F;C">
+<meta property="og:description" content="元表和元方法  元表（metatable）是一种特殊的表，它可以改变另一个表的行为。元表可以定义一些特殊的函数，这些函数被称为元方法，元表即table的元数据表 元方法可以改变表的一些基本行为，例如算术运算（+，-，*，&#x2F;等）、比较运算（&#x3D;&#x3D;，&lt;，&gt;等）、长度运算（#）、索引运算（[]）等。当你对一个表执行这些操作时，Lua会查找这个表的元表，如果元表中定义了对应的元方法，Lua就会">
 <meta property="og:locale" content="en_US">
-<meta property="article:published_time" content="2024-05-27T07:30:41.000Z">
-<meta property="article:modified_time" content="2024-06-25T13:01:49.882Z">
+<meta property="article:published_time" content="2024-06-15T07:30:41.000Z">
+<meta property="article:modified_time" content="2024-06-25T13:12:53.208Z">
 <meta property="article:author" content="John Doe">
-<meta property="article:tag" content="游戏引擎">
+<meta property="article:tag" content="lua">
 <meta name="twitter:card" content="summary">
   
     <link rel="alternate" href="/atom.xml" title="Scorpio-Gyh_WYK" type="application/atom+xml">
@@ -197,7 +197,7 @@
   <div class="widget-wrap">
     <div class="widget">
       <h3 class="widget-title">Tags</h3>
-      <ul class="widget-tag-list" itemprop="keywords"><li class="widget-tag-list-item"><a class="widget-tag-list-link" href="/tags/C/" rel="tag">C++</a></li><li class="widget-tag-list-item"><a class="widget-tag-list-link" href="/tags/%E6%B8%B8%E6%88%8F%E5%BC%95%E6%93%8E/" rel="tag">游戏引擎</a></li><li class="widget-tag-list-item"><a class="widget-tag-list-link" href="/tags/%E7%BC%96%E8%AF%91%E5%8E%9F%E7%90%86/" rel="tag">编译原理</a></li><li class="widget-tag-list-item"><a class="widget-tag-list-link" href="/tags/%E8%AE%A1%E5%88%92/" rel="tag">计划</a></li></ul>
+      <ul class="widget-tag-list" itemprop="keywords"><li class="widget-tag-list-item"><a class="widget-tag-list-link" href="/tags/C/" rel="tag">C++</a></li><li class="widget-tag-list-item"><a class="widget-tag-list-link" href="/tags/lua/" rel="tag">lua</a></li><li class="widget-tag-list-item"><a class="widget-tag-list-link" href="/tags/%E6%B8%B8%E6%88%8F%E5%BC%95%E6%93%8E/" rel="tag">游戏引擎</a></li><li class="widget-tag-list-item"><a class="widget-tag-list-link" href="/tags/%E7%BC%96%E8%AF%91%E5%8E%9F%E7%90%86/" rel="tag">编译原理</a></li><li class="widget-tag-list-item"><a class="widget-tag-list-link" href="/tags/%E8%AE%A1%E5%88%92/" rel="tag">计划</a></li></ul>
     </div>
   </div>
 
@@ -208,6 +208,11 @@
     <div class="widget">
       <h3 class="widget-title">Archives</h3>
       
+      
+        <a class="archive-link" href="/archives/2024/06 ">
+          June 2024 
+          <div class="archive-count">4 </div>
+        </a>
       
         <a class="archive-link" href="/archives/2024/05 ">
           May 2024 
@@ -225,33 +230,33 @@
       <h3 class="widget-title">Recent Posts</h3>
       <ul>
         
+          <a class="recent-link" href="/2024/06/24/lua/lua-%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1/" title="lua-面向对象" >
+            <div class="recent-link-text">
+              lua-面向对象
+            </div>
+          </a>
+        
+          <a class="recent-link" href="/2024/06/15/lua/lua-%E5%85%83%E8%A1%A8%E5%92%8C%E5%85%83%E6%96%B9%E6%B3%95/" title="lua-元表和元方法" >
+            <div class="recent-link-text">
+              lua-元表和元方法
+            </div>
+          </a>
+        
+          <a class="recent-link" href="/2024/06/11/lua/lua-%E8%BF%AD%E4%BB%A3%E5%99%A8%E3%80%81%E6%A8%A1%E5%9D%97%E3%80%81%E9%97%AD%E5%8C%85/" title="lua-迭代器、模块、闭包" >
+            <div class="recent-link-text">
+              lua-迭代器、模块、闭包
+            </div>
+          </a>
+        
+          <a class="recent-link" href="/2024/06/07/lua/lua-table/" title="lua-Table" >
+            <div class="recent-link-text">
+              lua-Table
+            </div>
+          </a>
+        
           <a class="recent-link" href="/2024/05/27/C++/C++/" title="C++基础" >
             <div class="recent-link-text">
               C++基础
-            </div>
-          </a>
-        
-          <a class="recent-link" href="/2024/05/27/lua/lua/" title="lua" >
-            <div class="recent-link-text">
-              lua
-            </div>
-          </a>
-        
-          <a class="recent-link" href="/2024/05/24/The%20Missing%20Semester/The%20Missing%20Semester%20-%2001%20copy%202/" title="git" >
-            <div class="recent-link-text">
-              git
-            </div>
-          </a>
-        
-          <a class="recent-link" href="/2024/05/21/The%20Missing%20Semester/The%20Missing%20Semester%20-%2001%20copy/" title="Shell工具和脚本" >
-            <div class="recent-link-text">
-              Shell工具和脚本
-            </div>
-          </a>
-        
-          <a class="recent-link" href="/2024/05/14/The%20Missing%20Semester/The%20Missing%20Semester%20-%2001/" title="Shell" >
-            <div class="recent-link-text">
-              Shell
             </div>
           </a>
         
@@ -267,7 +272,7 @@
        
 
 
-<article id="post-lua/lua" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+<article id="post-lua/lua-元表和元方法" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
   
     
    
@@ -280,7 +285,7 @@
   
     
       <h1 class="p-name article-title" itemprop="headline name">
-        lua
+        lua-元表和元方法
       </h1>
     
   
@@ -288,7 +293,7 @@
 
         <div class='meta-info-bar'>
           <div class="meta-info">
-  <time class="dt-published" datetime="2024-05-27T07:30:41.000Z" itemprop="datePublished">2024-05-27</time>
+  <time class="dt-published" datetime="2024-06-15T07:30:41.000Z" itemprop="datePublished">2024-06-15</time>
 </div>
           <div class="need-seperator meta-info">
             <div class="meta-cate-flex">
@@ -299,168 +304,25 @@
   
           </div>
           <div class="wordcount need-seperator meta-info">
-            11k words 
+            7.8k words 
           </div>
         </div>
         
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E6%B8%B8%E6%88%8F%E5%BC%95%E6%93%8E/" rel="tag">游戏引擎</a></li></ul>
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/lua/" rel="tag">lua</a></li></ul>
 
       </header>
       <div class="e-content article-entry" itemprop="articleBody">
         
-          <h1 id="注释"><a href="#注释" class="headerlink" title="注释"></a>注释</h1><ul>
-<li>注释：—</li>
-<li>多行注释: —[[           ]]—</li>
-</ul>
-<h1 id="数据类型"><a href="#数据类型" class="headerlink" title="数据类型"></a>数据类型</h1><div class="table-container">
-<table>
-<thead>
-<tr>
-<th>类型</th>
-<th style="text-align:center">解释</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>nil</td>
-<td style="text-align:center">同null，在条件表达式中同false</td>
-</tr>
-<tr>
-<td>boolean</td>
-<td style="text-align:center">false true</td>
-</tr>
-<tr>
-<td>string</td>
-<td style="text-align:center">单行：用单引号、双引号<br />多行：用[[ ]]括起来</td>
-</tr>
-<tr>
-<td>table</td>
-<td style="text-align:center">类似数组，但更强大</td>
-</tr>
-<tr>
-<td>function</td>
-<td style="text-align:center">函数</td>
-</tr>
-<tr>
-<td>thread</td>
-<td style="text-align:center">协同线程</td>
-</tr>
-<tr>
-<td>userdata</td>
-<td style="text-align:center">自定义数据类型，一般由C/C++或应用程序所创建的类型</td>
-</tr>
-</tbody>
-</table>
-</div>
-<h1 id="保留字"><a href="#保留字" class="headerlink" title="保留字"></a>保留字</h1><div class="table-container">
-<table>
-<thead>
-<tr>
-<th>and</th>
-<th>break</th>
-<th>do</th>
-<th>else</th>
-<th>elseif</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>end</td>
-<td>false</td>
-<td>for</td>
-<td>function</td>
-<td>if</td>
-</tr>
-<tr>
-<td>in</td>
-<td>local</td>
-<td>nil</td>
-<td>not</td>
-<td>or</td>
-</tr>
-<tr>
-<td>repeat</td>
-<td>return</td>
-<td>then</td>
-<td>true</td>
-<td>until</td>
-</tr>
-<tr>
-<td>while</td>
-<td>goto</td>
-<td></td>
-<td></td>
-</tr>
-</tbody>
-</table>
-</div>
-<p>除此之外，Lua定义了很多内置全局变量以 _ + 大写字母构成，如_ABC</p>
-<h1 id="变量"><a href="#变量" class="headerlink" title="变量"></a>变量</h1><p>Lua为弱类型语言，变量无需声明</p>
-<p>Lua变量为动态类型，可随时改变类型</p>
-<p>变量默认为全局变量</p>
-<p>局部变量以 local 声明</p>
-<h1 id="运算符"><a href="#运算符" class="headerlink" title="运算符"></a>运算符</h1><p>大部分与C++相同，需要具体注意的：</p>
-<p>^  幂乘</p>
-<p>// 整除  在5.3版本后可用</p>
-<p>~= 不等于</p>
-<p>and or not分别对应 &amp;&amp; 、|| 、！与或非</p>
-<p>.. 字符串连接符   a..b即连接</p>
-<h1 id="返回字符串长度或表长度"><a href="#返回字符串长度或表长度" class="headerlink" title="返回字符串长度或表长度"></a>返回字符串长度或表长度</h1><h1 id="函数"><a href="#函数" class="headerlink" title="函数"></a>函数</h1><p>以function开头，以end结尾</p>
-<h2 id="固定参数函数"><a href="#固定参数函数" class="headerlink" title="固定参数函数"></a>固定参数函数</h2><figure class="highlight lua"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">f</span> <span class="params">(a,b)</span></span></span><br><span class="line">	<span class="built_in">print</span>(a,b)</span><br><span class="line"><span class="keyword">end</span></span><br></pre></td></tr></table></figure>
-<p>下列调用均合法，若多于定义，则舍弃，若少于定义，则以nil补充</p>
-<figure class="highlight lua"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">f()</span><br><span class="line">f(<span class="number">0</span>)</span><br><span class="line">f(<span class="number">0</span>,<span class="number">0</span>)</span><br><span class="line">f(<span class="number">0</span>,<span class="number">0</span>,<span class="number">0</span>)</span><br></pre></td></tr></table></figure>
-<h2 id="可变参数"><a href="#可变参数" class="headerlink" title="可变参数"></a>可变参数</h2><figure class="highlight lua"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">f</span><span class="params">(...)</span></span></span><br><span class="line">	<span class="keyword">local</span> a,b,c,d = ...</span><br><span class="line">	<span class="built_in">print</span> (a,b,c,d)</span><br></pre></td></tr></table></figure>
-<h2 id="多返回值"><a href="#多返回值" class="headerlink" title="多返回值"></a>多返回值</h2><figure class="highlight lua"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">f</span><span class="params">(a,b)</span></span></span><br><span class="line">	<span class="keyword">return</span> a,b</span><br><span class="line"><span class="keyword">end</span></span><br><span class="line"></span><br><span class="line">m,n = f(<span class="number">3</span>,<span class="number">5</span>)</span><br></pre></td></tr></table></figure>
-<h2 id="函数为参数"><a href="#函数为参数" class="headerlink" title="函数为参数"></a>函数为参数</h2><p>直接传递即可</p>
-<figure class="highlight lua"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">sum</span><span class="params">(a,b)</span></span></span><br><span class="line">	<span class="keyword">return</span> a+b</span><br><span class="line"><span class="keyword">end</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">f</span><span class="params">(m,n,fun)</span></span></span><br><span class="line">	<span class="keyword">local</span> res = fun(m,n)</span><br><span class="line">	<span class="built_in">print</span>(res)</span><br><span class="line"><span class="keyword">end</span></span><br></pre></td></tr></table></figure>
-<p>可以传递匿名函数</p>
-<figure class="highlight lua"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">f(<span class="number">3</span>,<span class="number">5</span>,</span><br><span class="line"><span class="function"><span class="keyword">function</span><span class="params">(a,b)</span></span></span><br><span class="line">	<span class="keyword">return</span> a+b</span><br><span class="line"><span class="keyword">end</span></span><br><span class="line">)</span><br></pre></td></tr></table></figure>
-<h1 id="流程控制语句"><a href="#流程控制语句" class="headerlink" title="流程控制语句"></a>流程控制语句</h1><h2 id="if-语句"><a href="#if-语句" class="headerlink" title="if 语句"></a>if 语句</h2><p>if..then表示条件判断</p>
-<p>false，nil为假</p>
-<p>true，非nil为真（0也是真）</p>
-<figure class="highlight lua"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> a &gt; <span class="number">0</span> <span class="keyword">then</span></span><br><span class="line">	<span class="built_in">print</span>(<span class="string">&quot;&quot;</span>)</span><br><span class="line"><span class="keyword">elseif</span> <span class="keyword">then</span></span><br><span class="line">	<span class="built_in">print</span>(<span class="string">&quot;&quot;</span>)</span><br><span class="line"><span class="keyword">else</span></span><br><span class="line">	<span class="built_in">print</span>(<span class="string">&quot;&quot;</span>)</span><br><span class="line"><span class="keyword">end</span></span><br></pre></td></tr></table></figure>
-<h1 id="循环语句"><a href="#循环语句" class="headerlink" title="循环语句"></a>循环语句</h1><h2 id="while-do"><a href="#while-do" class="headerlink" title="while..do"></a>while..do</h2><figure class="highlight lua"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">while</span> a &gt; <span class="number">0</span> <span class="keyword">do</span></span><br><span class="line">	<span class="built_in">print</span>(a)</span><br><span class="line"><span class="keyword">end</span></span><br></pre></td></tr></table></figure>
-<h2 id="repeat-until"><a href="#repeat-until" class="headerlink" title="repeat..until"></a>repeat..until</h2><figure class="highlight lua"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">repeat</span></span><br><span class="line">	<span class="built_in">print</span>(a)</span><br><span class="line">	a = a - <span class="number">1</span></span><br><span class="line"><span class="keyword">until</span> a &lt;= <span class="number">0</span></span><br></pre></td></tr></table></figure>
-<h2 id="for循环"><a href="#for循环" class="headerlink" title="for循环"></a>for循环</h2><p>意为for(int i = 10;i &lt;= 50 ;)</p>
-<figure class="highlight lua"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> i = <span class="number">10</span>, <span class="number">50</span> ,<span class="number">20</span> <span class="keyword">do</span></span><br><span class="line">	<span class="built_in">print</span>(i)</span><br><span class="line"><span class="keyword">end</span></span><br></pre></td></tr></table></figure>
-<h2 id="break同C"><a href="#break同C" class="headerlink" title="break同C++"></a>break同C++</h2><h2 id="goto语句"><a href="#goto语句" class="headerlink" title="goto语句"></a>goto语句</h2><p>实现循环</p>
-<figure class="highlight lua"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">f</span><span class="params">(a)</span></span></span><br><span class="line">	::flag:: <span class="built_in">print</span>(<span class="string">&quot;------&quot;</span>)</span><br><span class="line">	<span class="keyword">if</span>(a &gt; <span class="number">0</span>) <span class="keyword">then</span></span><br><span class="line">		<span class="built_in">print</span>(a)</span><br><span class="line">		a = a - <span class="number">1</span></span><br><span class="line">		<span class="keyword">goto</span> flag</span><br><span class="line">	<span class="keyword">end</span></span><br><span class="line"><span class="keyword">end</span></span><br></pre></td></tr></table></figure>
-<h1 id="Table"><a href="#Table" class="headerlink" title="Table"></a>Table</h1><h2 id="数组"><a href="#数组" class="headerlink" title="数组"></a>数组</h2><h3 id="一维数组"><a href="#一维数组" class="headerlink" title="一维数组"></a>一维数组</h3><figure class="highlight lua"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">cities = &#123;<span class="string">&quot;北京&quot;</span>,<span class="string">&quot;上海&quot;</span>,<span class="string">&quot;广州&quot;</span>&#125;</span><br><span class="line"></span><br><span class="line">cities[<span class="number">4</span>] = <span class="string">&quot;深圳&quot;</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> i=<span class="number">1</span>,<span class="number">4</span> <span class="keyword">do</span></span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&quot;cities[&quot;</span>..i..<span class="string">&quot;] = &quot;</span>..cities[i])</span><br><span class="line"><span class="keyword">end</span></span><br></pre></td></tr></table></figure>
-<h3 id="二维数组"><a href="#二维数组" class="headerlink" title="二维数组"></a>二维数组</h3><figure class="highlight lua"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">arr = &#123;&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> i = <span class="number">1</span>,<span class="number">3</span> <span class="keyword">do</span></span><br><span class="line">    arr[i] = i</span><br><span class="line">    <span class="keyword">for</span> j = <span class="number">1</span>,<span class="number">3</span> <span class="keyword">do</span></span><br><span class="line">        arr[j] = j</span><br><span class="line">    <span class="keyword">end</span></span><br><span class="line"><span class="keyword">end</span></span><br></pre></td></tr></table></figure>
-<h2 id="Map"><a href="#Map" class="headerlink" title="Map"></a>Map</h2><h3 id="基本结构"><a href="#基本结构" class="headerlink" title="基本结构"></a>基本结构</h3><p>允许Map有数组和Map的嵌套</p>
-<figure class="highlight lua"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">info = &#123;name = <span class="string">&quot;WYK&quot;</span>,age = <span class="number">16</span>&#125;</span><br><span class="line">info[<span class="string">&quot;gender&quot;</span>] = <span class="string">&quot;男&quot;</span></span><br><span class="line">info.office = <span class="string">&quot;深圳&quot;</span></span><br><span class="line"></span><br><span class="line">a = <span class="string">&quot;xxx&quot;</span></span><br><span class="line">info[a..<span class="string">&quot;bb&quot;</span>] = <span class="literal">true</span> <span class="comment">-- info[&quot;xxxbb&quot;] = true用表达式作为key</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
-<h2 id="操作符"><a href="#操作符" class="headerlink" title="操作符"></a>操作符</h2><h3 id="table-concat-table-split-start-end"><a href="#table-concat-table-split-start-end" class="headerlink" title="table.concat(table,split,start,end)"></a>table.concat(table,split,start,end)</h3><p>table：被连接的数组</p>
-<p>split：连接符</p>
-<p>start：起始位置</p>
-<p>end：终止位置</p>
-<p>返回连接后的数据，常用于print</p>
-<h3 id="table-unpack-table-i-j"><a href="#table-unpack-table-i-j" class="headerlink" title="table.unpack(table,i,j)"></a>table.unpack(table,i,j)</h3><p>返回数组第i到j个元素值</p>
-<h3 id="table-pack-a-b-c"><a href="#table-pack-a-b-c" class="headerlink" title="table.pack(a,b,c)"></a>table.pack(a,b,c)</h3><p>将参数打包为一个数组，并存储了一个属性值n，表示数组的元素个数</p>
-<h3 id="table-maxn-table"><a href="#table-maxn-table" class="headerlink" title="table.maxn(table)"></a>table.maxn(table)</h3><p>返回最大的元素下表，即个数</p>
-<h3 id="table-insert-table-pos-value"><a href="#table-insert-table-pos-value" class="headerlink" title="table.insert(table,pos,value)"></a>table.insert(table,pos,value)</h3><p>在table的pos处插入value</p>
-<h3 id="table-sort"><a href="#table-sort" class="headerlink" title="table.sort()"></a>table.sort()</h3><p>默认按照升序排序，但可传递排序函数</p>
-<figure class="highlight lua"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">t = &#123;<span class="number">8</span>, <span class="number">2</span>, <span class="number">6</span>, <span class="number">3</span>, <span class="number">7</span>&#125;</span><br><span class="line"><span class="built_in">table</span>.<span class="built_in">sort</span>(t, <span class="function"><span class="keyword">function</span><span class="params">(a, b)</span></span> <span class="keyword">return</span> a &gt; b <span class="keyword">end</span>) <span class="comment">-- 降序排序</span></span><br><span class="line"><span class="keyword">for</span> k, v <span class="keyword">in</span> <span class="built_in">pairs</span>(t) <span class="keyword">do</span></span><br><span class="line">    <span class="built_in">print</span>(v)</span><br><span class="line"><span class="keyword">end</span></span><br></pre></td></tr></table></figure>
-<h1 id="迭代器"><a href="#迭代器" class="headerlink" title="迭代器"></a>迭代器</h1><h2 id="pairs"><a href="#pairs" class="headerlink" title="pairs"></a>pairs</h2><p>用于遍历表的所有元素的迭代器。它返回两个值：键和值。这个迭代器不保证元素的顺序</p>
-<figure class="highlight lua"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">t = &#123;name = <span class="string">&quot;WYK&quot;</span>, age = <span class="number">16</span>, gender = <span class="string">&quot;男&quot;</span>, office = <span class="string">&quot;深圳&quot;</span>&#125;</span><br><span class="line"><span class="keyword">for</span> k, v <span class="keyword">in</span> <span class="built_in">pairs</span>(t) <span class="keyword">do</span></span><br><span class="line">    <span class="built_in">print</span>(k, v)</span><br><span class="line"><span class="keyword">end</span></span><br></pre></td></tr></table></figure>
-<h2 id="ipairs"><a href="#ipairs" class="headerlink" title="ipairs"></a>ipairs</h2><p>用于遍历数组部分（即键为整数的部分）的迭代器。它返回两个值：索引和值。这个迭代器按照索引的升序遍历元素，从1开始，直到遇到第一个nil值。</p>
-<figure class="highlight lua"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">t = &#123;<span class="string">&quot;apple&quot;</span>, name = <span class="string">&quot;banana&quot;</span>, <span class="string">&quot;cherry&quot;</span>,[<span class="string">&quot;1&quot;</span>] = <span class="string">&quot;pairs&quot;</span>&#125;</span><br><span class="line"><span class="keyword">for</span> i, v <span class="keyword">in</span> <span class="built_in">ipairs</span>(t) <span class="keyword">do</span></span><br><span class="line">    <span class="built_in">print</span>(i, v)</span><br><span class="line"><span class="keyword">end</span></span><br></pre></td></tr></table></figure>
-<p>这里只会输出apple和banana</p>
-<h1 id="模块"><a href="#模块" class="headerlink" title="模块"></a>模块</h1><p>wykrec.lua文件：</p>
-<figure class="highlight lua"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">rectangle = &#123;&#125;</span><br><span class="line">rectangle.<span class="built_in">pi</span> = <span class="number">3.14</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">rectangle.perimeter</span><span class="params">(a,b)</span></span></span><br><span class="line">    <span class="keyword">return</span> (a + b) * <span class="number">2</span></span><br><span class="line"><span class="keyword">end</span></span><br><span class="line"></span><br><span class="line">rectangle.area = <span class="function"><span class="keyword">function</span><span class="params">(a,b)</span></span></span><br><span class="line">    <span class="keyword">return</span> a * b</span><br><span class="line"><span class="keyword">end</span></span><br><span class="line"></span><br><span class="line">aaawww = <span class="number">1</span></span><br><span class="line"><span class="keyword">return</span> rectangle</span><br></pre></td></tr></table></figure>
-<p>main.lua文件：</p>
-<figure class="highlight lua"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"> <span class="built_in">require</span> <span class="string">&quot;wykrec&quot;</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">print</span>(aaawww)</span><br><span class="line"><span class="built_in">print</span>(rectangle.<span class="built_in">pi</span>)</span><br><span class="line"><span class="built_in">print</span>(rectangle.perimeter(<span class="number">2</span>,<span class="number">3</span>))</span><br><span class="line"><span class="built_in">print</span>(rectangle.area(<span class="number">2</span>,<span class="number">3</span>))</span><br></pre></td></tr></table></figure>
-<p>会得到如下输出：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">1</span><br><span class="line">3.14</span><br><span class="line">10</span><br><span class="line">6</span><br></pre></td></tr></table></figure>
-<p>模块可以实现快速的代码复用，其导入方式类似TS 的export</p>
-<h1 id="闭包"><a href="#闭包" class="headerlink" title="闭包"></a>闭包</h1><p>闭包是一种特殊类型的函数，它可以访问其外部作用域中的变量，即使这个函数在其外部作用域已经结束的情况下也是如此</p>
-<figure class="highlight lua"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">outerFunction</span><span class="params">(x)</span></span></span><br><span class="line">    <span class="keyword">local</span> y = <span class="number">10</span></span><br><span class="line">    <span class="keyword">return</span> <span class="function"><span class="keyword">function</span><span class="params">(z)</span></span>  <span class="comment">-- 这个匿名函数就是一个闭包</span></span><br><span class="line">        <span class="keyword">return</span> x + y + z</span><br><span class="line">    <span class="keyword">end</span></span><br><span class="line"><span class="keyword">end</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">local</span> closure = outerFunction(<span class="number">5</span>)</span><br><span class="line"><span class="built_in">print</span>(closure(<span class="number">3</span>))  <span class="comment">-- 输出18</span></span><br></pre></td></tr></table></figure>
-<h1 id="outerFunction函数返回了一个匿名函数，这个匿名函数就是一个闭包。这个闭包可以访问-outerFunction的局部变量-x和-y，即使在-outerFunction已经返回之后。当我们调用-closure-3-时，它会返回-x-y-z的结果，即-5-10-3，所以输出是18。"><a href="#outerFunction函数返回了一个匿名函数，这个匿名函数就是一个闭包。这个闭包可以访问-outerFunction的局部变量-x和-y，即使在-outerFunction已经返回之后。当我们调用-closure-3-时，它会返回-x-y-z的结果，即-5-10-3，所以输出是18。" class="headerlink" title="outerFunction函数返回了一个匿名函数，这个匿名函数就是一个闭包。这个闭包可以访问 outerFunction的局部变量 x和 y，即使在 outerFunction已经返回之后。当我们调用 closure(3)时，它会返回 x + y + z的结果，即 5 + 10 + 3，所以输出是18。"></a><code>outerFunction</code>函数返回了一个匿名函数，这个匿名函数就是一个闭包。这个闭包可以访问 <code>outerFunction</code>的局部变量 <code>x</code>和 <code>y</code>，即使在 <code>outerFunction</code>已经返回之后。当我们调用 <code>closure(3)</code>时，它会返回 <code>x + y + z</code>的结果，即 <code>5 + 10 + 3</code>，所以输出是18。</h1><h1 id="元表和元方法"><a href="#元表和元方法" class="headerlink" title="元表和元方法"></a>元表和元方法</h1><ul>
+          <h1 id="元表和元方法"><a class="markdownIt-Anchor" href="#元表和元方法"></a> 元表和元方法</h1>
+<ul>
 <li>元表（metatable）是一种特殊的表，它可以改变另一个表的行为。元表可以定义一些特殊的函数，这些函数被称为元方法，元表即table的元数据表</li>
 <li>元方法可以改变表的一些基本行为，例如算术运算（<code>+</code>，<code>-</code>，<code>*</code>，<code>/</code>等）、比较运算（<code>==</code>，<code>&lt;</code>，<code>&gt;</code>等）、长度运算（<code>#</code>）、索引运算（<code>[]</code>）等。当你对一个表执行这些操作时，Lua会查找这个表的元表，如果元表中定义了对应的元方法，Lua就会调用这个元方法。</li>
 </ul>
 <figure class="highlight lua"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">local</span> t1 = &#123;value = <span class="number">5</span>&#125;</span><br><span class="line"><span class="keyword">local</span> t2 = &#123;value = <span class="number">3</span>&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">local</span> mt = &#123;</span><br><span class="line">    <span class="built_in">__add</span> = <span class="function"><span class="keyword">function</span><span class="params">(a, b)</span></span></span><br><span class="line">        <span class="keyword">return</span> &#123;value = a.value + b.value&#125;</span><br><span class="line">    <span class="keyword">end</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="built_in">setmetatable</span>(t1, mt)</span><br><span class="line"><span class="built_in">setmetatable</span>(t2, mt)</span><br><span class="line"></span><br><span class="line"><span class="keyword">local</span> t3 = t1 + t2</span><br><span class="line"><span class="built_in">print</span>(t3.value)  <span class="comment">-- 输出8</span></span><br></pre></td></tr></table></figure>
-<h2 id="重要函数"><a href="#重要函数" class="headerlink" title="重要函数"></a>重要函数</h2><figure class="highlight lua"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">setmetatable</span>(<span class="built_in">table</span>,metatable) <span class="comment">--为table制定元表为metatable</span></span><br><span class="line"><span class="built_in">getmetatable</span>(<span class="built_in">table</span>)	      <span class="comment">--获得table的元表</span></span><br></pre></td></tr></table></figure>
-<h2 id="元方法与运算符的对应关系："><a href="#元方法与运算符的对应关系：" class="headerlink" title="元方法与运算符的对应关系："></a>元方法与运算符的对应关系：</h2><ul>
+<h2 id="重要函数"><a class="markdownIt-Anchor" href="#重要函数"></a> 重要函数</h2>
+<figure class="highlight lua"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">setmetatable</span>(<span class="built_in">table</span>,metatable) <span class="comment">--为table制定元表为metatable</span></span><br><span class="line"><span class="built_in">getmetatable</span>(<span class="built_in">table</span>)	      <span class="comment">--获得table的元表</span></span><br></pre></td></tr></table></figure>
+<h2 id="元方法与运算符的对应关系"><a class="markdownIt-Anchor" href="#元方法与运算符的对应关系"></a> 元方法与运算符的对应关系：</h2>
+<ul>
 <li><code>__add(a, b)</code>：对应 <code>+</code>运算符。当你尝试对两个表进行加法运算时，Lua会调用这个元方法。这个元方法接受两个参数，返回它们的和。</li>
 <li><code>__sub(a, b)</code>：对应 <code>-</code>运算符。当你尝试对两个表进行减法运算时，Lua会调用这个元方法。这个元方法接受两个参数，返回它们的差。</li>
 <li><code>__mul(a, b)</code>：对应 <code>*</code>运算符。当你尝试对两个表进行乘法运算时，Lua会调用这个元方法。这个元方法接受两个参数，返回它们的积。</li>
@@ -483,30 +345,40 @@
 <li><code>__gc(a)</code>：当一个表被垃圾回收时，Lua会调用这个元方法。这个元方法接受一个参数，执行它的垃圾回收操作。</li>
 </ul>
 <figure class="highlight lua"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">-- 创建两个表local t1 = &#123;value = 5, a = 1&#125;</span></span><br><span class="line"><span class="keyword">local</span> t2 = &#123;value = <span class="number">3</span>, b = <span class="number">2</span>&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">-- 创建元表</span></span><br><span class="line"><span class="keyword">local</span> mt = &#123;</span><br><span class="line">    <span class="comment">-- 算术元方法</span></span><br><span class="line">    <span class="built_in">__add</span> = <span class="function"><span class="keyword">function</span><span class="params">(a, b)</span></span> <span class="keyword">return</span> &#123;value = a.value + b.value&#125; <span class="keyword">end</span>,</span><br><span class="line">    <span class="built_in">__sub</span> = <span class="function"><span class="keyword">function</span><span class="params">(a, b)</span></span> <span class="keyword">return</span> &#123;value = a.value - b.value&#125; <span class="keyword">end</span>,</span><br><span class="line">    <span class="built_in">__mul</span> = <span class="function"><span class="keyword">function</span><span class="params">(a, b)</span></span> <span class="keyword">return</span> &#123;value = a.value * b.value&#125; <span class="keyword">end</span>,</span><br><span class="line">    <span class="built_in">__div</span> = <span class="function"><span class="keyword">function</span><span class="params">(a, b)</span></span> <span class="keyword">return</span> &#123;value = a.value / b.value&#125; <span class="keyword">end</span>,</span><br><span class="line">    <span class="built_in">__mod</span> = <span class="function"><span class="keyword">function</span><span class="params">(a, b)</span></span> <span class="keyword">return</span> &#123;value = a.value % b.value&#125; <span class="keyword">end</span>,</span><br><span class="line">    <span class="built_in">__unm</span> = <span class="function"><span class="keyword">function</span><span class="params">(a)</span></span> <span class="keyword">return</span> &#123;value = -a.value&#125; <span class="keyword">end</span>,</span><br><span class="line">    <span class="built_in">__pow</span> = <span class="function"><span class="keyword">function</span><span class="params">(a, b)</span></span> <span class="keyword">return</span> &#123;value = a.value ^ b.value&#125; <span class="keyword">end</span>,</span><br><span class="line"></span><br><span class="line">    <span class="comment">-- 关系元方法</span></span><br><span class="line">    <span class="built_in">__eq</span> = <span class="function"><span class="keyword">function</span><span class="params">(a, b)</span></span> <span class="keyword">return</span> a.value == b.value <span class="keyword">end</span>,</span><br><span class="line">    <span class="built_in">__lt</span> = <span class="function"><span class="keyword">function</span><span class="params">(a, b)</span></span> <span class="keyword">return</span> a.value &lt; b.value <span class="keyword">end</span>,</span><br><span class="line">    <span class="built_in">__le</span> = <span class="function"><span class="keyword">function</span><span class="params">(a, b)</span></span> <span class="keyword">return</span> a.value &lt;= b.value <span class="keyword">end</span>,</span><br><span class="line"></span><br><span class="line">    <span class="comment">-- 库定义元方法</span></span><br><span class="line">    <span class="built_in">__index</span> = <span class="function"><span class="keyword">function</span><span class="params">(t, k)</span></span></span><br><span class="line">        <span class="keyword">return</span> <span class="string">&quot;You are trying to access a non-existing field: &quot;</span> .. k</span><br><span class="line">    <span class="keyword">end</span>,</span><br><span class="line">    <span class="built_in">__newindex</span> = <span class="function"><span class="keyword">function</span><span class="params">(t, k, v)</span></span></span><br><span class="line">        <span class="built_in">print</span>(<span class="string">&quot;You are trying to set a non-existing field: &quot;</span> .. k)</span><br><span class="line">    <span class="keyword">end</span>,</span><br><span class="line">    <span class="built_in">__call</span> = <span class="function"><span class="keyword">function</span><span class="params">(t, ...)</span></span></span><br><span class="line">        <span class="keyword">local</span> sum = <span class="number">0</span></span><br><span class="line">        <span class="keyword">for</span> _, v <span class="keyword">in</span> <span class="built_in">pairs</span>(&#123;...&#125;) <span class="keyword">do</span></span><br><span class="line">            sum = sum + v</span><br><span class="line">        <span class="keyword">end</span></span><br><span class="line">        <span class="keyword">return</span> sum</span><br><span class="line">    <span class="keyword">end</span>,</span><br><span class="line">    <span class="built_in">__tostring</span> = <span class="function"><span class="keyword">function</span><span class="params">(t)</span></span></span><br><span class="line">        <span class="keyword">return</span> <span class="string">&quot;value: &quot;</span> .. t.value</span><br><span class="line">    <span class="keyword">end</span>,</span><br><span class="line">    <span class="built_in">__len</span> = <span class="function"><span class="keyword">function</span><span class="params">(t)</span></span></span><br><span class="line">        <span class="keyword">local</span> count = <span class="number">0</span></span><br><span class="line">        <span class="keyword">for</span> _ <span class="keyword">in</span> <span class="built_in">pairs</span>(t) <span class="keyword">do</span></span><br><span class="line">            count = count + <span class="number">1</span></span><br><span class="line">        <span class="keyword">end</span></span><br><span class="line">        <span class="keyword">return</span> count</span><br><span class="line">    <span class="keyword">end</span>,</span><br><span class="line">    __pairs = <span class="function"><span class="keyword">function</span><span class="params">(t)</span></span></span><br><span class="line">        <span class="keyword">return</span> <span class="built_in">pairs</span>(t)</span><br><span class="line">    <span class="keyword">end</span>,</span><br><span class="line">    <span class="built_in">__metatable</span> = <span class="function"><span class="keyword">function</span><span class="params">(t)</span></span></span><br><span class="line">        <span class="keyword">return</span> <span class="string">&quot;This is a metatable&quot;</span></span><br><span class="line">    <span class="keyword">end</span>,</span><br><span class="line">    <span class="built_in">__gc</span> = <span class="function"><span class="keyword">function</span><span class="params">(t)</span></span></span><br><span class="line">        <span class="built_in">print</span>(<span class="string">&quot;Garbage collection for table&quot;</span>)</span><br><span class="line">    <span class="keyword">end</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">-- 设置元表</span></span><br><span class="line"><span class="built_in">setmetatable</span>(t1, mt)</span><br><span class="line"><span class="built_in">setmetatable</span>(t2, mt)</span><br><span class="line"></span><br><span class="line"><span class="comment">-- 测试元方法</span></span><br><span class="line"><span class="keyword">local</span> t3 = t1 + t2  <span class="comment">-- __add</span></span><br><span class="line"><span class="built_in">print</span>(t3.value)  <span class="comment">-- 输出8</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">local</span> t4 = t1 - t2  <span class="comment">-- __sub</span></span><br><span class="line"><span class="built_in">print</span>(t4.value)  <span class="comment">-- 输出2</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">local</span> t5 = t1 * t2  <span class="comment">-- __mul</span></span><br><span class="line"><span class="built_in">print</span>(t5.value)  <span class="comment">-- 输出15</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">local</span> t6 = t1 / t2  <span class="comment">-- __div</span></span><br><span class="line"><span class="built_in">print</span>(t6.value)  <span class="comment">-- 输出1.6666666666667</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">local</span> t7 = t1 % t2  <span class="comment">-- __mod</span></span><br><span class="line"><span class="built_in">print</span>(t7.value)  <span class="comment">-- 输出2</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">local</span> t8 = -t1  <span class="comment">-- __unm</span></span><br><span class="line"><span class="built_in">print</span>(t8.value)  <span class="comment">-- 输出-5</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">local</span> t9 = t1 ^ t2  <span class="comment">-- __pow</span></span><br><span class="line"><span class="built_in">print</span>(t9.value)  <span class="comment">-- 输出125</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">print</span>(t1 == t2)  <span class="comment">-- __eq, 输出false</span></span><br><span class="line"><span class="built_in">print</span>(t1 &lt; t2)  <span class="comment">-- __lt, 输出false</span></span><br><span class="line"><span class="built_in">print</span>(t1 &lt;= t2)  <span class="comment">-- __le, 输出false</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">print</span>(t1.non_existing_field)  <span class="comment">-- __index, 输出&quot;You are trying to access a non-existing field: non_existing_field&quot;</span></span><br><span class="line"></span><br><span class="line">t1.new_field = <span class="number">10</span>  <span class="comment">-- __newindex, 输出&quot;You are trying to set a non-existing field: new_field&quot;</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">print</span>(t1(<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>))  <span class="comment">-- __call, 输出15</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">print</span>(<span class="built_in">tostring</span>(t1))  <span class="comment">-- __tostring, 输出&quot;value: 5&quot;</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">print</span>(#t1)  <span class="comment">-- __len, 输出2</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> k, v <span class="keyword">in</span> <span class="built_in">pairs</span>(t1) <span class="keyword">do</span>  <span class="comment">-- __pairs</span></span><br><span class="line">    <span class="built_in">print</span>(k, v)</span><br><span class="line"><span class="keyword">end</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">print</span>(<span class="built_in">getmetatable</span>(t1))  <span class="comment">-- __metatable, 输出&quot;This is a metatable&quot;</span></span><br></pre></td></tr></table></figure>
-<h2 id="元表文件模块"><a href="#元表文件模块" class="headerlink" title="元表文件模块"></a>元表文件模块</h2><p>为了方便管理和引入，可自定义元表模块</p>
+<h2 id="元表文件模块"><a class="markdownIt-Anchor" href="#元表文件模块"></a> 元表文件模块</h2>
+<p>为了方便管理和引入，可自定义元表模块</p>
 <figure class="highlight lua"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">-- 文件：metatable.lua</span></span><br><span class="line"><span class="keyword">local</span> mt = &#123;</span><br><span class="line">    <span class="built_in">__add</span> = <span class="function"><span class="keyword">function</span><span class="params">(a, b)</span></span></span><br><span class="line">        <span class="keyword">return</span> &#123;value = a.value + b.value&#125;</span><br><span class="line">    <span class="keyword">end</span>,</span><br><span class="line">    <span class="built_in">__sub</span> = <span class="function"><span class="keyword">function</span><span class="params">(a, b)</span></span></span><br><span class="line">        <span class="keyword">return</span> &#123;value = a.value - b.value&#125;</span><br><span class="line">    <span class="keyword">end</span>,</span><br><span class="line">    <span class="built_in">__mul</span> = <span class="function"><span class="keyword">function</span><span class="params">(a, b)</span></span></span><br><span class="line">        <span class="keyword">return</span> &#123;value = a.value * b.value&#125;</span><br><span class="line">    <span class="keyword">end</span>,</span><br><span class="line">    <span class="built_in">__div</span> = <span class="function"><span class="keyword">function</span><span class="params">(a, b)</span></span></span><br><span class="line">        <span class="keyword">if</span> b.value ~= <span class="number">0</span> <span class="keyword">then</span></span><br><span class="line">            <span class="keyword">return</span> &#123;value = a.value / b.value&#125;</span><br><span class="line">        <span class="keyword">else</span></span><br><span class="line">            <span class="built_in">error</span>(<span class="string">&quot;division by zero&quot;</span>)</span><br><span class="line">        <span class="keyword">end</span></span><br><span class="line">    <span class="keyword">end</span>,</span><br><span class="line">    <span class="built_in">__tostring</span> = <span class="function"><span class="keyword">function</span><span class="params">(t)</span></span></span><br><span class="line">        <span class="keyword">return</span> <span class="string">&quot;value: &quot;</span> .. t.value</span><br><span class="line">    <span class="keyword">end</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">return</span> mt</span><br></pre></td></tr></table></figure>
 <figure class="highlight lua"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">-- 文件：main.lua</span></span><br><span class="line"></span><br><span class="line"><span class="comment">-- 加载元表文件</span></span><br><span class="line"><span class="keyword">local</span> mt = <span class="built_in">require</span>(<span class="string">&quot;metatable&quot;</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment">-- 使用元表</span></span><br><span class="line"><span class="keyword">local</span> t1 = &#123;value = <span class="number">5</span>&#125;</span><br><span class="line"><span class="keyword">local</span> t2 = &#123;value = <span class="number">3</span>&#125;</span><br><span class="line"></span><br><span class="line"><span class="built_in">setmetatable</span>(t1, mt)</span><br><span class="line"><span class="built_in">setmetatable</span>(t2, mt)</span><br></pre></td></tr></table></figure>
-<h2 id="不同元表的table操作规则"><a href="#不同元表的table操作规则" class="headerlink" title="不同元表的table操作规则"></a>不同元表的table操作规则</h2><ul>
+<h2 id="不同元表的table操作规则"><a class="markdownIt-Anchor" href="#不同元表的table操作规则"></a> 不同元表的table操作规则</h2>
+<ul>
 <li>假设两个表 <code>t1</code>和 <code>t2</code>，它们的元表分别是 <code>mt1</code>和 <code>mt2</code>，并且 <code>mt1</code>有 <code>__add</code>元方法，<code>mt2</code>没有。那么当执行 <code>t1 + t2</code>时，Lua会使用 <code>mt1</code>的 <code>__add</code>元方法。</li>
 <li>如果 <code>mt1</code>没有 <code>__add</code>元方法，但是 <code>mt2</code>有，那么Lua会使用 <code>mt2</code>的 <code>__add</code>元方法。</li>
 <li>如果两个元表都有 <code>__add</code>元方法，那么Lua会使用第一个操作数的元方法。</li>
 <li>如果两个元表都没有 <code>__add</code>元方法，那么Lua会报错，因为它不知道如何进行加法操作。</li>
 </ul>
-<h1 id="面向对象"><a href="#面向对象" class="headerlink" title="面向对象"></a>面向对象</h1><h2 id="使用元表和-index元方法进行类的模拟"><a href="#使用元表和-index元方法进行类的模拟" class="headerlink" title="使用元表和__index元方法进行类的模拟"></a>使用元表和__index元方法进行类的模拟</h2><p>在Lua中，虽然没有内置的类（class）概念，但是可以通过表（table）和元表（metatable）来模拟类的行为</p>
+<h1 id="面向对象"><a class="markdownIt-Anchor" href="#面向对象"></a> 面向对象</h1>
+<h2 id="使用元表和__index元方法进行类的模拟"><a class="markdownIt-Anchor" href="#使用元表和__index元方法进行类的模拟"></a> 使用元表和__index元方法进行类的模拟</h2>
+<p>在Lua中，虽然没有内置的类（class）概念，但是可以通过表（table）和元表（metatable）来模拟类的行为</p>
 <p>元表作为类的结构设计，而通过index和其他函数的配合，将创建的对象（即table）的元表设为该类（该元表），从而实现面向对象的模拟</p>
-<h2 id="类的创建"><a href="#类的创建" class="headerlink" title="类的创建"></a>类的创建</h2><figure class="highlight lua"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">-- 定义一个模拟类的表</span></span><br><span class="line"><span class="keyword">local</span> MyClass = &#123;&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">-- 定义类的元表</span></span><br><span class="line">MyClass.<span class="built_in">__index</span> = MyClass</span><br><span class="line"></span><br><span class="line"><span class="comment">-- 定义类的构造函数</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">MyClass.new</span><span class="params">(init)</span></span></span><br><span class="line">    <span class="keyword">local</span> <span class="built_in">self</span> = <span class="built_in">setmetatable</span>(&#123;&#125;, MyClass)</span><br><span class="line">    <span class="built_in">self</span>.value = init</span><br><span class="line">    <span class="keyword">return</span> <span class="built_in">self</span></span><br><span class="line"><span class="keyword">end</span></span><br><span class="line"></span><br><span class="line"><span class="comment">-- 定义类的方法</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">MyClass:add</span><span class="params">(x)</span></span></span><br><span class="line">    <span class="built_in">self</span>.value = <span class="built_in">self</span>.value + x</span><br><span class="line"><span class="keyword">end</span></span><br><span class="line"></span><br><span class="line"><span class="comment">-- 使用类</span></span><br><span class="line"><span class="keyword">local</span> instance = MyClass.new(<span class="number">5</span>)</span><br><span class="line">instance:add(<span class="number">3</span>)</span><br><span class="line"><span class="built_in">print</span>(instance.value)  <span class="comment">-- 输出8</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
-<h2 id="类的继承"><a href="#类的继承" class="headerlink" title="类的继承"></a>类的继承</h2><figure class="highlight lua"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">-- 定义基类</span></span><br><span class="line"><span class="keyword">local</span> BaseClass = &#123;&#125;</span><br><span class="line">BaseClass.<span class="built_in">__index</span> = BaseClass</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">BaseClass.new</span><span class="params">(init)</span></span></span><br><span class="line">    <span class="keyword">local</span> <span class="built_in">self</span> = <span class="built_in">setmetatable</span>(&#123;&#125;, BaseClass)</span><br><span class="line">    <span class="built_in">self</span>.value = init</span><br><span class="line">    <span class="keyword">return</span> <span class="built_in">self</span></span><br><span class="line"><span class="keyword">end</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">BaseClass:add</span><span class="params">(x)</span></span></span><br><span class="line">    <span class="built_in">self</span>.value = <span class="built_in">self</span>.value + x</span><br><span class="line"><span class="keyword">end</span></span><br><span class="line"></span><br><span class="line"><span class="comment">-- 定义派生类</span></span><br><span class="line"><span class="keyword">local</span> DerivedClass = <span class="built_in">setmetatable</span>(&#123;&#125;, &#123;<span class="built_in">__index</span> = BaseClass&#125;)</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">DerivedClass.new</span><span class="params">(init, extra)</span></span></span><br><span class="line">    <span class="keyword">local</span> <span class="built_in">self</span> = <span class="built_in">setmetatable</span>(BaseClass.new(init), DerivedClass)</span><br><span class="line">    <span class="built_in">self</span>.extra = extra</span><br><span class="line">    <span class="keyword">return</span> <span class="built_in">self</span></span><br><span class="line"><span class="keyword">end</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">DerivedClass:multiply</span><span class="params">(x)</span></span></span><br><span class="line">    <span class="built_in">self</span>.value = <span class="built_in">self</span>.value * x</span><br><span class="line"><span class="keyword">end</span></span><br><span class="line"></span><br><span class="line"><span class="comment">-- 使用派生类</span></span><br><span class="line"><span class="keyword">local</span> instance = DerivedClass.new(<span class="number">5</span>, <span class="number">10</span>)</span><br><span class="line">instance:add(<span class="number">3</span>)</span><br><span class="line">instance:multiply(<span class="number">2</span>)</span><br><span class="line"><span class="built_in">print</span>(instance.value)  <span class="comment">-- 输出16</span></span><br><span class="line"><span class="built_in">print</span>(instance.extra)  <span class="comment">-- 输出10</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
-<h2 id="★容易混淆的核心点★"><a href="#★容易混淆的核心点★" class="headerlink" title="★容易混淆的核心点★"></a>★容易混淆的核心点★</h2><h3 id="类模拟的底层实现"><a href="#类模拟的底层实现" class="headerlink" title="类模拟的底层实现"></a>类模拟的底层实现</h3><p>类本身是一个元表，而对象是一个table</p>
+<h2 id="类的创建"><a class="markdownIt-Anchor" href="#类的创建"></a> 类的创建</h2>
+<figure class="highlight lua"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">-- 定义一个模拟类的表</span></span><br><span class="line"><span class="keyword">local</span> MyClass = &#123;&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">-- 定义类的元表</span></span><br><span class="line">MyClass.<span class="built_in">__index</span> = MyClass</span><br><span class="line"></span><br><span class="line"><span class="comment">-- 定义类的构造函数</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">MyClass.new</span><span class="params">(init)</span></span></span><br><span class="line">    <span class="keyword">local</span> <span class="built_in">self</span> = <span class="built_in">setmetatable</span>(&#123;&#125;, MyClass)</span><br><span class="line">    <span class="built_in">self</span>.value = init</span><br><span class="line">    <span class="keyword">return</span> <span class="built_in">self</span></span><br><span class="line"><span class="keyword">end</span></span><br><span class="line"></span><br><span class="line"><span class="comment">-- 定义类的方法</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">MyClass:add</span><span class="params">(x)</span></span></span><br><span class="line">    <span class="built_in">self</span>.value = <span class="built_in">self</span>.value + x</span><br><span class="line"><span class="keyword">end</span></span><br><span class="line"></span><br><span class="line"><span class="comment">-- 使用类</span></span><br><span class="line"><span class="keyword">local</span> instance = MyClass.new(<span class="number">5</span>)</span><br><span class="line">instance:add(<span class="number">3</span>)</span><br><span class="line"><span class="built_in">print</span>(instance.value)  <span class="comment">-- 输出8</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<h2 id="类的继承"><a class="markdownIt-Anchor" href="#类的继承"></a> 类的继承</h2>
+<figure class="highlight lua"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">-- 定义基类</span></span><br><span class="line"><span class="keyword">local</span> BaseClass = &#123;&#125;</span><br><span class="line">BaseClass.<span class="built_in">__index</span> = BaseClass</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">BaseClass.new</span><span class="params">(init)</span></span></span><br><span class="line">    <span class="keyword">local</span> <span class="built_in">self</span> = <span class="built_in">setmetatable</span>(&#123;&#125;, BaseClass)</span><br><span class="line">    <span class="built_in">self</span>.value = init</span><br><span class="line">    <span class="keyword">return</span> <span class="built_in">self</span></span><br><span class="line"><span class="keyword">end</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">BaseClass:add</span><span class="params">(x)</span></span></span><br><span class="line">    <span class="built_in">self</span>.value = <span class="built_in">self</span>.value + x</span><br><span class="line"><span class="keyword">end</span></span><br><span class="line"></span><br><span class="line"><span class="comment">-- 定义派生类</span></span><br><span class="line"><span class="keyword">local</span> DerivedClass = <span class="built_in">setmetatable</span>(&#123;&#125;, &#123;<span class="built_in">__index</span> = BaseClass&#125;)</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">DerivedClass.new</span><span class="params">(init, extra)</span></span></span><br><span class="line">    <span class="keyword">local</span> <span class="built_in">self</span> = <span class="built_in">setmetatable</span>(BaseClass.new(init), DerivedClass)</span><br><span class="line">    <span class="built_in">self</span>.extra = extra</span><br><span class="line">    <span class="keyword">return</span> <span class="built_in">self</span></span><br><span class="line"><span class="keyword">end</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">DerivedClass:multiply</span><span class="params">(x)</span></span></span><br><span class="line">    <span class="built_in">self</span>.value = <span class="built_in">self</span>.value * x</span><br><span class="line"><span class="keyword">end</span></span><br><span class="line"></span><br><span class="line"><span class="comment">-- 使用派生类</span></span><br><span class="line"><span class="keyword">local</span> instance = DerivedClass.new(<span class="number">5</span>, <span class="number">10</span>)</span><br><span class="line">instance:add(<span class="number">3</span>)</span><br><span class="line">instance:multiply(<span class="number">2</span>)</span><br><span class="line"><span class="built_in">print</span>(instance.value)  <span class="comment">-- 输出16</span></span><br><span class="line"><span class="built_in">print</span>(instance.extra)  <span class="comment">-- 输出10</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<h2 id="容易混淆的核心点"><a class="markdownIt-Anchor" href="#容易混淆的核心点"></a> ★容易混淆的核心点★</h2>
+<h3 id="类模拟的底层实现"><a class="markdownIt-Anchor" href="#类模拟的底层实现"></a> 类模拟的底层实现</h3>
+<p>类本身是一个元表，而对象是一个table</p>
 <p>index定义了table中查询不到元素时的行为，当table中无法找到对应方法/元素时，table会默认去index元方法定义的返回值中寻找</p>
 <p>而在类的模拟中，index元方法默认指向定义该类的元表</p>
 <p>所以定义元表的方法就等价于定义类的方法</p>
 <p>其等价关系如下：</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">instance:add(3) = instance.add(instance,3) = myClass.add(instance,3)</span><br><span class="line">--myClass是定义instance对象的类--</span><br></pre></td></tr></table></figure>
-<h3 id="为什么有这种等价关系？"><a href="#为什么有这种等价关系？" class="headerlink" title="为什么有这种等价关系？"></a>为什么有这种等价关系？</h3><p>有如下两种定义方法，：是一个lua的语法糖，导致了如下的等价关系</p>
+<h3 id="为什么有这种等价关系"><a class="markdownIt-Anchor" href="#为什么有这种等价关系"></a> 为什么有这种等价关系？</h3>
+<p>有如下两种定义方法，：是一个lua的语法糖，导致了如下的等价关系</p>
 <figure class="highlight lua"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Person:sayHello</span><span class="params">(x)</span></span></span><br><span class="line">    <span class="built_in">print</span>(<span class="built_in">self</span>.name)</span><br><span class="line"><span class="keyword">end</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Person.sayHello</span><span class="params">(self,x)</span></span></span><br><span class="line">    <span class="built_in">print</span>(<span class="built_in">self</span>.name)</span><br><span class="line"><span class="keyword">end</span></span><br></pre></td></tr></table></figure>
 <p>因此在调用时可以使用如下方法调用：</p>
 <figure class="highlight lua"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">bob:sayHello(<span class="number">1</span>)</span><br><span class="line"></span><br><span class="line">Person.sayHello(bob,<span class="number">1</span>)</span><br></pre></td></tr></table></figure>
-<h3 id="类继承的实现机制"><a href="#类继承的实现机制" class="headerlink" title="类继承的实现机制"></a>类继承的实现机制</h3><p>lua中类的成员变量其实实在其元表中声明的</p>
+<h3 id="类继承的实现机制"><a class="markdownIt-Anchor" href="#类继承的实现机制"></a> 类继承的实现机制</h3>
+<p>lua中类的成员变量其实实在其元表中声明的</p>
 <figure class="highlight lua"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">BaseClass.new</span><span class="params">(init)</span></span></span><br><span class="line">    <span class="keyword">local</span> <span class="built_in">self</span> = <span class="built_in">setmetatable</span>(&#123;&#125;, BaseClass)</span><br><span class="line">    <span class="built_in">self</span>.value = init</span><br><span class="line">    <span class="keyword">return</span> <span class="built_in">self</span></span><br><span class="line"><span class="keyword">end</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
 <p>而元表通常可以实现一个new方法，作为该类的构造函数</p>
 <p>元表本身也是table，它也可以拥有元表</p>
@@ -519,7 +391,8 @@
 <p>所以可以得出结论：</p>
 <p>一个无需继承的类中，其元表指向自身，其index元方法也指向自身</p>
 <p>一个派生类中，其元表指向自身，但其index方法指向一个其基类</p>
-<h3 id="值得注意的问题"><a href="#值得注意的问题" class="headerlink" title="值得注意的问题"></a>值得注意的问题</h3><p>lua中模拟的对象，它的封装性是基于其元表实现的，即其成员变量及成员函数本质上都是元表的对象和方法</p>
+<h3 id="值得注意的问题"><a class="markdownIt-Anchor" href="#值得注意的问题"></a> 值得注意的问题</h3>
+<p>lua中模拟的对象，它的封装性是基于其元表实现的，即其成员变量及成员函数本质上都是元表的对象和方法</p>
 <p>但其本身作为一个table，仍然允许自由地插入和删除数据，这具有一定灵活性的同时，破坏了封装性</p>
 <p>因此在lua中使用“类”，应当十分谨慎</p>
 
@@ -536,25 +409,25 @@
 <nav id="article-nav">
   <a class="article-nav-btn left "
     
-      href="/2024/05/27/C++/C++/"
-      title="C++基础"
+      href="/2024/06/24/lua/lua-%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1/"
+      title="lua-面向对象"
      >
     <i class="fa-solid fa-angle-left"></i>
     <p class="title-text">
       
-        C++基础
+        lua-面向对象
         
     </p>
   </a>
   <a class="article-nav-btn right "
     
-      href="/2024/05/24/The%20Missing%20Semester/The%20Missing%20Semester%20-%2001%20copy%202/"
-      title="git"
+      href="/2024/06/11/lua/lua-%E8%BF%AD%E4%BB%A3%E5%99%A8%E3%80%81%E6%A8%A1%E5%9D%97%E3%80%81%E9%97%AD%E5%8C%85/"
+      title="lua-迭代器、模块、闭包"
      >
 
     <p class="title-text">
       
-        git
+        lua-迭代器、模块、闭包
         
     </p>
     <i class="fa-solid fa-angle-right"></i>
