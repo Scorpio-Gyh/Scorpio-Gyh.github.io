@@ -2,6 +2,7 @@
 title: lua-面向对象
 date: 2024-06-24 15:30:41
 tags: lua
+
 ---
 # lua面向对象
 

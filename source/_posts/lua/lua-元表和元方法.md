@@ -2,6 +2,7 @@
 title: lua-元表和元方法
 date: 2024-06-15 15:30:41
 tags: lua
+categories: lua
 ---
 # 元表和元方法
 

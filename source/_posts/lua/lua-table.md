@@ -2,6 +2,7 @@
 title: lua-Table
 date: 2024-06-07 15:30:41
 tags: lua
+categories: lua
 ---
 # Table
 
