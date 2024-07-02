@@ -158,23 +158,8 @@
     <div class="widget">
       <h3 class="widget-title">Categories</h3>
       <div class="category-box">
-            <a class="category-link" href="/categories/Games-104/">
-                Games 104
-                <div class="category-count">1</div>
-            </a>
-        
             <a class="category-link" href="/categories/%E7%BC%96%E8%AF%91%E5%8E%9F%E7%90%86/">
                 编译原理
-                <div class="category-count">1</div>
-            </a>
-        
-            <a class="category-link" href="/categories/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/">
-                虚幻引擎
-                <div class="category-count">2</div>
-            </a>
-        
-            <a class="category-link" href="/categories/%E8%AE%A1%E5%88%92/">
-                计划
                 <div class="category-count">1</div>
             </a>
         
@@ -183,9 +168,24 @@
                 <div class="category-count">3</div>
             </a>
         
+            <a class="category-link" href="/categories/Games-104/">
+                Games 104
+                <div class="category-count">1</div>
+            </a>
+        
             <a class="category-link" href="/categories/lua/">
                 lua
                 <div class="category-count">4</div>
+            </a>
+        
+            <a class="category-link" href="/categories/%E8%AE%A1%E5%88%92/">
+                计划
+                <div class="category-count">1</div>
+            </a>
+        
+            <a class="category-link" href="/categories/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/">
+                虚幻引擎
+                <div class="category-count">2</div>
             </a>
         </div>
     </div>
@@ -197,7 +197,7 @@
   <div class="widget-wrap">
     <div class="widget">
       <h3 class="widget-title">Tags</h3>
-      <ul class="widget-tag-list" itemprop="keywords"><li class="widget-tag-list-item"><a class="widget-tag-list-link" href="/tags/lua/" rel="tag">lua</a></li><li class="widget-tag-list-item"><a class="widget-tag-list-link" href="/tags/%E6%B8%B8%E6%88%8F%E5%BC%95%E6%93%8E/" rel="tag">游戏引擎</a></li><li class="widget-tag-list-item"><a class="widget-tag-list-link" href="/tags/%E7%BC%96%E8%AF%91%E5%8E%9F%E7%90%86/" rel="tag">编译原理</a></li><li class="widget-tag-list-item"><a class="widget-tag-list-link" href="/tags/%E8%AE%A1%E5%88%92/" rel="tag">计划</a></li></ul>
+      <ul class="widget-tag-list" itemprop="keywords"><li class="widget-tag-list-item"><a class="widget-tag-list-link" href="/tags/C/" rel="tag">C++</a></li><li class="widget-tag-list-item"><a class="widget-tag-list-link" href="/tags/lua/" rel="tag">lua</a></li><li class="widget-tag-list-item"><a class="widget-tag-list-link" href="/tags/%E6%B8%B8%E6%88%8F%E5%BC%95%E6%93%8E/" rel="tag">游戏引擎</a></li><li class="widget-tag-list-item"><a class="widget-tag-list-link" href="/tags/%E7%BC%96%E8%AF%91%E5%8E%9F%E7%90%86/" rel="tag">编译原理</a></li><li class="widget-tag-list-item"><a class="widget-tag-list-link" href="/tags/%E8%AE%A1%E5%88%92/" rel="tag">计划</a></li></ul>
     </div>
   </div>
 
@@ -216,7 +216,7 @@
       
         <a class="archive-link" href="/archives/2024/05 ">
           May 2024 
-          <div class="archive-count">9 </div>
+          <div class="archive-count">10 </div>
         </a>
       
     </div>
@@ -314,13 +314,20 @@
         
           <div class="truncate-text">
             
-              协程协程（coroutine）是一种可以暂停和恢复执行的计算机程序组件，它提供了一种强大的编程工具，可以用来处理多任务、非阻塞I/O、状态机等复杂问题。
-协程方法
+               协程
+协程（coroutine）是一种可以暂停和恢复执行的计算机程序组件，它提供了一种强大的编程工具，可以用来处理多任务、非阻塞I/O、状态机等复杂问题。
+ 协程方法
+
+
 coroutine.create(func): 创建一个新的协程。func是当协程被恢复时将要运行的函数。这个函数返回一个协程对象。
 123local co = coroutine.create(function ()    print(&quot;Hello, coroutine!&quot;)end)
+
+
 coroutine.resume(co, ...): 开始或继续执行协程 co。可选的参数 ...会被传递给协程函数或 coroutine.yield。如果协程运行成功，coroutine.resume会返回 true，否则返回 false和错误信息。
 1234local co = coroutine.create(function (a, b)    print(a + b)end)coroutine.resume(co, 1, 2)  -- 输出：3
-coroutine.yield(...): 暂停协程的执行，并...
+
+
+coroutine.yield(...): ...
             
           </div>
         
@@ -837,6 +844,85 @@ Lua变量为动态类型，可随时改变类型
    
 
 
+<article id="post-C++/1.C++工作流程" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+   
+  <div class="article-inner">
+    <div class="article-main">
+      <header class="article-header">
+        
+<div class="main-title-bar">
+  <div class="main-title-dot"></div>
+  
+    
+      <h1 itemprop="name">
+        <a class="p-name article-title" href="/2024/05/27/C++/1.C++%E5%B7%A5%E4%BD%9C%E6%B5%81%E7%A8%8B/">1. C++ 工作流程</a>
+      </h1>
+    
+  
+</div>
+
+        <div class='meta-info-bar'>
+          <div class="meta-info">
+  <time class="dt-published" datetime="2024-05-27T01:30:41.000Z" itemprop="datePublished">2024-05-27</time>
+</div>
+          <div class="need-seperator meta-info">
+            <div class="meta-cate-flex">
+  
+    Uncategorized 
+   
+</div>
+  
+          </div>
+          <div class="wordcount need-seperator meta-info">
+            509 words 
+          </div>
+        </div>
+        
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/C/" rel="tag">C++</a></li></ul>
+
+      </header>
+      <div class="e-content article-entry" itemprop="articleBody">
+        
+          <div class="truncate-text">
+            
+               VS相关
+ 解决方案
+ 工作流程
+123456#include &lt;iostream&gt;int main()&#123;	std::cout&lt;&lt;&quot;Hello World&quot;&lt;&lt;endl;	std::cin.get();&#125;
+预处理指令：预处理器接收源代码，并处理源代码中的预处理指令。预处理指令是以 #开头的指令，例如 #include、#define等。预处理器会处理这些指令，例如包含头文件、处理宏定义等，然后生成预处理后的源代码。
+编译：编译器接收预处理后的源代码，然后将源代码翻译成汇编代码。编译器在这个过程中会进行语法检查、类型检查、优化等操作。
+汇编：将文本文件转换为机器码，.cpp文件会被编译，但.h文件不会，.h文件会在预处理阶段被“copy”到.cpp文件中，编译的结果是一个object文件，在windows系统中，是.obj文件
+链接：链接器接收多个目标文件，然后将这些目标文件链接成一个可执行文件。链接器在这个过程中会解析目标文件中的符号（例如函数和变量的名称），并将这些符号链接到它们在可执行文件中的地址。...
+            
+          </div>
+        
+      </div>
+
+         
+    </div>
+    
+     
+    <a class="right-panel  non-pic  "
+      
+      href="/2024/05/27/C++/1.C++%E5%B7%A5%E4%BD%9C%E6%B5%81%E7%A8%8B/" 
+    >
+       
+      <i class="fa-solid fa-angle-right non-pic"></i>
+       
+    </a>
+     
+  </div>
+  
+</article>
+
+
+
+
+
+
+   
+
+
 <article id="post-The Missing Semester/The Missing Semester - 01 copy 2" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
    
   <div class="article-inner">
@@ -1088,110 +1174,6 @@ sudo echo 500 &gt; brightness 如果在系统...
     <a class="right-panel  non-pic  "
       
       href="/2024/05/14/The%20Missing%20Semester/The%20Missing%20Semester%20-%2001/" 
-    >
-       
-      <i class="fa-solid fa-angle-right non-pic"></i>
-       
-    </a>
-     
-  </div>
-  
-</article>
-
-
-
-
-
-
-   
-
-
-<article id="post-Compilation Priciple/Compilation Priciple-01" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-   
-  <div class="article-inner">
-    <div class="article-main">
-      <header class="article-header">
-        
-<div class="main-title-bar">
-  <div class="main-title-dot"></div>
-  
-    
-      <h1 itemprop="name">
-        <a class="p-name article-title" href="/2024/05/13/Compilation%20Priciple/Compilation%20Priciple-01/">编译原理-01</a>
-      </h1>
-    
-  
-</div>
-
-        <div class='meta-info-bar'>
-          <div class="meta-info">
-  <time class="dt-published" datetime="2024-05-13T12:15:56.000Z" itemprop="datePublished">2024-05-13</time>
-</div>
-          <div class="need-seperator meta-info">
-            <div class="meta-cate-flex">
-  
-  <a class="meta-cate-link" href="/categories/%E7%BC%96%E8%AF%91%E5%8E%9F%E7%90%86/">编译原理</a>
-   
-</div>
-  
-          </div>
-          <div class="wordcount need-seperator meta-info">
-            188 words 
-          </div>
-        </div>
-        
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E7%BC%96%E8%AF%91%E5%8E%9F%E7%90%86/" rel="tag">编译原理</a></li></ul>
-
-      </header>
-      <div class="e-content article-entry" itemprop="articleBody">
-        
-          <div class="truncate-text">
-            
-              编译器
-将源代码翻译成目标代码，如C++编译为x86，Arm架构的计算机等
-
-解释器
-将源代码解释，生成计算结果
-
-编译器高层结构
-编译器是一个高层模块化的软件系统
-一个典型的无优化的简单编译器结构
-
-一个简单编译器实例
-源语言：加法表达式Sum
-
-两种语法形式：
-整形数字 n
-加法 e1 + e2
-
-
-
-
-栈式计算机(例如jvm)
-
-一个操作数栈
-两条指令：
-压栈指令 push n
-加法指令 add
-
-
-
-
-任务：编译程序1 + 2 + 3到栈式计算机
-
-
-            
-          </div>
-        
-      </div>
-
-         
-    </div>
-    
-     
-    <a class="right-panel  non-pic  "
-      
-      href="/2024/05/13/Compilation%20Priciple/Compilation%20Priciple-01/" 
     >
        
       <i class="fa-solid fa-angle-right non-pic"></i>
