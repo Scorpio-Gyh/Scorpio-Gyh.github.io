@@ -209,6 +209,11 @@
       <h3 class="widget-title">Archives</h3>
       
       
+        <a class="archive-link" href="/archives/2024/07 ">
+          July 2024 
+          <div class="archive-count">3 </div>
+        </a>
+      
         <a class="archive-link" href="/archives/2024/06 ">
           June 2024 
           <div class="archive-count">5 </div>
@@ -230,6 +235,24 @@
       <h3 class="widget-title">Recent Posts</h3>
       <ul>
         
+          <a class="recent-link" href="/2024/07/02/C++/3.C++%E5%A4%B4%E6%96%87%E4%BB%B6/" title="3. C++ 基础变量和函数" >
+            <div class="recent-link-text">
+              3. C++ 基础变量和函数
+            </div>
+          </a>
+        
+          <a class="recent-link" href="/2024/07/02/C++/X.VisualStudio%E4%BD%BF%E7%94%A8/" title="X. Viusal Studio使用" >
+            <div class="recent-link-text">
+              X. Viusal Studio使用
+            </div>
+          </a>
+        
+          <a class="recent-link" href="/2024/07/02/C++/2.C++%E5%9F%BA%E7%A1%80%E5%8F%98%E9%87%8F%E5%92%8C%E5%87%BD%E6%95%B0/" title="2. C++ 基础变量和函数" >
+            <div class="recent-link-text">
+              2. C++ 基础变量和函数
+            </div>
+          </a>
+        
           <a class="recent-link" href="/2024/06/26/lua/lua-%E5%8D%8F%E7%A8%8B/" title="lua-Table" >
             <div class="recent-link-text">
               lua-Table
@@ -239,24 +262,6 @@
           <a class="recent-link" href="/2024/06/24/lua/lua-%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1/" title="lua-面向对象" >
             <div class="recent-link-text">
               lua-面向对象
-            </div>
-          </a>
-        
-          <a class="recent-link" href="/2024/06/15/lua/lua-%E5%85%83%E8%A1%A8%E5%92%8C%E5%85%83%E6%96%B9%E6%B3%95/" title="lua-元表和元方法" >
-            <div class="recent-link-text">
-              lua-元表和元方法
-            </div>
-          </a>
-        
-          <a class="recent-link" href="/2024/06/11/lua/lua-%E8%BF%AD%E4%BB%A3%E5%99%A8%E3%80%81%E6%A8%A1%E5%9D%97%E3%80%81%E9%97%AD%E5%8C%85/" title="lua-迭代器、模块、闭包" >
-            <div class="recent-link-text">
-              lua-迭代器、模块、闭包
-            </div>
-          </a>
-        
-          <a class="recent-link" href="/2024/06/07/lua/lua-table/" title="lua-Table" >
-            <div class="recent-link-text">
-              lua-Table
             </div>
           </a>
         
@@ -270,6 +275,275 @@
     </div>
     <div id="content-body">
       
+   
+
+
+<article id="post-The Missing Semester/The Missing Semester - 01 copy 2" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+   
+  <div class="article-inner">
+    <div class="article-main">
+      <header class="article-header">
+        
+<div class="main-title-bar">
+  <div class="main-title-dot"></div>
+  
+    
+      <h1 itemprop="name">
+        <a class="p-name article-title" href="/2024/05/24/The%20Missing%20Semester/The%20Missing%20Semester%20-%2001%20copy%202/">git</a>
+      </h1>
+    
+  
+</div>
+
+        <div class='meta-info-bar'>
+          <div class="meta-info">
+  <time class="dt-published" datetime="2024-05-24T08:20:08.000Z" itemprop="datePublished">2024-05-24</time>
+</div>
+          <div class="need-seperator meta-info">
+            <div class="meta-cate-flex">
+  
+  <a class="meta-cate-link" href="/categories/The-Missing-Semester/">The Missing Semester</a>
+   
+</div>
+  
+          </div>
+          <div class="wordcount need-seperator meta-info">
+            597 words 
+          </div>
+        </div>
+        
+      </header>
+      <div class="e-content article-entry" itemprop="articleBody">
+        
+          <div class="truncate-text">
+            
+               中文讲义：计算机教育中缺失的一课 · the missing semester of your cs education (missing-semester-cn.github.io)
+ Git的数据结构
+ 文件、文件夹模型
+
+文件夹：树
+文件：“blob”对象
+
+ 历史记录模型
+git通过有向无环图来构建数据
+跟踪历史文件夹，形成文件夹快照
+fork：从某个历史节点分叉，创建对象副本
+merge：合并不同分支
+ 模型的具体实现
+12345678910type blob = array&lt;byte&gt;type tree = map&lt;string,tree|blob&gt;type commit = struct &#123;	parents: array&lt;commit&gt;	author: string	message:string	snapshot:tree&#125;type object = blob|tree|commit
+每一个object通过SHA-1哈希函数存储在一个哈希表中，映射到磁盘上
+git中的所有内容，都有自己的哈希值，用于寻址
+gi...
+            
+          </div>
+        
+      </div>
+
+         
+    </div>
+    
+     
+    <a class="right-panel  non-pic  "
+      
+      href="/2024/05/24/The%20Missing%20Semester/The%20Missing%20Semester%20-%2001%20copy%202/" 
+    >
+       
+      <i class="fa-solid fa-angle-right non-pic"></i>
+       
+    </a>
+     
+  </div>
+  
+</article>
+
+
+
+
+
+
+   
+
+
+<article id="post-The Missing Semester/The Missing Semester - 01 copy" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+   
+  <div class="article-inner">
+    <div class="article-main">
+      <header class="article-header">
+        
+<div class="main-title-bar">
+  <div class="main-title-dot"></div>
+  
+    
+      <h1 itemprop="name">
+        <a class="p-name article-title" href="/2024/05/21/The%20Missing%20Semester/The%20Missing%20Semester%20-%2001%20copy/">Shell工具和脚本</a>
+      </h1>
+    
+  
+</div>
+
+        <div class='meta-info-bar'>
+          <div class="meta-info">
+  <time class="dt-published" datetime="2024-05-21T10:48:41.099Z" itemprop="datePublished">2024-05-21</time>
+</div>
+          <div class="need-seperator meta-info">
+            <div class="meta-cate-flex">
+  
+  <a class="meta-cate-link" href="/categories/The-Missing-Semester/">The Missing Semester</a>
+   
+</div>
+  
+          </div>
+          <div class="wordcount need-seperator meta-info">
+            560 words 
+          </div>
+        </div>
+        
+      </header>
+      <div class="e-content article-entry" itemprop="articleBody">
+        
+          <div class="truncate-text">
+            
+               中文讲义：计算机教育中缺失的一课 · the missing semester of your cs education (missing-semester-cn.github.io)
+ 变量声明
+注意不能有空格
+1234var1=barecho $fooecho &quot;value is $foo&quot;    # value is barecho &#x27;value is $foo&#x27;    # value is $foo
+脚本示例
+如果有一个mcd.sh文件，它是如下定义的：
+1234mcd ()&#123;	mkdir -p &quot;$1&quot;	cd &quot;$1&quot;&#125;
+这表示：定义名为mcd的函数，接收一个参数，创建文件夹并进入该路径
+随后，在Shell中使用
+12source mcd.shmcd test
+即可使用该脚本
+ 各种关键字
+有很多作用
+$_ 上一个参数
+!! 上一个命令
+$? 错误代码
+$@ 展开所有参数
+Shell命令支持通配符，类似正则表达式，但存在一定区别
+ 展开关键字
+foo{a,b,c} = ...
+            
+          </div>
+        
+      </div>
+
+         
+    </div>
+    
+     
+    <a class="right-panel  non-pic  "
+      
+      href="/2024/05/21/The%20Missing%20Semester/The%20Missing%20Semester%20-%2001%20copy/" 
+    >
+       
+      <i class="fa-solid fa-angle-right non-pic"></i>
+       
+    </a>
+     
+  </div>
+  
+</article>
+
+
+
+
+
+
+   
+
+
+<article id="post-The Missing Semester/The Missing Semester - 01" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+   
+  <div class="article-inner">
+    <div class="article-main">
+      <header class="article-header">
+        
+<div class="main-title-bar">
+  <div class="main-title-dot"></div>
+  
+    
+      <h1 itemprop="name">
+        <a class="p-name article-title" href="/2024/05/14/The%20Missing%20Semester/The%20Missing%20Semester%20-%2001/">Shell</a>
+      </h1>
+    
+  
+</div>
+
+        <div class='meta-info-bar'>
+          <div class="meta-info">
+  <time class="dt-published" datetime="2024-05-14T07:20:08.000Z" itemprop="datePublished">2024-05-14</time>
+</div>
+          <div class="need-seperator meta-info">
+            <div class="meta-cate-flex">
+  
+  <a class="meta-cate-link" href="/categories/The-Missing-Semester/">The Missing Semester</a>
+   
+</div>
+  
+          </div>
+          <div class="wordcount need-seperator meta-info">
+            609 words 
+          </div>
+        </div>
+        
+      </header>
+      <div class="e-content article-entry" itemprop="articleBody">
+        
+          <div class="truncate-text">
+            
+               中文讲义：计算机教育中缺失的一课 · the missing semester of your cs education (missing-semester-cn.github.io)
+ 常用命令
+
+cd 进入目录
+cd - 上一目录
+pwd 显示当前路径
+ls 列出当前目录下的文件
+mv 移动
+cp 复制
+rm 删除
+mkdir 创建文件夹
+man 参考手册
+
+ 输入输出
+
+cat打印命令
+‘&lt;’ 输入重定向
+‘&gt;’ 输出重定向
+‘&gt;&gt;’ 输出追加
+
+123echo hello &gt; hello.txt 输出hello到文件hello.txtcat &lt; hello.txt        输入hello.txt内容作为cat的cat  &lt; hello.txt &gt;hello2.txt 将hello.txt的内容作为cat的参数输出到hello2.txt
+ 管道 |
+1ls -l / | tail -n1 将前一个命令的输出作为后一个命令的输入，实现不同程序的通信
+
+sudo echo 500 &gt; brightness 如果在系统...
+            
+          </div>
+        
+      </div>
+
+         
+    </div>
+    
+     
+    <a class="right-panel  non-pic  "
+      
+      href="/2024/05/14/The%20Missing%20Semester/The%20Missing%20Semester%20-%2001/" 
+    >
+       
+      <i class="fa-solid fa-angle-right non-pic"></i>
+       
+    </a>
+     
+  </div>
+  
+</article>
+
+
+
+
+
+
    
 
 

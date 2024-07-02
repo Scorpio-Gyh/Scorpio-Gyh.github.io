@@ -209,6 +209,11 @@
       <h3 class="widget-title">Archives</h3>
       
       
+        <a class="archive-link" href="/archives/2024/07 ">
+          July 2024 
+          <div class="archive-count">3 </div>
+        </a>
+      
         <a class="archive-link" href="/archives/2024/06 ">
           June 2024 
           <div class="archive-count">5 </div>
@@ -230,6 +235,24 @@
       <h3 class="widget-title">Recent Posts</h3>
       <ul>
         
+          <a class="recent-link" href="/2024/07/02/C++/3.C++%E5%A4%B4%E6%96%87%E4%BB%B6/" title="3. C++ 基础变量和函数" >
+            <div class="recent-link-text">
+              3. C++ 基础变量和函数
+            </div>
+          </a>
+        
+          <a class="recent-link" href="/2024/07/02/C++/X.VisualStudio%E4%BD%BF%E7%94%A8/" title="X. Viusal Studio使用" >
+            <div class="recent-link-text">
+              X. Viusal Studio使用
+            </div>
+          </a>
+        
+          <a class="recent-link" href="/2024/07/02/C++/2.C++%E5%9F%BA%E7%A1%80%E5%8F%98%E9%87%8F%E5%92%8C%E5%87%BD%E6%95%B0/" title="2. C++ 基础变量和函数" >
+            <div class="recent-link-text">
+              2. C++ 基础变量和函数
+            </div>
+          </a>
+        
           <a class="recent-link" href="/2024/06/26/lua/lua-%E5%8D%8F%E7%A8%8B/" title="lua-Table" >
             <div class="recent-link-text">
               lua-Table
@@ -239,24 +262,6 @@
           <a class="recent-link" href="/2024/06/24/lua/lua-%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1/" title="lua-面向对象" >
             <div class="recent-link-text">
               lua-面向对象
-            </div>
-          </a>
-        
-          <a class="recent-link" href="/2024/06/15/lua/lua-%E5%85%83%E8%A1%A8%E5%92%8C%E5%85%83%E6%96%B9%E6%B3%95/" title="lua-元表和元方法" >
-            <div class="recent-link-text">
-              lua-元表和元方法
-            </div>
-          </a>
-        
-          <a class="recent-link" href="/2024/06/11/lua/lua-%E8%BF%AD%E4%BB%A3%E5%99%A8%E3%80%81%E6%A8%A1%E5%9D%97%E3%80%81%E9%97%AD%E5%8C%85/" title="lua-迭代器、模块、闭包" >
-            <div class="recent-link-text">
-              lua-迭代器、模块、闭包
-            </div>
-          </a>
-        
-          <a class="recent-link" href="/2024/06/07/lua/lua-table/" title="lua-Table" >
-            <div class="recent-link-text">
-              lua-Table
             </div>
           </a>
         
@@ -270,6 +275,263 @@
     </div>
     <div id="content-body">
       
+   
+
+
+<article id="post-C++/3.C++头文件" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+   
+  <div class="article-inner">
+    <div class="article-main">
+      <header class="article-header">
+        
+<div class="main-title-bar">
+  <div class="main-title-dot"></div>
+  
+    
+      <h1 itemprop="name">
+        <a class="p-name article-title" href="/2024/07/02/C++/3.C++%E5%A4%B4%E6%96%87%E4%BB%B6/">3. C++ 基础变量和函数</a>
+      </h1>
+    
+  
+</div>
+
+        <div class='meta-info-bar'>
+          <div class="meta-info">
+  <time class="dt-published" datetime="2024-07-02T07:30:41.000Z" itemprop="datePublished">2024-07-02</time>
+</div>
+          <div class="need-seperator meta-info">
+            <div class="meta-cate-flex">
+  
+    Uncategorized 
+   
+</div>
+  
+          </div>
+          <div class="wordcount need-seperator meta-info">
+            578 words 
+          </div>
+        </div>
+        
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/C/" rel="tag">C++</a></li></ul>
+
+      </header>
+      <div class="e-content article-entry" itemprop="articleBody">
+        
+          <div class="truncate-text">
+            
+              头文件头文件是一种源代码文件，通常包含函数声明、宏定义、类型定义（如类、结构体和枚举的定义）等。头文件的主要目的是提供接口，使得源代码文件可以共享和重用代码。
+头文件通常具有 .h或 .hpp扩展名（在C++中）。当你在源代码文件中使用 #include预处理指令来包含头文件时，预处理器会将整个头文件的内容复制到该指令的位置。
+例如，如果你有一个名为 my_functions.h的头文件，其中包含了一些函数的声明，你可以在另一个源代码文件中使用以下指令来包含这个头文件：
+#include “my_functions.h”
+这样，你就可以在这个源代码文件中调用 my_functions.h中声明的函数了。
+注意，为了防止头文件的内容在同一编译单元中被多次包含，通常会在头文件中使用预处理指令 #ifndef、#define和 #endif来设置包含保护。例如：
+123456#ifndef MY_FUNCTIONS_H#define MY_FUNCTIONS_H// function declarations, type definitions, etc.#endif
+这样，即使在同一...
+            
+          </div>
+        
+      </div>
+
+         
+    </div>
+    
+     
+    <a class="right-panel  non-pic  "
+      
+      href="/2024/07/02/C++/3.C++%E5%A4%B4%E6%96%87%E4%BB%B6/" 
+    >
+       
+      <i class="fa-solid fa-angle-right non-pic"></i>
+       
+    </a>
+     
+  </div>
+  
+</article>
+
+
+
+
+
+
+   
+
+
+<article id="post-C++/X.VisualStudio使用" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+   
+  <div class="article-inner">
+    <div class="article-main">
+      <header class="article-header">
+        
+<div class="main-title-bar">
+  <div class="main-title-dot"></div>
+  
+    
+      <h1 itemprop="name">
+        <a class="p-name article-title" href="/2024/07/02/C++/X.VisualStudio%E4%BD%BF%E7%94%A8/">X. Viusal Studio使用</a>
+      </h1>
+    
+  
+</div>
+
+        <div class='meta-info-bar'>
+          <div class="meta-info">
+  <time class="dt-published" datetime="2024-07-02T03:30:41.000Z" itemprop="datePublished">2024-07-02</time>
+</div>
+          <div class="need-seperator meta-info">
+            <div class="meta-cate-flex">
+  
+    Uncategorized 
+   
+</div>
+  
+          </div>
+          <div class="wordcount need-seperator meta-info">
+            120 words 
+          </div>
+        </div>
+        
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/C/" rel="tag">C++</a></li></ul>
+
+      </header>
+      <div class="e-content article-entry" itemprop="articleBody">
+        
+          <div class="truncate-text">
+            
+              Visual Stuido 2022断点
+F5 ： 运行
+F9 ：设置或清除断点。它将在该行设置一个断点
+F10 ：步过。调试器将执行当前行的代码，并在下一行停止。
+F11 ：步入。调试器将执行当前行的代码，并在下一行或函数内部（如果当前行是一个函数调用）停止。
+
+
+
+            
+          </div>
+        
+      </div>
+
+         
+    </div>
+    
+     
+    <a class="right-panel  non-pic  "
+      
+      href="/2024/07/02/C++/X.VisualStudio%E4%BD%BF%E7%94%A8/" 
+    >
+       
+      <i class="fa-solid fa-angle-right non-pic"></i>
+       
+    </a>
+     
+  </div>
+  
+</article>
+
+
+
+
+
+
+   
+
+
+<article id="post-C++/2.C++基础变量和函数" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+   
+  <div class="article-inner">
+    <div class="article-main">
+      <header class="article-header">
+        
+<div class="main-title-bar">
+  <div class="main-title-dot"></div>
+  
+    
+      <h1 itemprop="name">
+        <a class="p-name article-title" href="/2024/07/02/C++/2.C++%E5%9F%BA%E7%A1%80%E5%8F%98%E9%87%8F%E5%92%8C%E5%87%BD%E6%95%B0/">2. C++ 基础变量和函数</a>
+      </h1>
+    
+  
+</div>
+
+        <div class='meta-info-bar'>
+          <div class="meta-info">
+  <time class="dt-published" datetime="2024-07-02T02:30:41.000Z" itemprop="datePublished">2024-07-02</time>
+</div>
+          <div class="need-seperator meta-info">
+            <div class="meta-cate-flex">
+  
+    Uncategorized 
+   
+</div>
+  
+          </div>
+          <div class="wordcount need-seperator meta-info">
+            888 words 
+          </div>
+        </div>
+        
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/C/" rel="tag">C++</a></li></ul>
+
+      </header>
+      <div class="e-content article-entry" itemprop="articleBody">
+        
+          <div class="truncate-text">
+            
+              数据类型整数类型 ：
+
+short: 通常占用2字节，取值范围通常为-32768到32767。
+int: 通常占用4字节，取值范围通常为-2147483648到2147483647。
+long: 在32位系统上通常占用4字节，在64位系统上通常占用8字节。
+long long: 通常占用8字节，取值范围通常为-9223372036854775808到9223372036854775807。
+
+字符类型 ：
+
+char: 占用1字节，取值范围通常为-128到127或0到255。
+wchar_t: 用于表示宽字符，通常占用2或4字节。
+
+浮点数类型 ：
+
+float: 占用4字节。
+double: 占用8字节。
+long double: 占用的字节数依赖于具体的实现，通常为8字节或12字节或16字节。
+
+布尔类型 ：
+
+bool: 占用1字节，取值为 true或 false。
+
+空类型 ：
+
+void: 无值，通常用于表示函数无返回值或指针无指向类型。
+
+函数函数基本结构
+123return_type function_name( parameter list ) &#123;   ...
+            
+          </div>
+        
+      </div>
+
+         
+    </div>
+    
+     
+    <a class="right-panel  non-pic  "
+      
+      href="/2024/07/02/C++/2.C++%E5%9F%BA%E7%A1%80%E5%8F%98%E9%87%8F%E5%92%8C%E5%87%BD%E6%95%B0/" 
+    >
+       
+      <i class="fa-solid fa-angle-right non-pic"></i>
+       
+    </a>
+     
+  </div>
+  
+</article>
+
+
+
+
+
+
    
 
 
@@ -885,14 +1147,11 @@ Lua变量为动态类型，可随时改变类型
         
           <div class="truncate-text">
             
-               VS相关
- 解决方案
- 工作流程
-123456#include &lt;iostream&gt;int main()&#123;	std::cout&lt;&lt;&quot;Hello World&quot;&lt;&lt;endl;	std::cin.get();&#125;
+              VS相关解决方案工作流程123456#include &lt;iostream&gt;int main()&#123;	std::cout&lt;&lt;&quot;Hello World&quot;&lt;&lt;endl;	std::cin.get();&#125;
 预处理指令：预处理器接收源代码，并处理源代码中的预处理指令。预处理指令是以 #开头的指令，例如 #include、#define等。预处理器会处理这些指令，例如包含头文件、处理宏定义等，然后生成预处理后的源代码。
 编译：编译器接收预处理后的源代码，然后将源代码翻译成汇编代码。编译器在这个过程中会进行语法检查、类型检查、优化等操作。
 汇编：将文本文件转换为机器码，.cpp文件会被编译，但.h文件不会，.h文件会在预处理阶段被“copy”到.cpp文件中，编译的结果是一个object文件，在windows系统中，是.obj文件
-链接：链接器接收多个目标文件，然后将这些目标文件链接成一个可执行文件。链接器在这个过程中会解析目标文件中的符号（例如函数和变量的名称），并将这些符号链接到它们在可执行文件中的地址。...
+链接：链接器接收多个目标文件，然后将这些目标文件链接成一个可执行文件。链接器在这个过程中会解析目标文件中的符号（例如函数和变量的名称），并将这些符号链接到它们在可执行文件中的地址。此过程会将所...
             
           </div>
         
@@ -905,275 +1164,6 @@ Lua变量为动态类型，可随时改变类型
     <a class="right-panel  non-pic  "
       
       href="/2024/05/27/C++/1.C++%E5%B7%A5%E4%BD%9C%E6%B5%81%E7%A8%8B/" 
-    >
-       
-      <i class="fa-solid fa-angle-right non-pic"></i>
-       
-    </a>
-     
-  </div>
-  
-</article>
-
-
-
-
-
-
-   
-
-
-<article id="post-The Missing Semester/The Missing Semester - 01 copy 2" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-   
-  <div class="article-inner">
-    <div class="article-main">
-      <header class="article-header">
-        
-<div class="main-title-bar">
-  <div class="main-title-dot"></div>
-  
-    
-      <h1 itemprop="name">
-        <a class="p-name article-title" href="/2024/05/24/The%20Missing%20Semester/The%20Missing%20Semester%20-%2001%20copy%202/">git</a>
-      </h1>
-    
-  
-</div>
-
-        <div class='meta-info-bar'>
-          <div class="meta-info">
-  <time class="dt-published" datetime="2024-05-24T08:20:08.000Z" itemprop="datePublished">2024-05-24</time>
-</div>
-          <div class="need-seperator meta-info">
-            <div class="meta-cate-flex">
-  
-  <a class="meta-cate-link" href="/categories/The-Missing-Semester/">The Missing Semester</a>
-   
-</div>
-  
-          </div>
-          <div class="wordcount need-seperator meta-info">
-            597 words 
-          </div>
-        </div>
-        
-      </header>
-      <div class="e-content article-entry" itemprop="articleBody">
-        
-          <div class="truncate-text">
-            
-               中文讲义：计算机教育中缺失的一课 · the missing semester of your cs education (missing-semester-cn.github.io)
- Git的数据结构
- 文件、文件夹模型
-
-文件夹：树
-文件：“blob”对象
-
- 历史记录模型
-git通过有向无环图来构建数据
-跟踪历史文件夹，形成文件夹快照
-fork：从某个历史节点分叉，创建对象副本
-merge：合并不同分支
- 模型的具体实现
-12345678910type blob = array&lt;byte&gt;type tree = map&lt;string,tree|blob&gt;type commit = struct &#123;	parents: array&lt;commit&gt;	author: string	message:string	snapshot:tree&#125;type object = blob|tree|commit
-每一个object通过SHA-1哈希函数存储在一个哈希表中，映射到磁盘上
-git中的所有内容，都有自己的哈希值，用于寻址
-gi...
-            
-          </div>
-        
-      </div>
-
-         
-    </div>
-    
-     
-    <a class="right-panel  non-pic  "
-      
-      href="/2024/05/24/The%20Missing%20Semester/The%20Missing%20Semester%20-%2001%20copy%202/" 
-    >
-       
-      <i class="fa-solid fa-angle-right non-pic"></i>
-       
-    </a>
-     
-  </div>
-  
-</article>
-
-
-
-
-
-
-   
-
-
-<article id="post-The Missing Semester/The Missing Semester - 01 copy" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-   
-  <div class="article-inner">
-    <div class="article-main">
-      <header class="article-header">
-        
-<div class="main-title-bar">
-  <div class="main-title-dot"></div>
-  
-    
-      <h1 itemprop="name">
-        <a class="p-name article-title" href="/2024/05/21/The%20Missing%20Semester/The%20Missing%20Semester%20-%2001%20copy/">Shell工具和脚本</a>
-      </h1>
-    
-  
-</div>
-
-        <div class='meta-info-bar'>
-          <div class="meta-info">
-  <time class="dt-published" datetime="2024-05-21T10:48:41.099Z" itemprop="datePublished">2024-05-21</time>
-</div>
-          <div class="need-seperator meta-info">
-            <div class="meta-cate-flex">
-  
-  <a class="meta-cate-link" href="/categories/The-Missing-Semester/">The Missing Semester</a>
-   
-</div>
-  
-          </div>
-          <div class="wordcount need-seperator meta-info">
-            560 words 
-          </div>
-        </div>
-        
-      </header>
-      <div class="e-content article-entry" itemprop="articleBody">
-        
-          <div class="truncate-text">
-            
-               中文讲义：计算机教育中缺失的一课 · the missing semester of your cs education (missing-semester-cn.github.io)
- 变量声明
-注意不能有空格
-1234var1=barecho $fooecho &quot;value is $foo&quot;    # value is barecho &#x27;value is $foo&#x27;    # value is $foo
-脚本示例
-如果有一个mcd.sh文件，它是如下定义的：
-1234mcd ()&#123;	mkdir -p &quot;$1&quot;	cd &quot;$1&quot;&#125;
-这表示：定义名为mcd的函数，接收一个参数，创建文件夹并进入该路径
-随后，在Shell中使用
-12source mcd.shmcd test
-即可使用该脚本
- 各种关键字
-有很多作用
-$_ 上一个参数
-!! 上一个命令
-$? 错误代码
-$@ 展开所有参数
-Shell命令支持通配符，类似正则表达式，但存在一定区别
- 展开关键字
-foo{a,b,c} = ...
-            
-          </div>
-        
-      </div>
-
-         
-    </div>
-    
-     
-    <a class="right-panel  non-pic  "
-      
-      href="/2024/05/21/The%20Missing%20Semester/The%20Missing%20Semester%20-%2001%20copy/" 
-    >
-       
-      <i class="fa-solid fa-angle-right non-pic"></i>
-       
-    </a>
-     
-  </div>
-  
-</article>
-
-
-
-
-
-
-   
-
-
-<article id="post-The Missing Semester/The Missing Semester - 01" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-   
-  <div class="article-inner">
-    <div class="article-main">
-      <header class="article-header">
-        
-<div class="main-title-bar">
-  <div class="main-title-dot"></div>
-  
-    
-      <h1 itemprop="name">
-        <a class="p-name article-title" href="/2024/05/14/The%20Missing%20Semester/The%20Missing%20Semester%20-%2001/">Shell</a>
-      </h1>
-    
-  
-</div>
-
-        <div class='meta-info-bar'>
-          <div class="meta-info">
-  <time class="dt-published" datetime="2024-05-14T07:20:08.000Z" itemprop="datePublished">2024-05-14</time>
-</div>
-          <div class="need-seperator meta-info">
-            <div class="meta-cate-flex">
-  
-  <a class="meta-cate-link" href="/categories/The-Missing-Semester/">The Missing Semester</a>
-   
-</div>
-  
-          </div>
-          <div class="wordcount need-seperator meta-info">
-            609 words 
-          </div>
-        </div>
-        
-      </header>
-      <div class="e-content article-entry" itemprop="articleBody">
-        
-          <div class="truncate-text">
-            
-               中文讲义：计算机教育中缺失的一课 · the missing semester of your cs education (missing-semester-cn.github.io)
- 常用命令
-
-cd 进入目录
-cd - 上一目录
-pwd 显示当前路径
-ls 列出当前目录下的文件
-mv 移动
-cp 复制
-rm 删除
-mkdir 创建文件夹
-man 参考手册
-
- 输入输出
-
-cat打印命令
-‘&lt;’ 输入重定向
-‘&gt;’ 输出重定向
-‘&gt;&gt;’ 输出追加
-
-123echo hello &gt; hello.txt 输出hello到文件hello.txtcat &lt; hello.txt        输入hello.txt内容作为cat的cat  &lt; hello.txt &gt;hello2.txt 将hello.txt的内容作为cat的参数输出到hello2.txt
- 管道 |
-1ls -l / | tail -n1 将前一个命令的输出作为后一个命令的输入，实现不同程序的通信
-
-sudo echo 500 &gt; brightness 如果在系统...
-            
-          </div>
-        
-      </div>
-
-         
-    </div>
-    
-     
-    <a class="right-panel  non-pic  "
-      
-      href="/2024/05/14/The%20Missing%20Semester/The%20Missing%20Semester%20-%2001/" 
     >
        
       <i class="fa-solid fa-angle-right non-pic"></i>
