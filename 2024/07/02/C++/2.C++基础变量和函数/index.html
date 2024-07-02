@@ -20,12 +20,12 @@
   <link rel="preload" href="/css/fonts/Roboto-Regular.ttf" as="font" type="font/ttf" crossorigin="anonymous">
   <link rel="preload" href="/css/fonts/Roboto-Bold.ttf" as="font" type="font/ttf" crossorigin="anonymous">
 
-  <meta name="description" content="数据类型整数类型 ：  short: 通常占用2字节，取值范围通常为-32768到32767。 int: 通常占用4字节，取值范围通常为-2147483648到2147483647。 long: 在32位系统上通常占用4字节，在64位系统上通常占用8字节。 long long: 通常占用8字节，取值范围通常为-9223372036854775808到9223372036854775807。  字符">
+  <meta name="description" content="数据类型 整数类型 ：  short: 通常占用2字节，取值范围通常为-32768到32767。 int: 通常占用4字节，取值范围通常为-2147483648到2147483647。 long: 在32位系统上通常占用4字节，在64位系统上通常占用8字节。 long long: 通常占用8字节，取值范围通常为-9223372036854775808到9223372036854775807。">
 <meta property="og:type" content="article">
 <meta property="og:title" content="2. C++ 基础变量和函数">
 <meta property="og:url" content="https://scorpio-gyh.github.io/2024/07/02/C++/2.C++%E5%9F%BA%E7%A1%80%E5%8F%98%E9%87%8F%E5%92%8C%E5%87%BD%E6%95%B0/index.html">
 <meta property="og:site_name" content="Scorpio-Gyh_WYK">
-<meta property="og:description" content="数据类型整数类型 ：  short: 通常占用2字节，取值范围通常为-32768到32767。 int: 通常占用4字节，取值范围通常为-2147483648到2147483647。 long: 在32位系统上通常占用4字节，在64位系统上通常占用8字节。 long long: 通常占用8字节，取值范围通常为-9223372036854775808到9223372036854775807。  字符">
+<meta property="og:description" content="数据类型 整数类型 ：  short: 通常占用2字节，取值范围通常为-32768到32767。 int: 通常占用4字节，取值范围通常为-2147483648到2147483647。 long: 在32位系统上通常占用4字节，在64位系统上通常占用8字节。 long long: 通常占用8字节，取值范围通常为-9223372036854775808到9223372036854775807。">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2024-07-02T02:30:41.000Z">
 <meta property="article:modified_time" content="2024-07-02T03:00:41.855Z">
@@ -168,14 +168,14 @@
                 <div class="category-count">1</div>
             </a>
         
-            <a class="category-link" href="/categories/The-Missing-Semester/">
-                The Missing Semester
-                <div class="category-count">3</div>
-            </a>
-        
             <a class="category-link" href="/categories/Games-104/">
                 Games 104
                 <div class="category-count">1</div>
+            </a>
+        
+            <a class="category-link" href="/categories/The-Missing-Semester/">
+                The Missing Semester
+                <div class="category-count">3</div>
             </a>
         
             <a class="category-link" href="/categories/lua/">
@@ -246,9 +246,9 @@
             </div>
           </a>
         
-          <a class="recent-link" href="/2024/07/02/C++/X.VisualStudio%E4%BD%BF%E7%94%A8/" title="X. Viusal Studio使用" >
+          <a class="recent-link" href="/2024/07/02/C++/X.VisualStudio%E4%BD%BF%E7%94%A8/X.VisualStudio%E4%BD%BF%E7%94%A8/" title="X.Viusal Studio使用" >
             <div class="recent-link-text">
-              X. Viusal Studio使用
+              X.Viusal Studio使用
             </div>
           </a>
         
@@ -323,7 +323,8 @@
       </header>
       <div class="e-content article-entry" itemprop="articleBody">
         
-          <h1 id="数据类型"><a href="#数据类型" class="headerlink" title="数据类型"></a>数据类型</h1><p><strong>整数类型</strong> ：</p>
+          <h1 id="数据类型"><a class="markdownIt-Anchor" href="#数据类型"></a> 数据类型</h1>
+<p><strong>整数类型</strong> ：</p>
 <ul>
 <li><code>short</code>: 通常占用2字节，取值范围通常为-32768到32767。</li>
 <li><code>int</code>: 通常占用4字节，取值范围通常为-2147483648到2147483647。</li>
@@ -349,7 +350,8 @@
 <ul>
 <li><code>void</code>: 无值，通常用于表示函数无返回值或指针无指向类型。</li>
 </ul>
-<h1 id="函数"><a href="#函数" class="headerlink" title="函数"></a>函数</h1><p>函数基本结构</p>
+<h1 id="函数"><a class="markdownIt-Anchor" href="#函数"></a> 函数</h1>
+<p>函数基本结构</p>
 <figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="function">return_type <span class="title">function_name</span><span class="params">( parameter list )</span> </span>&#123;</span><br><span class="line">   <span class="comment">//body of the function</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <ul>
 <li><code>return_type</code>：这是函数返回的数据类型。如果函数不返回值，则返回类型为 <code>void</code>。</li>
@@ -375,13 +377,13 @@
 <nav id="article-nav">
   <a class="article-nav-btn left "
     
-      href="/2024/07/02/C++/X.VisualStudio%E4%BD%BF%E7%94%A8/"
-      title="X. Viusal Studio使用"
+      href="/2024/07/02/C++/X.VisualStudio%E4%BD%BF%E7%94%A8/X.VisualStudio%E4%BD%BF%E7%94%A8/"
+      title="X.Viusal Studio使用"
      >
     <i class="fa-solid fa-angle-left"></i>
     <p class="title-text">
       
-        X. Viusal Studio使用
+        X.Viusal Studio使用
         
     </p>
   </a>

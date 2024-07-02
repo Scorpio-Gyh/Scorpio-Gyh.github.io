@@ -163,14 +163,14 @@
                 <div class="category-count">1</div>
             </a>
         
-            <a class="category-link" href="/categories/The-Missing-Semester/">
-                The Missing Semester
-                <div class="category-count">3</div>
-            </a>
-        
             <a class="category-link" href="/categories/Games-104/">
                 Games 104
                 <div class="category-count">1</div>
+            </a>
+        
+            <a class="category-link" href="/categories/The-Missing-Semester/">
+                The Missing Semester
+                <div class="category-count">3</div>
             </a>
         
             <a class="category-link" href="/categories/lua/">
@@ -241,9 +241,9 @@
             </div>
           </a>
         
-          <a class="recent-link" href="/2024/07/02/C++/X.VisualStudio%E4%BD%BF%E7%94%A8/" title="X. Viusal Studio使用" >
+          <a class="recent-link" href="/2024/07/02/C++/X.VisualStudio%E4%BD%BF%E7%94%A8/X.VisualStudio%E4%BD%BF%E7%94%A8/" title="X.Viusal Studio使用" >
             <div class="recent-link-text">
-              X. Viusal Studio使用
+              X.Viusal Studio使用
             </div>
           </a>
         
@@ -319,14 +319,15 @@
         
           <div class="truncate-text">
             
-              头文件头文件是一种源代码文件，通常包含函数声明、宏定义、类型定义（如类、结构体和枚举的定义）等。头文件的主要目的是提供接口，使得源代码文件可以共享和重用代码。
+               头文件
+头文件是一种源代码文件，通常包含函数声明、宏定义、类型定义（如类、结构体和枚举的定义）等。头文件的主要目的是提供接口，使得源代码文件可以共享和重用代码。
 头文件通常具有 .h或 .hpp扩展名（在C++中）。当你在源代码文件中使用 #include预处理指令来包含头文件时，预处理器会将整个头文件的内容复制到该指令的位置。
 例如，如果你有一个名为 my_functions.h的头文件，其中包含了一些函数的声明，你可以在另一个源代码文件中使用以下指令来包含这个头文件：
 #include “my_functions.h”
 这样，你就可以在这个源代码文件中调用 my_functions.h中声明的函数了。
 注意，为了防止头文件的内容在同一编译单元中被多次包含，通常会在头文件中使用预处理指令 #ifndef、#define和 #endif来设置包含保护。例如：
 123456#ifndef MY_FUNCTIONS_H#define MY_FUNCTIONS_H// function declarations, type definitions, etc.#endif
-这样，即使在同一...
+这样，即使在...
             
           </div>
         
@@ -357,7 +358,7 @@
    
 
 
-<article id="post-C++/X.VisualStudio使用" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+<article id="post-C++/X.VisualStudio使用/X.VisualStudio使用" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
    
   <div class="article-inner">
     <div class="article-main">
@@ -368,7 +369,7 @@
   
     
       <h1 itemprop="name">
-        <a class="p-name article-title" href="/2024/07/02/C++/X.VisualStudio%E4%BD%BF%E7%94%A8/">X. Viusal Studio使用</a>
+        <a class="p-name article-title" href="/2024/07/02/C++/X.VisualStudio%E4%BD%BF%E7%94%A8/X.VisualStudio%E4%BD%BF%E7%94%A8/">X.Viusal Studio使用</a>
       </h1>
     
   
@@ -398,7 +399,9 @@
         
           <div class="truncate-text">
             
-              Visual Stuido 2022断点
+               Visual Stuido 2022
+ 断点
+
 F5 ： 运行
 F9 ：设置或清除断点。它将在该行设置一个断点
 F10 ：步过。调试器将执行当前行的代码，并在下一行停止。
@@ -417,7 +420,7 @@ F11 ：步入。调试器将执行当前行的代码，并在下一行或函数�
      
     <a class="right-panel  non-pic  "
       
-      href="/2024/07/02/C++/X.VisualStudio%E4%BD%BF%E7%94%A8/" 
+      href="/2024/07/02/C++/X.VisualStudio%E4%BD%BF%E7%94%A8/X.VisualStudio%E4%BD%BF%E7%94%A8/" 
     >
        
       <i class="fa-solid fa-angle-right non-pic"></i>
@@ -477,7 +480,8 @@ F11 ：步入。调试器将执行当前行的代码，并在下一行或函数�
         
           <div class="truncate-text">
             
-              数据类型整数类型 ：
+               数据类型
+整数类型 ：
 
 short: 通常占用2字节，取值范围通常为-32768到32767。
 int: 通常占用4字节，取值范围通常为-2147483648到2147483647。
@@ -503,8 +507,9 @@ bool: 占用1字节，取值为 true或 false。
 
 void: 无值，通常用于表示函数无返回值或指针无指向类型。
 
-函数函数基本结构
-123return_type function_name( parameter list ) &#123;   ...
+ 函数
+函数基本结构
+123return_type function_name( parameter list ) &#123...
             
           </div>
         
@@ -1147,11 +1152,14 @@ Lua变量为动态类型，可随时改变类型
         
           <div class="truncate-text">
             
-              VS相关解决方案工作流程123456#include &lt;iostream&gt;int main()&#123;	std::cout&lt;&lt;&quot;Hello World&quot;&lt;&lt;endl;	std::cin.get();&#125;
+               VS相关
+ 解决方案
+ 工作流程
+123456#include &lt;iostream&gt;int main()&#123;	std::cout&lt;&lt;&quot;Hello World&quot;&lt;&lt;endl;	std::cin.get();&#125;
 预处理指令：预处理器接收源代码，并处理源代码中的预处理指令。预处理指令是以 #开头的指令，例如 #include、#define等。预处理器会处理这些指令，例如包含头文件、处理宏定义等，然后生成预处理后的源代码。
 编译：编译器接收预处理后的源代码，然后将源代码翻译成汇编代码。编译器在这个过程中会进行语法检查、类型检查、优化等操作。
 汇编：将文本文件转换为机器码，.cpp文件会被编译，但.h文件不会，.h文件会在预处理阶段被“copy”到.cpp文件中，编译的结果是一个object文件，在windows系统中，是.obj文件
-链接：链接器接收多个目标文件，然后将这些目标文件链接成一个可执行文件。链接器在这个过程中会解析目标文件中的符号（例如函数和变量的名称），并将这些符号链接到它们在可执行文件中的地址。此过程会将所...
+链接：链接器接收多个目标文件，然后将这些目标文件链接成一个可执行文件。链接器在这个过程中会解析目标文件中的符号（例如函数和变量的名称），并将这些符号链接到它们在可执行文件中的地址。...
             
           </div>
         
