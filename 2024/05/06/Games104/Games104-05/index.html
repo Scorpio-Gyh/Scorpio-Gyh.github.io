@@ -20,12 +20,12 @@
   <link rel="preload" href="/css/fonts/Roboto-Regular.ttf" as="font" type="font/ttf" crossorigin="anonymous">
   <link rel="preload" href="/css/fonts/Roboto-Bold.ttf" as="font" type="font/ttf" crossorigin="anonymous">
 
-  <meta name="description" content="renderable可渲染对象  渲染方程  双向反射分布函数（BRDF） Lo(x,ωo)&#x3D;Le(x,ωo)+∫H2fr(x,ωo,ωi)Li(x,ωi)cosθidωiL_o(x, \omega_o) &#x3D; L_e(x, \omega_o) + \int_{\mathbb{H}^2} f_r(x, \omega_o, \omega_i)L_i(x, \omega_i)\cos\theta_id">
+  <meta name="description" content="renderable可渲染对象渲染方程 双向反射分布函数（BRDF）  L_o(x, \omega_o) &#x3D; L_e(x, \omega_o) + \int_{\mathbb{H}^2} f_r(x, \omega_o, \omega_i)L_i(x, \omega_i)\cos\theta_id\omega_i三个挑战 第一个挑战是如何获取任何给定入射方向的入射辐射。这涉及到如何准确计算来自场景">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Games104-5 渲染实践">
 <meta property="og:url" content="https://scorpio-gyh.github.io/2024/05/06/Games104/Games104-05/index.html">
 <meta property="og:site_name" content="Scorpio-Gyh_WYK">
-<meta property="og:description" content="renderable可渲染对象  渲染方程  双向反射分布函数（BRDF） Lo(x,ωo)&#x3D;Le(x,ωo)+∫H2fr(x,ωo,ωi)Li(x,ωi)cosθidωiL_o(x, \omega_o) &#x3D; L_e(x, \omega_o) + \int_{\mathbb{H}^2} f_r(x, \omega_o, \omega_i)L_i(x, \omega_i)\cos\theta_id">
+<meta property="og:description" content="renderable可渲染对象渲染方程 双向反射分布函数（BRDF）  L_o(x, \omega_o) &#x3D; L_e(x, \omega_o) + \int_{\mathbb{H}^2} f_r(x, \omega_o, \omega_i)L_i(x, \omega_i)\cos\theta_id\omega_i三个挑战 第一个挑战是如何获取任何给定入射方向的入射辐射。这涉及到如何准确计算来自场景">
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="https://scorpio-gyh.github.io/2024/05/06/Games104/Games104-05/BRDF.png">
 <meta property="og:image" content="https://scorpio-gyh.github.io/2024/05/06/Games104/Games104-05/blinn-phong.png">
@@ -223,7 +223,7 @@
       
         <a class="archive-link" href="/archives/2024/07 ">
           July 2024 
-          <div class="archive-count">3 </div>
+          <div class="archive-count">1 </div>
         </a>
       
         <a class="archive-link" href="/archives/2024/06 ">
@@ -247,21 +247,9 @@
       <h3 class="widget-title">Recent Posts</h3>
       <ul>
         
-          <a class="recent-link" href="/2024/07/02/C++/3.C++%E5%A4%B4%E6%96%87%E4%BB%B6/" title="3. C++ 基础变量和函数" >
-            <div class="recent-link-text">
-              3. C++ 基础变量和函数
-            </div>
-          </a>
-        
-          <a class="recent-link" href="/2024/07/02/C++/X.VisualStudio%E4%BD%BF%E7%94%A8/X.VisualStudio%E4%BD%BF%E7%94%A8/" title="X.Viusal Studio使用" >
+          <a class="recent-link" href="/2024/07/02/C++/X.VisualStudio%E4%BD%BF%E7%94%A8/" title="X.Viusal Studio使用" >
             <div class="recent-link-text">
               X.Viusal Studio使用
-            </div>
-          </a>
-        
-          <a class="recent-link" href="/2024/07/02/C++/2.C++%E5%9F%BA%E7%A1%80%E5%8F%98%E9%87%8F%E5%92%8C%E5%87%BD%E6%95%B0/" title="2. C++ 基础变量和函数" >
-            <div class="recent-link-text">
-              2. C++ 基础变量和函数
             </div>
           </a>
         
@@ -274,6 +262,18 @@
           <a class="recent-link" href="/2024/06/24/lua/lua-%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1/" title="lua-面向对象" >
             <div class="recent-link-text">
               lua-面向对象
+            </div>
+          </a>
+        
+          <a class="recent-link" href="/2024/06/15/lua/lua-%E5%85%83%E8%A1%A8%E5%92%8C%E5%85%83%E6%96%B9%E6%B3%95/" title="lua-元表和元方法" >
+            <div class="recent-link-text">
+              lua-元表和元方法
+            </div>
+          </a>
+        
+          <a class="recent-link" href="/2024/06/11/lua/lua-%E8%BF%AD%E4%BB%A3%E5%99%A8%E3%80%81%E6%A8%A1%E5%9D%97%E3%80%81%E9%97%AD%E5%8C%85/" title="lua-迭代器、模块、闭包" >
+            <div class="recent-link-text">
+              lua-迭代器、模块、闭包
             </div>
           </a>
         
@@ -321,7 +321,7 @@
   
           </div>
           <div class="wordcount need-seperator meta-info">
-            846 words 
+            711 words 
           </div>
         </div>
         
@@ -330,43 +330,22 @@
       </header>
       <div class="e-content article-entry" itemprop="articleBody">
         
-          <h1 id="renderable可渲染对象"><a class="markdownIt-Anchor" href="#renderable可渲染对象"></a> renderable可渲染对象</h1>
-<h2 id="渲染方程"><a class="markdownIt-Anchor" href="#渲染方程"></a> 渲染方程</h2>
-<p><img src="BRDF.png" alt="0" /></p>
+          <h1 id="renderable可渲染对象"><a href="#renderable可渲染对象" class="headerlink" title="renderable可渲染对象"></a>renderable可渲染对象</h1><h2 id="渲染方程"><a href="#渲染方程" class="headerlink" title="渲染方程"></a>渲染方程</h2><p><img src="BRDF.png" alt="0"></p>
 <p><strong>双向反射分布函数（BRDF）</strong></p>
-<p><span class="katex-display"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>L</mi><mi>o</mi></msub><mo>(</mo><mi>x</mi><mo separator="true">,</mo><msub><mi>ω</mi><mi>o</mi></msub><mo>)</mo><mo>=</mo><msub><mi>L</mi><mi>e</mi></msub><mo>(</mo><mi>x</mi><mo separator="true">,</mo><msub><mi>ω</mi><mi>o</mi></msub><mo>)</mo><mo>+</mo><msub><mo>∫</mo><mrow><msup><mrow><mi mathvariant="double-struck">H</mi></mrow><mn>2</mn></msup></mrow></msub><msub><mi>f</mi><mi>r</mi></msub><mo>(</mo><mi>x</mi><mo separator="true">,</mo><msub><mi>ω</mi><mi>o</mi></msub><mo separator="true">,</mo><msub><mi>ω</mi><mi>i</mi></msub><mo>)</mo><msub><mi>L</mi><mi>i</mi></msub><mo>(</mo><mi>x</mi><mo separator="true">,</mo><msub><mi>ω</mi><mi>i</mi></msub><mo>)</mo><mi>cos</mi><msub><mi>θ</mi><mi>i</mi></msub><mi>d</mi><msub><mi>ω</mi><mi>i</mi></msub></mrow><annotation encoding="application/x-tex">L_o(x, \omega_o) = L_e(x, \omega_o) + \int_{\mathbb{H}^2} f_r(x, \omega_o, \omega_i)L_i(x, \omega_i)\cos\theta_id\omega_i
-</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:1.36em;"></span><span class="strut bottom" style="height:2.27225em;vertical-align:-0.91225em;"></span><span class="base displaystyle textstyle uncramped"><span class="mord"><span class="mord mathit">L</span><span class="vlist"><span style="top:0.15em;margin-right:0.05em;margin-left:0em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">​</span></span><span class="reset-textstyle scriptstyle cramped"><span class="mord mathit">o</span></span></span><span class="baseline-fix"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">​</span></span>​</span></span></span><span class="mopen">(</span><span class="mord mathit">x</span><span class="mpunct">,</span><span class="mord"><span class="mord mathit" style="margin-right:0.03588em;">ω</span><span class="vlist"><span style="top:0.15em;margin-right:0.05em;margin-left:-0.03588em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">​</span></span><span class="reset-textstyle scriptstyle cramped"><span class="mord mathit">o</span></span></span><span class="baseline-fix"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">​</span></span>​</span></span></span><span class="mclose">)</span><span class="mrel">=</span><span class="mord"><span class="mord mathit">L</span><span class="vlist"><span style="top:0.15em;margin-right:0.05em;margin-left:0em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">​</span></span><span class="reset-textstyle scriptstyle cramped"><span class="mord mathit">e</span></span></span><span class="baseline-fix"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">​</span></span>​</span></span></span><span class="mopen">(</span><span class="mord mathit">x</span><span class="mpunct">,</span><span class="mord"><span class="mord mathit" style="margin-right:0.03588em;">ω</span><span class="vlist"><span style="top:0.15em;margin-right:0.05em;margin-left:-0.03588em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">​</span></span><span class="reset-textstyle scriptstyle cramped"><span class="mord mathit">o</span></span></span><span class="baseline-fix"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">​</span></span>​</span></span></span><span class="mclose">)</span><span class="mbin">+</span><span class="mop"><span class="op-symbol large-op mop" style="margin-right:0.44445em;top:-0.0011249999999999316em;">∫</span><span class="vlist"><span style="top:0.91225em;margin-right:0.05em;margin-left:-0.44445em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">​</span></span><span class="reset-textstyle scriptstyle cramped"><span class="mord scriptstyle cramped"><span class=""><span class="mord scriptstyle cramped"><span class="mord mathbb">H</span></span><span class="vlist"><span style="top:-0.30289em;margin-right:0.07142857142857144em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">​</span></span><span class="reset-scriptstyle scriptscriptstyle cramped"><span class="mord mathrm">2</span></span></span><span class="baseline-fix"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">​</span></span>​</span></span></span></span></span></span><span class="baseline-fix"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">​</span></span>​</span></span></span><span class="mord"><span class="mord mathit" style="margin-right:0.10764em;">f</span><span class="vlist"><span style="top:0.15em;margin-right:0.05em;margin-left:-0.10764em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">​</span></span><span class="reset-textstyle scriptstyle cramped"><span class="mord mathit" style="margin-right:0.02778em;">r</span></span></span><span class="baseline-fix"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">​</span></span>​</span></span></span><span class="mopen">(</span><span class="mord mathit">x</span><span class="mpunct">,</span><span class="mord"><span class="mord mathit" style="margin-right:0.03588em;">ω</span><span class="vlist"><span style="top:0.15em;margin-right:0.05em;margin-left:-0.03588em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">​</span></span><span class="reset-textstyle scriptstyle cramped"><span class="mord mathit">o</span></span></span><span class="baseline-fix"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">​</span></span>​</span></span></span><span class="mpunct">,</span><span class="mord"><span class="mord mathit" style="margin-right:0.03588em;">ω</span><span class="vlist"><span style="top:0.15em;margin-right:0.05em;margin-left:-0.03588em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">​</span></span><span class="reset-textstyle scriptstyle cramped"><span class="mord mathit">i</span></span></span><span class="baseline-fix"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">​</span></span>​</span></span></span><span class="mclose">)</span><span class="mord"><span class="mord mathit">L</span><span class="vlist"><span style="top:0.15em;margin-right:0.05em;margin-left:0em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">​</span></span><span class="reset-textstyle scriptstyle cramped"><span class="mord mathit">i</span></span></span><span class="baseline-fix"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">​</span></span>​</span></span></span><span class="mopen">(</span><span class="mord mathit">x</span><span class="mpunct">,</span><span class="mord"><span class="mord mathit" style="margin-right:0.03588em;">ω</span><span class="vlist"><span style="top:0.15em;margin-right:0.05em;margin-left:-0.03588em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">​</span></span><span class="reset-textstyle scriptstyle cramped"><span class="mord mathit">i</span></span></span><span class="baseline-fix"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">​</span></span>​</span></span></span><span class="mclose">)</span><span class="mop">cos</span><span class="mord"><span class="mord mathit" style="margin-right:0.02778em;">θ</span><span class="vlist"><span style="top:0.15em;margin-right:0.05em;margin-left:-0.02778em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">​</span></span><span class="reset-textstyle scriptstyle cramped"><span class="mord mathit">i</span></span></span><span class="baseline-fix"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">​</span></span>​</span></span></span><span class="mord mathit">d</span><span class="mord"><span class="mord mathit" style="margin-right:0.03588em;">ω</span><span class="vlist"><span style="top:0.15em;margin-right:0.05em;margin-left:-0.03588em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">​</span></span><span class="reset-textstyle scriptstyle cramped"><span class="mord mathit">i</span></span></span><span class="baseline-fix"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">​</span></span>​</span></span></span></span></span></span></span></p>
-<h2 id="三个挑战"><a class="markdownIt-Anchor" href="#三个挑战"></a> 三个挑战</h2>
-<ul>
+<script type="math/tex; mode=display">
+L_o(x, \omega_o) = L_e(x, \omega_o) + \int_{\mathbb{H}^2} f_r(x, \omega_o, \omega_i)L_i(x, \omega_i)\cos\theta_id\omega_i</script><h2 id="三个挑战"><a href="#三个挑战" class="headerlink" title="三个挑战"></a>三个挑战</h2><ul>
 <li>第一个挑战是如何获取任何给定入射方向的入射辐射。这涉及到如何准确计算来自场景中每一个方向光的亮度。</li>
 <li>第二个挑战是照明和散射函数在半球上的积分计算成本很高。由于需要对所有可能的入射方向进行积分，这个计算是非常复杂和耗时的。</li>
 <li>第三个挑战是为了评估入射辐射，我们必须计算另一个积分，也就是说渲染方程是递归的。这意味着为了计算一个方向上的光亮度，我们可能需要计算由这个光再次反射到其他物体上的光亮度，这样就形成了一个复杂的递归过程。</li>
 </ul>
-<h2 id="blinn-phong模型"><a class="markdownIt-Anchor" href="#blinn-phong模型"></a> Blinn-Phong模型</h2>
-<p><img src="blinn-phong.png" alt="1" /></p>
-光强 = 环境光(Ambient)+漫反射光(Diffuse)+高光(Specular)
-
-<h2 id="阴影"><a class="markdownIt-Anchor" href="#阴影"></a> 阴影</h2>
-<p><img src="shadow.png" alt="2" /></p>
+<h2 id="Blinn-Phong模型"><a href="#Blinn-Phong模型" class="headerlink" title="Blinn-Phong模型"></a>Blinn-Phong模型</h2><p><img src="blinn-phong.png" alt="1"></p>
+<script type="math/tex; mode=display">
+光强 = 环境光(Ambient)+漫反射光(Diffuse)+高光(Specular)</script><h2 id="阴影"><a href="#阴影" class="headerlink" title="阴影"></a>阴影</h2><p><img src="shadow.png" alt="2"></p>
 <p>阴影映射，光源位置进行MVP变换进行生成Shadow Map</p>
-<h1 id="纹理压缩"><a class="markdownIt-Anchor" href="#纹理压缩"></a> 纹理压缩</h1>
-<p>ASTC压缩算法，基本思想<br />
-<img src="4.png" alt="4" /><br />
-核心思想：在一个瓦片块中，寻找最亮、暗的栅格值，其他值作为这两个值的插值<br />
-jpeg等压缩算法占开销，不支持随机访问</p>
-<h1 id="建模工具"><a class="markdownIt-Anchor" href="#建模工具"></a> 建模工具</h1>
-<p>三维建模：Maya、Blender、3dMax等<br />
-雕刻：Sculpting<br />
-扫描：Scanning<br />
-自动建模：Houdini、Unreal Engine<br />
-人工智能等<br />
-<img src="5.png" alt="5" /></p>
-<h1 id="网格管线"><a class="markdownIt-Anchor" href="#网格管线"></a> 网格管线</h1>
-<p>Cluster Based Mesh Pipline<br />
-<img src="6.png" alt="6" /><br />
-将整体网格体划分为多个cluster，并可在显卡上无g限细分，例如虚幻引擎的nanite</p>
-<h1 id="学习图形渲染的核心"><a class="markdownIt-Anchor" href="#学习图形渲染的核心"></a> 学习图形渲染的核心</h1>
-<ul>
+<h1 id="纹理压缩"><a href="#纹理压缩" class="headerlink" title="纹理压缩"></a>纹理压缩</h1><p>ASTC压缩算法，基本思想<br><img src="4.png" alt="4"><br>核心思想：在一个瓦片块中，寻找最亮、暗的栅格值，其他值作为这两个值的插值<br>jpeg等压缩算法占开销，不支持随机访问</p>
+<h1 id="建模工具"><a href="#建模工具" class="headerlink" title="建模工具"></a>建模工具</h1><p>三维建模：Maya、Blender、3dMax等<br>雕刻：Sculpting<br>扫描：Scanning<br>自动建模：Houdini、Unreal Engine<br>人工智能等<br><img src="5.png" alt="5"></p>
+<h1 id="网格管线"><a href="#网格管线" class="headerlink" title="网格管线"></a>网格管线</h1><p>Cluster Based Mesh Pipline<br><img src="6.png" alt="6"><br>将整体网格体划分为多个cluster，并可在显卡上无g限细分，例如虚幻引擎的nanite</p>
+<h1 id="学习图形渲染的核心"><a href="#学习图形渲染的核心" class="headerlink" title="学习图形渲染的核心"></a>学习图形渲染的核心</h1><ul>
 <li>了解显卡架构</li>
 <li>mesh submesh</li>
 <li>culling算法</li>
@@ -386,13 +365,13 @@ jpeg等压缩算法占开销，不支持随机访问</p>
 <nav id="article-nav">
   <a class="article-nav-btn left "
     
-      href="/2024/05/13/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/UE4/UE4/"
-      title="Unreal Engine 4"
+      href="/2024/05/13/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/UE5/UE4/"
+      title="Unreal Engine 5 C++"
      >
     <i class="fa-solid fa-angle-left"></i>
     <p class="title-text">
       
-        Unreal Engine 4
+        Unreal Engine 5 C++
         
     </p>
   </a>

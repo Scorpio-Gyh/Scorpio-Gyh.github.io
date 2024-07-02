@@ -211,7 +211,7 @@
       
         <a class="archive-link" href="/archives/2024/07 ">
           July 2024 
-          <div class="archive-count">3 </div>
+          <div class="archive-count">1 </div>
         </a>
       
         <a class="archive-link" href="/archives/2024/06 ">
@@ -235,21 +235,9 @@
       <h3 class="widget-title">Recent Posts</h3>
       <ul>
         
-          <a class="recent-link" href="/2024/07/02/C++/3.C++%E5%A4%B4%E6%96%87%E4%BB%B6/" title="3. C++ 基础变量和函数" >
-            <div class="recent-link-text">
-              3. C++ 基础变量和函数
-            </div>
-          </a>
-        
-          <a class="recent-link" href="/2024/07/02/C++/X.VisualStudio%E4%BD%BF%E7%94%A8/X.VisualStudio%E4%BD%BF%E7%94%A8/" title="X.Viusal Studio使用" >
+          <a class="recent-link" href="/2024/07/02/C++/X.VisualStudio%E4%BD%BF%E7%94%A8/" title="X.Viusal Studio使用" >
             <div class="recent-link-text">
               X.Viusal Studio使用
-            </div>
-          </a>
-        
-          <a class="recent-link" href="/2024/07/02/C++/2.C++%E5%9F%BA%E7%A1%80%E5%8F%98%E9%87%8F%E5%92%8C%E5%87%BD%E6%95%B0/" title="2. C++ 基础变量和函数" >
-            <div class="recent-link-text">
-              2. C++ 基础变量和函数
             </div>
           </a>
         
@@ -262,6 +250,18 @@
           <a class="recent-link" href="/2024/06/24/lua/lua-%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1/" title="lua-面向对象" >
             <div class="recent-link-text">
               lua-面向对象
+            </div>
+          </a>
+        
+          <a class="recent-link" href="/2024/06/15/lua/lua-%E5%85%83%E8%A1%A8%E5%92%8C%E5%85%83%E6%96%B9%E6%B3%95/" title="lua-元表和元方法" >
+            <div class="recent-link-text">
+              lua-元表和元方法
+            </div>
+          </a>
+        
+          <a class="recent-link" href="/2024/06/11/lua/lua-%E8%BF%AD%E4%BB%A3%E5%99%A8%E3%80%81%E6%A8%A1%E5%9D%97%E3%80%81%E9%97%AD%E5%8C%85/" title="lua-迭代器、模块、闭包" >
+            <div class="recent-link-text">
+              lua-迭代器、模块、闭包
             </div>
           </a>
         
@@ -278,7 +278,7 @@
    
 
 
-<article id="post-C++/3.C++头文件" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+<article id="post-C++/X.VisualStudio使用" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
    
   <div class="article-inner">
     <div class="article-main">
@@ -289,87 +289,7 @@
   
     
       <h1 itemprop="name">
-        <a class="p-name article-title" href="/2024/07/02/C++/3.C++%E5%A4%B4%E6%96%87%E4%BB%B6/">3. C++ 基础变量和函数</a>
-      </h1>
-    
-  
-</div>
-
-        <div class='meta-info-bar'>
-          <div class="meta-info">
-  <time class="dt-published" datetime="2024-07-02T07:30:41.000Z" itemprop="datePublished">2024-07-02</time>
-</div>
-          <div class="need-seperator meta-info">
-            <div class="meta-cate-flex">
-  
-    Uncategorized 
-   
-</div>
-  
-          </div>
-          <div class="wordcount need-seperator meta-info">
-            578 words 
-          </div>
-        </div>
-        
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/C/" rel="tag">C++</a></li></ul>
-
-      </header>
-      <div class="e-content article-entry" itemprop="articleBody">
-        
-          <div class="truncate-text">
-            
-               头文件
-头文件是一种源代码文件，通常包含函数声明、宏定义、类型定义（如类、结构体和枚举的定义）等。头文件的主要目的是提供接口，使得源代码文件可以共享和重用代码。
-头文件通常具有 .h或 .hpp扩展名（在C++中）。当你在源代码文件中使用 #include预处理指令来包含头文件时，预处理器会将整个头文件的内容复制到该指令的位置。
-例如，如果你有一个名为 my_functions.h的头文件，其中包含了一些函数的声明，你可以在另一个源代码文件中使用以下指令来包含这个头文件：
-#include “my_functions.h”
-这样，你就可以在这个源代码文件中调用 my_functions.h中声明的函数了。
-注意，为了防止头文件的内容在同一编译单元中被多次包含，通常会在头文件中使用预处理指令 #ifndef、#define和 #endif来设置包含保护。例如：
-123456#ifndef MY_FUNCTIONS_H#define MY_FUNCTIONS_H// function declarations, type definitions, etc.#endif
-这样，即使在...
-            
-          </div>
-        
-      </div>
-
-         
-    </div>
-    
-     
-    <a class="right-panel  non-pic  "
-      
-      href="/2024/07/02/C++/3.C++%E5%A4%B4%E6%96%87%E4%BB%B6/" 
-    >
-       
-      <i class="fa-solid fa-angle-right non-pic"></i>
-       
-    </a>
-     
-  </div>
-  
-</article>
-
-
-
-
-
-
-   
-
-
-<article id="post-C++/X.VisualStudio使用/X.VisualStudio使用" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-   
-  <div class="article-inner">
-    <div class="article-main">
-      <header class="article-header">
-        
-<div class="main-title-bar">
-  <div class="main-title-dot"></div>
-  
-    
-      <h1 itemprop="name">
-        <a class="p-name article-title" href="/2024/07/02/C++/X.VisualStudio%E4%BD%BF%E7%94%A8/X.VisualStudio%E4%BD%BF%E7%94%A8/">X.Viusal Studio使用</a>
+        <a class="p-name article-title" href="/2024/07/02/C++/X.VisualStudio%E4%BD%BF%E7%94%A8/">X.Viusal Studio使用</a>
       </h1>
     
   
@@ -399,9 +319,7 @@
         
           <div class="truncate-text">
             
-               Visual Stuido 2022
- 断点
-
+              Visual Stuido 2022断点
 F5 ： 运行
 F9 ：设置或清除断点。它将在该行设置一个断点
 F10 ：步过。调试器将执行当前行的代码，并在下一行停止。
@@ -409,6 +327,7 @@ F11 ：步入。调试器将执行当前行的代码，并在下一行或函数�
 
 
 
+
             
           </div>
         
@@ -420,108 +339,7 @@ F11 ：步入。调试器将执行当前行的代码，并在下一行或函数�
      
     <a class="right-panel  non-pic  "
       
-      href="/2024/07/02/C++/X.VisualStudio%E4%BD%BF%E7%94%A8/X.VisualStudio%E4%BD%BF%E7%94%A8/" 
-    >
-       
-      <i class="fa-solid fa-angle-right non-pic"></i>
-       
-    </a>
-     
-  </div>
-  
-</article>
-
-
-
-
-
-
-   
-
-
-<article id="post-C++/2.C++基础变量和函数" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-   
-  <div class="article-inner">
-    <div class="article-main">
-      <header class="article-header">
-        
-<div class="main-title-bar">
-  <div class="main-title-dot"></div>
-  
-    
-      <h1 itemprop="name">
-        <a class="p-name article-title" href="/2024/07/02/C++/2.C++%E5%9F%BA%E7%A1%80%E5%8F%98%E9%87%8F%E5%92%8C%E5%87%BD%E6%95%B0/">2. C++ 基础变量和函数</a>
-      </h1>
-    
-  
-</div>
-
-        <div class='meta-info-bar'>
-          <div class="meta-info">
-  <time class="dt-published" datetime="2024-07-02T02:30:41.000Z" itemprop="datePublished">2024-07-02</time>
-</div>
-          <div class="need-seperator meta-info">
-            <div class="meta-cate-flex">
-  
-    Uncategorized 
-   
-</div>
-  
-          </div>
-          <div class="wordcount need-seperator meta-info">
-            888 words 
-          </div>
-        </div>
-        
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/C/" rel="tag">C++</a></li></ul>
-
-      </header>
-      <div class="e-content article-entry" itemprop="articleBody">
-        
-          <div class="truncate-text">
-            
-               数据类型
-整数类型 ：
-
-short: 通常占用2字节，取值范围通常为-32768到32767。
-int: 通常占用4字节，取值范围通常为-2147483648到2147483647。
-long: 在32位系统上通常占用4字节，在64位系统上通常占用8字节。
-long long: 通常占用8字节，取值范围通常为-9223372036854775808到9223372036854775807。
-
-字符类型 ：
-
-char: 占用1字节，取值范围通常为-128到127或0到255。
-wchar_t: 用于表示宽字符，通常占用2或4字节。
-
-浮点数类型 ：
-
-float: 占用4字节。
-double: 占用8字节。
-long double: 占用的字节数依赖于具体的实现，通常为8字节或12字节或16字节。
-
-布尔类型 ：
-
-bool: 占用1字节，取值为 true或 false。
-
-空类型 ：
-
-void: 无值，通常用于表示函数无返回值或指针无指向类型。
-
- 函数
-函数基本结构
-123return_type function_name( parameter list ) &#123...
-            
-          </div>
-        
-      </div>
-
-         
-    </div>
-    
-     
-    <a class="right-panel  non-pic  "
-      
-      href="/2024/07/02/C++/2.C++%E5%9F%BA%E7%A1%80%E5%8F%98%E9%87%8F%E5%92%8C%E5%87%BD%E6%95%B0/" 
+      href="/2024/07/02/C++/X.VisualStudio%E4%BD%BF%E7%94%A8/" 
     >
        
       <i class="fa-solid fa-angle-right non-pic"></i>
@@ -581,20 +399,13 @@ void: 无值，通常用于表示函数无返回值或指针无指向类型。
         
           <div class="truncate-text">
             
-               协程
-协程（coroutine）是一种可以暂停和恢复执行的计算机程序组件，它提供了一种强大的编程工具，可以用来处理多任务、非阻塞I/O、状态机等复杂问题。
- 协程方法
-
-
+              协程协程（coroutine）是一种可以暂停和恢复执行的计算机程序组件，它提供了一种强大的编程工具，可以用来处理多任务、非阻塞I/O、状态机等复杂问题。
+协程方法
 coroutine.create(func): 创建一个新的协程。func是当协程被恢复时将要运行的函数。这个函数返回一个协程对象。
 123local co = coroutine.create(function ()    print(&quot;Hello, coroutine!&quot;)end)
-
-
 coroutine.resume(co, ...): 开始或继续执行协程 co。可选的参数 ...会被传递给协程函数或 coroutine.yield。如果协程运行成功，coroutine.resume会返回 true，否则返回 false和错误信息。
 1234local co = coroutine.create(function (a, b)    print(a + b)end)coroutine.resume(co, 1, 2)  -- 输出：3
-
-
-coroutine.yield(...): ...
+coroutine.yield(...): 暂停协程的执行，并...
             
           </div>
         
@@ -666,12 +477,9 @@ coroutine.yield(...): ...
         
           <div class="truncate-text">
             
-               lua面向对象
- 使用元表和__index元方法进行类的模拟
-在Lua中，虽然没有内置的类（class）概念，但是可以通过表（table）和元表（metatable）来模拟类的行为
+              lua面向对象使用元表和__index元方法进行类的模拟在Lua中，虽然没有内置的类（class）概念，但是可以通过表（table）和元表（metatable）来模拟类的行为
 元表作为类的结构设计，而通过index和其他函数的配合，将创建的对象（即table）的元表设为该类（该元表），从而实现面向对象的模拟
- 类的创建
-1234567891011121314151617181920212223-- 定义一个模拟类的表local MyClass = &#123;&#125;-- 定义类的元表MyClass.__index = MyClass-- 定义类的构造函数function MyClass.new(init)    local self = setmetatable(&#123;&#125;, MyClass)    self.value = init    return selfend-- 定义类的方法function MyClass:add(x)    self.value = self.value + xend-- 使用类local instance = MyCl...
+类的创建1234567891011121314151617181920212223-- 定义一个模拟类的表local MyClass = &#123;&#125;-- 定义类的元表MyClass.__index = MyClass-- 定义类的构造函数function MyClass.new(init)    local self = setmetatable(&#123;&#125;, MyClass)    self.value = init    return selfend-- 定义类的方法function MyClass:add(x)    self.value = self.value + xend-- 使用类local instance = MyClass.ne...
             
           </div>
         
@@ -743,14 +551,12 @@ coroutine.yield(...): ...
         
           <div class="truncate-text">
             
-               元表和元方法
-
+              元表和元方法
 元表（metatable）是一种特殊的表，它可以改变另一个表的行为。元表可以定义一些特殊的函数，这些函数被称为元方法，元表即table的元数据表
 元方法可以改变表的一些基本行为，例如算术运算（+，-，*，/等）、比较运算（==，&lt;，&gt;等）、长度运算（#）、索引运算（[]）等。当你对一个表执行这些操作时，Lua会查找这个表的元表，如果元表中定义了对应的元方法，Lua就会调用这个元方法。
 
 1234567891011121314local t1 = &#123;value = 5&#125;local t2 = &#123;value = 3&#125;local mt = &#123;    __add = function(a, b)        return &#123;value = a.value + b.value&#125;    end&#125;setmetatable(t1, mt)setmetatable(t2, mt)local t3 = t1 + t2print(t3.value)  -- 输出8
- 重要函数
-12setmet...
+重要函数12setmetatab...
             
           </div>
         
@@ -822,17 +628,13 @@ coroutine.yield(...): ...
         
           <div class="truncate-text">
             
-               迭代器
- pairs
-用于遍历表的所有元素的迭代器。它返回两个值：键和值。这个迭代器不保证元素的顺序
+              迭代器pairs用于遍历表的所有元素的迭代器。它返回两个值：键和值。这个迭代器不保证元素的顺序
 1234t = &#123;name = &quot;WYK&quot;, age = 16, gender = &quot;男&quot;, office = &quot;深圳&quot;&#125;for k, v in pairs(t) do    print(k, v)end
- ipairs
-用于遍历数组部分（即键为整数的部分）的迭代器。它返回两个值：索引和值。这个迭代器按照索引的升序遍历元素，从1开始，直到遇到第一个nil值。
+ipairs用于遍历数组部分（即键为整数的部分）的迭代器。它返回两个值：索引和值。这个迭代器按照索引的升序遍历元素，从1开始，直到遇到第一个nil值。
 1234t = &#123;&quot;apple&quot;, name = &quot;banana&quot;, &quot;cherry&quot;,[&quot;1&quot;] = &quot;pairs&quot;&#125;for i, v in ipairs(t) do    print(i, v)end
 这里只会输出apple和banana
- 模块
-wykrec.lua文件：
-123456789101112rectangle...
+模块wykrec.lua文件：
+123456789101112rectangle = &#123...
             
           </div>
         
@@ -904,16 +706,10 @@ wykrec.lua文件：
         
           <div class="truncate-text">
             
-               Table
- 数组
- 一维数组
-1234567cities = &#123;&quot;北京&quot;,&quot;上海&quot;,&quot;广州&quot;&#125;cities[4] = &quot;深圳&quot;for i=1,4 do    print(&quot;cities[&quot;..i..&quot;] = &quot;..cities[i])end
- 二维数组
-12345678arr = &#123;&#125;for i = 1,3 do    arr[i] = i    for j = 1,3 do        arr[j] = j    endend
- Map
- 基本结构
-允许Map有数组和Map的嵌套
-1234567info = &#123;name = &quot;WYK&quot;,age = 16&#125;info[&quot;gender&quot;] = &quot;男&quot;info.office = &quot;深圳&quot;a = &quot;xxx&quot;info[a..&quot;bb&quot;] = ...
+              Table数组一维数组1234567cities = &#123;&quot;北京&quot;,&quot;上海&quot;,&quot;广州&quot;&#125;cities[4] = &quot;深圳&quot;for i=1,4 do    print(&quot;cities[&quot;..i..&quot;] = &quot;..cities[i])end
+二维数组12345678arr = &#123;&#125;for i = 1,3 do    arr[i] = i    for j = 1,3 do        arr[j] = j    endend
+Map基本结构允许Map有数组和Map的嵌套
+1234567info = &#123;name = &quot;WYK&quot;,age = 16&#125;info[&quot;gender&quot;] = &quot;男&quot;info.office = &quot;深圳&quot;a = &quot;xxx&quot;info[a..&quot;bb&quot;] = true -- info...
             
           </div>
         
@@ -985,12 +781,11 @@ wykrec.lua文件：
         
           <div class="truncate-text">
             
-               注释
+              注释
+注释：—
+多行注释: —[[           ]]—
 
-注释：–
-多行注释: --[[           ]]–
-
- 数据类型
+数据类型
 
 
 
@@ -1029,7 +824,8 @@ userdata
 
 
 
- 保留字
+
+保留字
 
 
 
@@ -1072,15 +868,13 @@ goto
 
 
 除此之外，Lua定义了很多内置全局变量以 _ + 大写字母构成，如_ABC
- 变量
-Lua为弱类型语言，变量无需声明
+变量Lua为弱类型语言，变量无需声明
 Lua变量为动态类型，可随时改变类型
 变量默认为全局变量
 局部变量以 local 声明
- 运算符
-大部分与C++相同，需要具体注意的：
+运算符大部分与C++相同，需要具体注意的：
 ^  幂乘
-// 整除  ...
+// 整除  在5.3版本后可...
             
           </div>
         
@@ -1111,7 +905,7 @@ Lua变量为动态类型，可随时改变类型
    
 
 
-<article id="post-C++/1.C++工作流程" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+<article id="post-C++/C++基础" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
    
   <div class="article-inner">
     <div class="article-main">
@@ -1122,7 +916,7 @@ Lua变量为动态类型，可随时改变类型
   
     
       <h1 itemprop="name">
-        <a class="p-name article-title" href="/2024/05/27/C++/1.C++%E5%B7%A5%E4%BD%9C%E6%B5%81%E7%A8%8B/">1. C++ 工作流程</a>
+        <a class="p-name article-title" href="/2024/05/27/C++/C++%E5%9F%BA%E7%A1%80/">1. C++ 基础</a>
       </h1>
     
   
@@ -1141,7 +935,7 @@ Lua变量为动态类型，可随时改变类型
   
           </div>
           <div class="wordcount need-seperator meta-info">
-            509 words 
+            4.2k words 
           </div>
         </div>
         
@@ -1152,14 +946,11 @@ Lua变量为动态类型，可随时改变类型
         
           <div class="truncate-text">
             
-               VS相关
- 解决方案
- 工作流程
-123456#include &lt;iostream&gt;int main()&#123;	std::cout&lt;&lt;&quot;Hello World&quot;&lt;&lt;endl;	std::cin.get();&#125;
+              VS相关解决方案工作流程123456#include &lt;iostream&gt;int main()&#123;	std::cout&lt;&lt;&quot;Hello World&quot;&lt;&lt;endl;	std::cin.get();&#125;
 预处理指令：预处理器接收源代码，并处理源代码中的预处理指令。预处理指令是以 #开头的指令，例如 #include、#define等。预处理器会处理这些指令，例如包含头文件、处理宏定义等，然后生成预处理后的源代码。
 编译：编译器接收预处理后的源代码，然后将源代码翻译成汇编代码。编译器在这个过程中会进行语法检查、类型检查、优化等操作。
 汇编：将文本文件转换为机器码，.cpp文件会被编译，但.h文件不会，.h文件会在预处理阶段被“copy”到.cpp文件中，编译的结果是一个object文件，在windows系统中，是.obj文件
-链接：链接器接收多个目标文件，然后将这些目标文件链接成一个可执行文件。链接器在这个过程中会解析目标文件中的符号（例如函数和变量的名称），并将这些符号链接到它们在可执行文件中的地址。...
+链接：链接器接收多个目标文件，然后将这些目标文件链接成一个可执行文件。链接器在这个过程中会解析目标文件中的符号（例如函数和变量的名称），并将这些符号链接到它们在可执行文件中的地址。此过程会将所...
             
           </div>
         
@@ -1171,7 +962,173 @@ Lua变量为动态类型，可随时改变类型
      
     <a class="right-panel  non-pic  "
       
-      href="/2024/05/27/C++/1.C++%E5%B7%A5%E4%BD%9C%E6%B5%81%E7%A8%8B/" 
+      href="/2024/05/27/C++/C++%E5%9F%BA%E7%A1%80/" 
+    >
+       
+      <i class="fa-solid fa-angle-right non-pic"></i>
+       
+    </a>
+     
+  </div>
+  
+</article>
+
+
+
+
+
+
+   
+
+
+<article id="post-The Missing Semester/The Missing Semester - 01 copy 2" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+   
+  <div class="article-inner">
+    <div class="article-main">
+      <header class="article-header">
+        
+<div class="main-title-bar">
+  <div class="main-title-dot"></div>
+  
+    
+      <h1 itemprop="name">
+        <a class="p-name article-title" href="/2024/05/24/The%20Missing%20Semester/The%20Missing%20Semester%20-%2001%20copy%202/">git</a>
+      </h1>
+    
+  
+</div>
+
+        <div class='meta-info-bar'>
+          <div class="meta-info">
+  <time class="dt-published" datetime="2024-05-24T08:20:08.000Z" itemprop="datePublished">2024-05-24</time>
+</div>
+          <div class="need-seperator meta-info">
+            <div class="meta-cate-flex">
+  
+  <a class="meta-cate-link" href="/categories/The-Missing-Semester/">The Missing Semester</a>
+   
+</div>
+  
+          </div>
+          <div class="wordcount need-seperator meta-info">
+            597 words 
+          </div>
+        </div>
+        
+      </header>
+      <div class="e-content article-entry" itemprop="articleBody">
+        
+          <div class="truncate-text">
+            
+              中文讲义：计算机教育中缺失的一课 · the missing semester of your cs education (missing-semester-cn.github.io)Git的数据结构文件、文件夹模型
+文件夹：树
+文件：“blob”对象
+
+历史记录模型git通过有向无环图来构建数据
+跟踪历史文件夹，形成文件夹快照
+fork：从某个历史节点分叉，创建对象副本
+merge：合并不同分支
+模型的具体实现12345678910type blob = array&lt;byte&gt;type tree = map&lt;string,tree|blob&gt;type commit = struct &#123;	parents: array&lt;commit&gt;	author: string	message:string	snapshot:tree&#125;type object = blob|tree|commit
+每一个object通过SHA-1哈希函数存储在一个哈希表中，映射到磁盘上
+git中的所有内容，都有自己的哈希值，用于寻址
+git可以更新，添加，但...
+            
+          </div>
+        
+      </div>
+
+         
+    </div>
+    
+     
+    <a class="right-panel  non-pic  "
+      
+      href="/2024/05/24/The%20Missing%20Semester/The%20Missing%20Semester%20-%2001%20copy%202/" 
+    >
+       
+      <i class="fa-solid fa-angle-right non-pic"></i>
+       
+    </a>
+     
+  </div>
+  
+</article>
+
+
+
+
+
+
+   
+
+
+<article id="post-The Missing Semester/The Missing Semester - 01 copy" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+   
+  <div class="article-inner">
+    <div class="article-main">
+      <header class="article-header">
+        
+<div class="main-title-bar">
+  <div class="main-title-dot"></div>
+  
+    
+      <h1 itemprop="name">
+        <a class="p-name article-title" href="/2024/05/21/The%20Missing%20Semester/The%20Missing%20Semester%20-%2001%20copy/">Shell工具和脚本</a>
+      </h1>
+    
+  
+</div>
+
+        <div class='meta-info-bar'>
+          <div class="meta-info">
+  <time class="dt-published" datetime="2024-05-21T10:48:41.099Z" itemprop="datePublished">2024-05-21</time>
+</div>
+          <div class="need-seperator meta-info">
+            <div class="meta-cate-flex">
+  
+  <a class="meta-cate-link" href="/categories/The-Missing-Semester/">The Missing Semester</a>
+   
+</div>
+  
+          </div>
+          <div class="wordcount need-seperator meta-info">
+            560 words 
+          </div>
+        </div>
+        
+      </header>
+      <div class="e-content article-entry" itemprop="articleBody">
+        
+          <div class="truncate-text">
+            
+              中文讲义：计算机教育中缺失的一课 · the missing semester of your cs education (missing-semester-cn.github.io)变量声明注意不能有空格
+1234var1=barecho $fooecho &quot;value is $foo&quot;    # value is barecho &#x27;value is $foo&#x27;    # value is $foo
+脚本示例
+如果有一个mcd.sh文件，它是如下定义的：
+1234mcd ()&#123;	mkdir -p &quot;$1&quot;	cd &quot;$1&quot;&#125;
+这表示：定义名为mcd的函数，接收一个参数，创建文件夹并进入该路径
+随后，在Shell中使用
+12source mcd.shmcd test
+即可使用该脚本
+各种关键字有很多作用
+$_ 上一个参数
+!! 上一个命令
+$? 错误代码
+$@ 展开所有参数
+Shell命令支持通配符，类似正则表达式，但存在一定区别
+展开关键字foo{a,b,c} = fooa foo...
+            
+          </div>
+        
+      </div>
+
+         
+    </div>
+    
+     
+    <a class="right-panel  non-pic  "
+      
+      href="/2024/05/21/The%20Missing%20Semester/The%20Missing%20Semester%20-%2001%20copy/" 
     >
        
       <i class="fa-solid fa-angle-right non-pic"></i>

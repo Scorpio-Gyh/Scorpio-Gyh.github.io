@@ -20,12 +20,12 @@
   <link rel="preload" href="/css/fonts/Roboto-Regular.ttf" as="font" type="font/ttf" crossorigin="anonymous">
   <link rel="preload" href="/css/fonts/Roboto-Bold.ttf" as="font" type="font/ttf" crossorigin="anonymous">
 
-  <meta name="description" content="协程 协程（coroutine）是一种可以暂停和恢复执行的计算机程序组件，它提供了一种强大的编程工具，可以用来处理多任务、非阻塞I&#x2F;O、状态机等复杂问题。  协程方法   coroutine.create(func): 创建一个新的协程。func是当协程被恢复时将要运行的函数。这个函数返回一个协程对象。 123local co &#x3D; coroutine.create(function ()">
+  <meta name="description" content="协程协程（coroutine）是一种可以暂停和恢复执行的计算机程序组件，它提供了一种强大的编程工具，可以用来处理多任务、非阻塞I&#x2F;O、状态机等复杂问题。 协程方法 coroutine.create(func): 创建一个新的协程。func是当协程被恢复时将要运行的函数。这个函数返回一个协程对象。 123local co &#x3D; coroutine.create(function ()    print">
 <meta property="og:type" content="article">
 <meta property="og:title" content="lua-Table">
 <meta property="og:url" content="https://scorpio-gyh.github.io/2024/06/26/lua/lua-%E5%8D%8F%E7%A8%8B/index.html">
 <meta property="og:site_name" content="Scorpio-Gyh_WYK">
-<meta property="og:description" content="协程 协程（coroutine）是一种可以暂停和恢复执行的计算机程序组件，它提供了一种强大的编程工具，可以用来处理多任务、非阻塞I&#x2F;O、状态机等复杂问题。  协程方法   coroutine.create(func): 创建一个新的协程。func是当协程被恢复时将要运行的函数。这个函数返回一个协程对象。 123local co &#x3D; coroutine.create(function ()">
+<meta property="og:description" content="协程协程（coroutine）是一种可以暂停和恢复执行的计算机程序组件，它提供了一种强大的编程工具，可以用来处理多任务、非阻塞I&#x2F;O、状态机等复杂问题。 协程方法 coroutine.create(func): 创建一个新的协程。func是当协程被恢复时将要运行的函数。这个函数返回一个协程对象。 123local co &#x3D; coroutine.create(function ()    print">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2024-06-26T01:30:41.000Z">
 <meta property="article:modified_time" content="2024-06-26T01:58:22.140Z">
@@ -216,7 +216,7 @@
       
         <a class="archive-link" href="/archives/2024/07 ">
           July 2024 
-          <div class="archive-count">3 </div>
+          <div class="archive-count">1 </div>
         </a>
       
         <a class="archive-link" href="/archives/2024/06 ">
@@ -240,21 +240,9 @@
       <h3 class="widget-title">Recent Posts</h3>
       <ul>
         
-          <a class="recent-link" href="/2024/07/02/C++/3.C++%E5%A4%B4%E6%96%87%E4%BB%B6/" title="3. C++ 基础变量和函数" >
-            <div class="recent-link-text">
-              3. C++ 基础变量和函数
-            </div>
-          </a>
-        
-          <a class="recent-link" href="/2024/07/02/C++/X.VisualStudio%E4%BD%BF%E7%94%A8/X.VisualStudio%E4%BD%BF%E7%94%A8/" title="X.Viusal Studio使用" >
+          <a class="recent-link" href="/2024/07/02/C++/X.VisualStudio%E4%BD%BF%E7%94%A8/" title="X.Viusal Studio使用" >
             <div class="recent-link-text">
               X.Viusal Studio使用
-            </div>
-          </a>
-        
-          <a class="recent-link" href="/2024/07/02/C++/2.C++%E5%9F%BA%E7%A1%80%E5%8F%98%E9%87%8F%E5%92%8C%E5%87%BD%E6%95%B0/" title="2. C++ 基础变量和函数" >
-            <div class="recent-link-text">
-              2. C++ 基础变量和函数
             </div>
           </a>
         
@@ -267,6 +255,18 @@
           <a class="recent-link" href="/2024/06/24/lua/lua-%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1/" title="lua-面向对象" >
             <div class="recent-link-text">
               lua-面向对象
+            </div>
+          </a>
+        
+          <a class="recent-link" href="/2024/06/15/lua/lua-%E5%85%83%E8%A1%A8%E5%92%8C%E5%85%83%E6%96%B9%E6%B3%95/" title="lua-元表和元方法" >
+            <div class="recent-link-text">
+              lua-元表和元方法
+            </div>
+          </a>
+        
+          <a class="recent-link" href="/2024/06/11/lua/lua-%E8%BF%AD%E4%BB%A3%E5%99%A8%E3%80%81%E6%A8%A1%E5%9D%97%E3%80%81%E9%97%AD%E5%8C%85/" title="lua-迭代器、模块、闭包" >
+            <div class="recent-link-text">
+              lua-迭代器、模块、闭包
             </div>
           </a>
         
@@ -323,48 +323,33 @@
       </header>
       <div class="e-content article-entry" itemprop="articleBody">
         
-          <h1 id="协程"><a class="markdownIt-Anchor" href="#协程"></a> 协程</h1>
-<p>协程（coroutine）是一种可以暂停和恢复执行的计算机程序组件，它提供了一种强大的编程工具，可以用来处理多任务、非阻塞I/O、状态机等复杂问题。</p>
-<h1 id="协程方法"><a class="markdownIt-Anchor" href="#协程方法"></a> 协程方法</h1>
-<ul>
-<li>
-<p><code>coroutine.create(func)</code>: 创建一个新的协程。<code>func</code>是当协程被恢复时将要运行的函数。这个函数返回一个协程对象。</p>
-<figure class="highlight lua"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">local</span> co = <span class="built_in">coroutine</span>.<span class="built_in">create</span>(<span class="function"><span class="keyword">function</span> <span class="params">()</span></span></span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&quot;Hello, coroutine!&quot;</span>)</span><br><span class="line"><span class="keyword">end</span>)</span><br></pre></td></tr></table></figure>
-</li>
-<li>
-<p><code>coroutine.resume(co, ...)</code>: 开始或继续执行协程 <code>co</code>。可选的参数 <code>...</code>会被传递给协程函数或 <code>coroutine.yield</code>。如果协程运行成功，<code>coroutine.resume</code>会返回 <code>true</code>，否则返回 <code>false</code>和错误信息。</p>
-<figure class="highlight lua"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">local</span> co = <span class="built_in">coroutine</span>.<span class="built_in">create</span>(<span class="function"><span class="keyword">function</span> <span class="params">(a, b)</span></span></span><br><span class="line">    <span class="built_in">print</span>(a + b)</span><br><span class="line"><span class="keyword">end</span>)</span><br><span class="line"><span class="built_in">coroutine</span>.<span class="built_in">resume</span>(co, <span class="number">1</span>, <span class="number">2</span>)  <span class="comment">-- 输出：3</span></span><br></pre></td></tr></table></figure>
-</li>
-<li>
-<p><code>coroutine.yield(...)</code>: 暂停协程的执行，并返回给 <code>coroutine.resume</code>任意数量的值。</p>
-<figure class="highlight lua"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">local</span> co = <span class="built_in">coroutine</span>.<span class="built_in">create</span>(<span class="function"><span class="keyword">function</span> <span class="params">()</span></span></span><br><span class="line">    <span class="keyword">for</span> i = <span class="number">1</span>, <span class="number">5</span> <span class="keyword">do</span></span><br><span class="line">        <span class="built_in">print</span>(i)</span><br><span class="line">        <span class="keyword">if</span> i == <span class="number">3</span> <span class="keyword">then</span> <span class="built_in">coroutine</span>.<span class="built_in">yield</span>() <span class="keyword">end</span></span><br><span class="line">    <span class="keyword">end</span></span><br><span class="line"><span class="keyword">end</span>)</span><br><span class="line"><span class="built_in">coroutine</span>.<span class="built_in">resume</span>(co)  <span class="comment">-- 输出：1 2 3</span></span><br><span class="line"><span class="built_in">coroutine</span>.<span class="built_in">resume</span>(co)  <span class="comment">-- 输出：4 5</span></span><br></pre></td></tr></table></figure>
-</li>
-<li>
-<p><code>coroutine.status(co)</code>: 返回协程 <code>co</code>的状态。可能的返回值有&quot;running&quot;、“suspended”、“normal&quot;和&quot;dead”。</p>
+          <h1 id="协程"><a href="#协程" class="headerlink" title="协程"></a>协程</h1><p>协程（coroutine）是一种可以暂停和恢复执行的计算机程序组件，它提供了一种强大的编程工具，可以用来处理多任务、非阻塞I/O、状态机等复杂问题。</p>
+<h1 id="协程方法"><a href="#协程方法" class="headerlink" title="协程方法"></a>协程方法</h1><ul>
+<li><p><code>coroutine.create(func)</code>: 创建一个新的协程。<code>func</code>是当协程被恢复时将要运行的函数。这个函数返回一个协程对象。</p>
+<figure class="highlight lua"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">local</span> co = <span class="built_in">coroutine</span>.<span class="built_in">create</span>(<span class="function"><span class="keyword">function</span> <span class="params">()</span></span></span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&quot;Hello, coroutine!&quot;</span>)</span><br><span class="line"><span class="keyword">end</span>)</span><br></pre></td></tr></table></figure></li>
+<li><p><code>coroutine.resume(co, ...)</code>: 开始或继续执行协程 <code>co</code>。可选的参数 <code>...</code>会被传递给协程函数或 <code>coroutine.yield</code>。如果协程运行成功，<code>coroutine.resume</code>会返回 <code>true</code>，否则返回 <code>false</code>和错误信息。</p>
+<figure class="highlight lua"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">local</span> co = <span class="built_in">coroutine</span>.<span class="built_in">create</span>(<span class="function"><span class="keyword">function</span> <span class="params">(a, b)</span></span></span><br><span class="line">    <span class="built_in">print</span>(a + b)</span><br><span class="line"><span class="keyword">end</span>)</span><br><span class="line"><span class="built_in">coroutine</span>.<span class="built_in">resume</span>(co, <span class="number">1</span>, <span class="number">2</span>)  <span class="comment">-- 输出：3</span></span><br></pre></td></tr></table></figure></li>
+<li><p><code>coroutine.yield(...)</code>: 暂停协程的执行，并返回给 <code>coroutine.resume</code>任意数量的值。</p>
+<figure class="highlight lua"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">local</span> co = <span class="built_in">coroutine</span>.<span class="built_in">create</span>(<span class="function"><span class="keyword">function</span> <span class="params">()</span></span></span><br><span class="line">    <span class="keyword">for</span> i = <span class="number">1</span>, <span class="number">5</span> <span class="keyword">do</span></span><br><span class="line">        <span class="built_in">print</span>(i)</span><br><span class="line">        <span class="keyword">if</span> i == <span class="number">3</span> <span class="keyword">then</span> <span class="built_in">coroutine</span>.<span class="built_in">yield</span>() <span class="keyword">end</span></span><br><span class="line">    <span class="keyword">end</span></span><br><span class="line"><span class="keyword">end</span>)</span><br><span class="line"><span class="built_in">coroutine</span>.<span class="built_in">resume</span>(co)  <span class="comment">-- 输出：1 2 3</span></span><br><span class="line"><span class="built_in">coroutine</span>.<span class="built_in">resume</span>(co)  <span class="comment">-- 输出：4 5</span></span><br></pre></td></tr></table></figure></li>
+<li><p><code>coroutine.status(co)</code>: 返回协程 <code>co</code>的状态。可能的返回值有”running”、”suspended”、”normal”和”dead”。</p>
 <ol>
 <li>“suspended”：协程已经被创建，但还没有开始运行，或者是在运行过程中调用了 <code>coroutine.yield</code>函数暂停了执行。</li>
-<li>“running”：协程正在运行。Lua不允许有多个协程同时运行，所以在任何时刻，最多只有一个协程处于&quot;running&quot;状态。</li>
+<li>“running”：协程正在运行。Lua不允许有多个协程同时运行，所以在任何时刻，最多只有一个协程处于”running”状态。</li>
 <li>“normal”：协程处于活动状态，但并没有在运行。它要么是因为正在等待主线程（在一个 <code>coroutine.resume</code>的调用中），要么是因为正在等待其他协程。</li>
 <li>“dead”：协程已经运行结束，或者在运行过程中发生了错误。</li>
 </ol>
-<figure class="highlight lua"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">local</span> co = <span class="built_in">coroutine</span>.<span class="built_in">create</span>(<span class="function"><span class="keyword">function</span> <span class="params">()</span></span> <span class="keyword">end</span>)</span><br><span class="line"><span class="built_in">print</span>(<span class="built_in">coroutine</span>.<span class="built_in">status</span>(co))  <span class="comment">-- 输出：suspended</span></span><br><span class="line"><span class="built_in">coroutine</span>.<span class="built_in">resume</span>(co)</span><br><span class="line"><span class="built_in">print</span>(<span class="built_in">coroutine</span>.<span class="built_in">status</span>(co))  <span class="comment">-- 输出：dead</span></span><br></pre></td></tr></table></figure>
-</li>
-<li>
-<p><code>coroutine.wrap(func)</code>: 创建一个新的协程，就像 <code>coroutine.create</code>，但返回的不是协程本身，而是一个函数。当这个函数被调用时，它会恢复协程。任何传递给这个函数的参数都会被传递给协程，作为 <code>coroutine.resume</code>的参数。这个函数返回协程的返回值，如果协程运行失败，它会抛出错误。</p>
-<figure class="highlight lua"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">local</span> co = <span class="built_in">coroutine</span>.<span class="built_in">wrap</span>(<span class="function"><span class="keyword">function</span> <span class="params">(a, b)</span></span></span><br><span class="line">    <span class="built_in">print</span>(a + b)</span><br><span class="line"><span class="keyword">end</span>)</span><br><span class="line">co(<span class="number">1</span>, <span class="number">2</span>)  <span class="comment">-- 输出：3</span></span><br></pre></td></tr></table></figure>
-</li>
-<li>
-<p><code>coroutine.running()</code>: 返回当前正在运行的协程。如果在主线程中调用，返回 <code>nil</code>。</p>
+<figure class="highlight lua"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">local</span> co = <span class="built_in">coroutine</span>.<span class="built_in">create</span>(<span class="function"><span class="keyword">function</span> <span class="params">()</span></span> <span class="keyword">end</span>)</span><br><span class="line"><span class="built_in">print</span>(<span class="built_in">coroutine</span>.<span class="built_in">status</span>(co))  <span class="comment">-- 输出：suspended</span></span><br><span class="line"><span class="built_in">coroutine</span>.<span class="built_in">resume</span>(co)</span><br><span class="line"><span class="built_in">print</span>(<span class="built_in">coroutine</span>.<span class="built_in">status</span>(co))  <span class="comment">-- 输出：dead</span></span><br></pre></td></tr></table></figure></li>
+<li><p><code>coroutine.wrap(func)</code>: 创建一个新的协程，就像 <code>coroutine.create</code>，但返回的不是协程本身，而是一个函数。当这个函数被调用时，它会恢复协程。任何传递给这个函数的参数都会被传递给协程，作为 <code>coroutine.resume</code>的参数。这个函数返回协程的返回值，如果协程运行失败，它会抛出错误。</p>
+<figure class="highlight lua"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">local</span> co = <span class="built_in">coroutine</span>.<span class="built_in">wrap</span>(<span class="function"><span class="keyword">function</span> <span class="params">(a, b)</span></span></span><br><span class="line">    <span class="built_in">print</span>(a + b)</span><br><span class="line"><span class="keyword">end</span>)</span><br><span class="line">co(<span class="number">1</span>, <span class="number">2</span>)  <span class="comment">-- 输出：3</span></span><br></pre></td></tr></table></figure></li>
+<li><p><code>coroutine.running()</code>: 返回当前正在运行的协程。如果在主线程中调用，返回 <code>nil</code>。</p>
 <figure class="highlight lua"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">local</span> co = <span class="built_in">coroutine</span>.<span class="built_in">create</span>(<span class="function"><span class="keyword">function</span> <span class="params">()</span></span></span><br><span class="line">    <span class="keyword">local</span> <span class="built_in">running</span> = <span class="built_in">coroutine</span>.<span class="built_in">running</span>()</span><br><span class="line">    <span class="built_in">print</span>(<span class="built_in">running</span>)</span><br><span class="line"><span class="keyword">end</span>)</span><br><span class="line"><span class="built_in">coroutine</span>.<span class="built_in">resume</span>(co)  <span class="comment">-- 输出：thread: 0x7f8c8e4001d0</span></span><br><span class="line"><span class="built_in">print</span>(<span class="built_in">coroutine</span>.<span class="built_in">running</span>())  <span class="comment">-- 输出：nil</span></span><br></pre></td></tr></table></figure>
 </li>
 </ul>
-<h1 id="协程返回值问题"><a class="markdownIt-Anchor" href="#协程返回值问题"></a> 协程返回值问题</h1>
-<p>注意以下示例：</p>
+<h1 id="协程返回值问题"><a href="#协程返回值问题" class="headerlink" title="协程返回值问题"></a>协程返回值问题</h1><p>注意以下示例：</p>
 <figure class="highlight lua"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">local</span> co = <span class="built_in">coroutine</span>.<span class="built_in">create</span>(<span class="function"><span class="keyword">function</span> <span class="params">(a, b)</span></span></span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&quot;Coroutine started. Initial parameters:&quot;</span>, a, b)</span><br><span class="line">    <span class="keyword">local</span> r = a + b</span><br><span class="line">    <span class="keyword">while</span> <span class="literal">true</span> <span class="keyword">do</span></span><br><span class="line">        <span class="built_in">print</span>(<span class="string">&quot;Coroutine yields:&quot;</span>, r)</span><br><span class="line">        a, b = <span class="built_in">coroutine</span>.<span class="built_in">yield</span>(r)</span><br><span class="line">        <span class="built_in">print</span>(<span class="string">&quot;Coroutine resumed. New parameters:&quot;</span>, a, b)</span><br><span class="line">        r = a + b</span><br><span class="line">    <span class="keyword">end</span></span><br><span class="line"><span class="keyword">end</span>)</span><br><span class="line"></span><br><span class="line"><span class="keyword">local</span> <span class="built_in">status</span>, result = <span class="built_in">coroutine</span>.<span class="built_in">resume</span>(co, <span class="number">1</span>, <span class="number">2</span>)</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;Main thread. Coroutine returned:&quot;</span>, result)</span><br><span class="line"></span><br><span class="line"><span class="built_in">status</span>, result = <span class="built_in">coroutine</span>.<span class="built_in">resume</span>(co, <span class="number">3</span>, <span class="number">4</span>)</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;Main thread. Coroutine returned:&quot;</span>, result)</span><br><span class="line"></span><br><span class="line"><span class="built_in">status</span>, result = <span class="built_in">coroutine</span>.<span class="built_in">resume</span>(co, <span class="number">5</span>, <span class="number">6</span>)</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;Main thread. Coroutine returned:&quot;</span>, result)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">--[[</span></span><br><span class="line"><span class="comment">返回值为：</span></span><br><span class="line"><span class="comment">Coroutine started. Initial parameters: 1 2</span></span><br><span class="line"><span class="comment">Coroutine yields: 3</span></span><br><span class="line"><span class="comment">Main thread. Coroutine returned: 3</span></span><br><span class="line"><span class="comment">Coroutine resumed. New parameters: 3 4</span></span><br><span class="line"><span class="comment">Coroutine yields: 7</span></span><br><span class="line"><span class="comment">Main thread. Coroutine returned: 7</span></span><br><span class="line"><span class="comment">Coroutine resumed. New parameters: 5 6</span></span><br><span class="line"><span class="comment">Coroutine yields: 11</span></span><br><span class="line"><span class="comment">Main thread. Coroutine returned: 11</span></span><br><span class="line"><span class="comment">]]</span><span class="comment">--</span></span><br></pre></td></tr></table></figure>
 <p><code>coroutine.resume</code>的参数（除了第一个参数，即协程对象）会成为 <code>coroutine.yield</code>的返回值，反过来，<code>coroutine.yield</code>的参数会成为 <code>coroutine.resume</code>的返回值（除了第一个布尔值的返回值）。</p>
 <p>这种机制使得协程可以在不同的恢复点接收不同的参数，这对于实现复杂的控制流程非常有用</p>
-<h1 id="一个生成器示例"><a class="markdownIt-Anchor" href="#一个生成器示例"></a> 一个生成器示例</h1>
-<figure class="highlight lua"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">integers</span><span class="params">()</span></span></span><br><span class="line">    <span class="keyword">local</span> i = <span class="number">0</span></span><br><span class="line">    <span class="keyword">return</span> <span class="built_in">coroutine</span>.<span class="built_in">create</span>(<span class="function"><span class="keyword">function</span> <span class="params">()</span></span></span><br><span class="line">        <span class="keyword">while</span> <span class="literal">true</span> <span class="keyword">do</span></span><br><span class="line">            i = i + <span class="number">1</span></span><br><span class="line">            <span class="built_in">coroutine</span>.<span class="built_in">yield</span>(i)</span><br><span class="line">        <span class="keyword">end</span></span><br><span class="line">    <span class="keyword">end</span>)</span><br><span class="line"><span class="keyword">end</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">local</span> gen = integers()</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> i = <span class="number">1</span>, <span class="number">5</span> <span class="keyword">do</span></span><br><span class="line">    <span class="built_in">print</span>(<span class="built_in">coroutine</span>.<span class="built_in">resume</span>(gen))</span><br><span class="line"><span class="keyword">end</span></span><br></pre></td></tr></table></figure>
+<h1 id="一个生成器示例"><a href="#一个生成器示例" class="headerlink" title="一个生成器示例"></a>一个生成器示例</h1><figure class="highlight lua"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">integers</span><span class="params">()</span></span></span><br><span class="line">    <span class="keyword">local</span> i = <span class="number">0</span></span><br><span class="line">    <span class="keyword">return</span> <span class="built_in">coroutine</span>.<span class="built_in">create</span>(<span class="function"><span class="keyword">function</span> <span class="params">()</span></span></span><br><span class="line">        <span class="keyword">while</span> <span class="literal">true</span> <span class="keyword">do</span></span><br><span class="line">            i = i + <span class="number">1</span></span><br><span class="line">            <span class="built_in">coroutine</span>.<span class="built_in">yield</span>(i)</span><br><span class="line">        <span class="keyword">end</span></span><br><span class="line">    <span class="keyword">end</span>)</span><br><span class="line"><span class="keyword">end</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">local</span> gen = integers()</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> i = <span class="number">1</span>, <span class="number">5</span> <span class="keyword">do</span></span><br><span class="line">    <span class="built_in">print</span>(<span class="built_in">coroutine</span>.<span class="built_in">resume</span>(gen))</span><br><span class="line"><span class="keyword">end</span></span><br></pre></td></tr></table></figure>
 <p>这个生成器会生成一个无限的整数序列。每次你恢复这个生成器，它都会生成下一个整数.</p>
 <p>每次获取整数后，可以对生成的数据进行处理。</p>
 
@@ -381,13 +366,13 @@
 <nav id="article-nav">
   <a class="article-nav-btn left "
     
-      href="/2024/07/02/C++/2.C++%E5%9F%BA%E7%A1%80%E5%8F%98%E9%87%8F%E5%92%8C%E5%87%BD%E6%95%B0/"
-      title="2. C++ 基础变量和函数"
+      href="/2024/07/02/C++/X.VisualStudio%E4%BD%BF%E7%94%A8/"
+      title="X.Viusal Studio使用"
      >
     <i class="fa-solid fa-angle-left"></i>
     <p class="title-text">
       
-        2. C++ 基础变量和函数
+        X.Viusal Studio使用
         
     </p>
   </a>

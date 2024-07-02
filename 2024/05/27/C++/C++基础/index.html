@@ -1,0 +1,506 @@
+<!DOCTYPE html>
+
+
+<html theme="dark" showBanner="true" hasBanner="true" > 
+<link href="https://cdn.staticfile.org/font-awesome/6.4.2/css/fontawesome.min.css" rel="stylesheet">
+<link href="https://cdn.staticfile.org/font-awesome/6.4.2/css/brands.min.css" rel="stylesheet">
+<link href="https://cdn.staticfile.org/font-awesome/6.4.2/css/solid.min.css" rel="stylesheet">
+<script src="/js/color.global.min.js" ></script>
+<script src="/js/load-settings.js" ></script>
+<head>
+  <meta charset="utf-8">
+  
+  
+  
+
+  
+  <title>1. C++ 基础 | Scorpio-Gyh_WYK</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <link rel="preload" href="/css/fonts/Roboto-Regular.ttf" as="font" type="font/ttf" crossorigin="anonymous">
+  <link rel="preload" href="/css/fonts/Roboto-Bold.ttf" as="font" type="font/ttf" crossorigin="anonymous">
+
+  <meta name="description" content="VS相关解决方案工作流程123456#include &lt;iostream&gt;int main()&#123;	std::cout&lt;&lt;&quot;Hello World&quot;&lt;&lt;endl;	std::cin.get();&#125; 预处理指令：预处理器接收源代码，并处理源代码中的预处理指令。预处理指令是以 #开头的指令，例如 #include、#define">
+<meta property="og:type" content="article">
+<meta property="og:title" content="1. C++ 基础">
+<meta property="og:url" content="https://scorpio-gyh.github.io/2024/05/27/C++/C++%E5%9F%BA%E7%A1%80/index.html">
+<meta property="og:site_name" content="Scorpio-Gyh_WYK">
+<meta property="og:description" content="VS相关解决方案工作流程123456#include &lt;iostream&gt;int main()&#123;	std::cout&lt;&lt;&quot;Hello World&quot;&lt;&lt;endl;	std::cin.get();&#125; 预处理指令：预处理器接收源代码，并处理源代码中的预处理指令。预处理指令是以 #开头的指令，例如 #include、#define">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2024-05-27T01:30:41.000Z">
+<meta property="article:modified_time" content="2024-07-02T12:39:01.318Z">
+<meta property="article:author" content="John Doe">
+<meta property="article:tag" content="C++">
+<meta name="twitter:card" content="summary">
+  
+    <link rel="alternate" href="/atom.xml" title="Scorpio-Gyh_WYK" type="application/atom+xml">
+  
+  
+    <link rel="icon" media="(prefers-color-scheme: light)" href="/images/favicon-light-32.png" sizes="32x32">
+    <link rel="icon" media="(prefers-color-scheme: light)" href="/images/favicon-light-128.png" sizes="128x128">
+    <link rel="icon" media="(prefers-color-scheme: light)" href="/images/favicon-light-180.png" sizes="180x180">
+    <link rel="icon" media="(prefers-color-scheme: light)" href="/images/favicon-light-192.png" sizes="192x192">
+    <link rel="icon" media="(prefers-color-scheme: dark)" href="/images/favicon-dark-32.png" sizes="32x32">
+    <link rel="icon" media="(prefers-color-scheme: dark)" href="/images/favicon-dark-128.png" sizes="128x128">
+    <link rel="icon" media="(prefers-color-scheme: dark)" href="/images/favicon-dark-180.png" sizes="180x180">
+    <link rel="icon" media="(prefers-color-scheme: dark)" href="/images/favicon-dark-192.png" sizes="192x192">
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  <link href="https://cdn.bootcss.com/KaTeX/0.7.1/katex.min.css" rel="stylesheet">
+<!-- hexo injector head_end start -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css">
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/hexo-math@4.0.0/dist/style.css">
+<!-- hexo injector head_end end --><meta name="generator" content="Hexo 7.2.0"></head>
+
+<body>
+  
+  
+    
+<div id="banner" class="">
+  <img src="/background.png" itemprop="image">
+  <div id="banner-dim"></div>
+</div>
+ 
+   
+  <div id="main-grid" class="  ">
+    <div id="nav" class=""  >
+      <navbar id="navbar">
+  <nav id="title-nav">
+    <a href="/">
+      <div id="vivia-logo">
+        <div class="dot"></div>
+        <div class="dot"></div>
+        <div class="dot"></div>
+        <div class="dot"></div>
+      </div>
+      <div>Scorpio-Gyh_WYK </div>
+    </a>
+  </nav>
+  <nav id="main-nav">
+    
+      <a class="main-nav-link" href="/">主页</a>
+    
+      <a class="main-nav-link" href="/archives">档案</a>
+    
+      <a class="main-nav-link" href="/about">关于我</a>
+    
+  </nav>
+  <nav id="sub-nav">
+    <a id="theme-btn" class="nav-icon">
+      <span class="light-mode-icon"><svg xmlns="http://www.w3.org/2000/svg" height="20" viewBox="0 -960 960 960" width="20"><path d="M438.5-829.913v-48q0-17.452 11.963-29.476 11.964-12.024 29.326-12.024 17.363 0 29.537 12.024t12.174 29.476v48q0 17.452-11.963 29.476-11.964 12.024-29.326 12.024-17.363 0-29.537-12.024T438.5-829.913Zm0 747.826v-48q0-17.452 11.963-29.476 11.964-12.024 29.326-12.024 17.363 0 29.537 12.024t12.174 29.476v48q0 17.452-11.963 29.476-11.964 12.024-29.326 12.024-17.363 0-29.537-12.024T438.5-82.087ZM877.913-438.5h-48q-17.452 0-29.476-11.963-12.024-11.964-12.024-29.326 0-17.363 12.024-29.537t29.476-12.174h48q17.452 0 29.476 11.963 12.024 11.964 12.024 29.326 0 17.363-12.024 29.537T877.913-438.5Zm-747.826 0h-48q-17.452 0-29.476-11.963-12.024-11.964-12.024-29.326 0-17.363 12.024-29.537T82.087-521.5h48q17.452 0 29.476 11.963 12.024 11.964 12.024 29.326 0 17.363-12.024 29.537T130.087-438.5Zm660.174-290.87-34.239 32q-12.913 12.674-29.565 12.174-16.653-.5-29.327-13.174-12.674-12.673-12.554-28.826.12-16.152 12.794-28.826l33-35q12.913-12.674 30.454-12.674t30.163 12.847q12.709 12.846 12.328 30.826-.38 17.98-13.054 30.653ZM262.63-203.978l-32 34q-12.913 12.674-30.454 12.674t-30.163-12.847q-12.709-12.846-12.328-30.826.38-17.98 13.054-30.653l33.239-31q12.913-12.674 29.565-12.174 16.653.5 29.327 13.174 12.674 12.673 12.554 28.826-.12 16.152-12.794 28.826Zm466.74 33.239-32-33.239q-12.674-12.913-12.174-29.565.5-16.653 13.174-29.327 12.673-12.674 28.826-13.054 16.152-.38 28.826 12.294l35 33q12.674 12.913 12.674 30.454t-12.847 30.163q-12.846 12.709-30.826 12.328-17.98-.38-30.653-13.054ZM203.978-697.37l-34-33q-12.674-12.913-13.174-29.945-.5-17.033 12.174-29.707t31.326-13.293q18.653-.62 31.326 13.054l32 34.239q11.674 12.913 11.174 29.565-.5 16.653-13.174 29.327-12.673 12.674-28.826 12.554-16.152-.12-28.826-12.794ZM480-240q-100 0-170-70t-70-170q0-100 70-170t170-70q100 0 170 70t70 170q0 100-70 170t-170 70Zm-.247-82q65.703 0 111.475-46.272Q637-414.544 637-480.247t-45.525-111.228Q545.95-637 480.247-637t-111.475 45.525Q323-545.95 323-480.247t45.525 111.975Q414.05-322 479.753-322ZM481-481Z"/></svg></span>
+      <span class="dark-mode-icon"><svg xmlns="http://www.w3.org/2000/svg" height="20" viewBox="0 -960 960 960" width="20"><path d="M480.239-116.413q-152.63 0-258.228-105.478Q116.413-327.37 116.413-480q0-130.935 77.739-227.435t206.304-125.043q43.022-9.631 63.87 10.869t3.478 62.805q-8.891 22.043-14.315 44.463-5.424 22.42-5.424 46.689 0 91.694 64.326 155.879 64.325 64.186 156.218 64.186 24.369 0 46.978-4.946 22.609-4.945 44.413-14.076 42.826-17.369 62.967 1.142 20.142 18.511 10.511 61.054Q807.174-280 712.63-198.206q-94.543 81.793-232.391 81.793Zm0-95q79.783 0 143.337-40.217 63.554-40.218 95.793-108.283-15.608 4.044-31.097 5.326-15.49 1.283-31.859.805-123.706-4.066-210.777-90.539-87.071-86.473-91.614-212.092-.24-16.369.923-31.978 1.164-15.609 5.446-30.978-67.826 32.478-108.282 96.152Q211.652-559.543 211.652-480q0 111.929 78.329 190.258 78.329 78.329 190.258 78.329ZM466.13-465.891Z"/></svg></span>
+    </a>
+    
+      <a id="nav-rss-link" class="nav-icon mobile-hide" href="/atom.xml" title="RSS Feed">
+        <svg xmlns="http://www.w3.org/2000/svg" height="20" viewBox="0 -960 960 960" width="20"><path d="M198-120q-25.846 0-44.23-18.384-18.384-18.385-18.384-44.23 0-25.846 18.384-44.23 18.384-18.385 44.23-18.385 25.846 0 44.23 18.385 18.384 18.384 18.384 44.23 0 25.845-18.384 44.23Q223.846-120 198-120Zm538.385 0q-18.846 0-32.923-13.769-14.076-13.769-15.922-33.23-8.692-100.616-51.077-188.654-42.385-88.039-109.885-155.539-67.5-67.501-155.539-109.885Q283-663.462 182.385-672.154q-19.461-1.846-33.23-16.23-13.769-14.385-13.769-33.846t14.076-32.922q14.077-13.461 32.923-12.23 120.076 8.692 226.038 58.768 105.961 50.077 185.73 129.846 79.769 79.769 129.846 185.731 50.077 105.961 58.769 226.038 1.231 18.846-12.538 32.922Q756.461-120 736.385-120Zm-252 0q-18.231 0-32.423-13.461t-18.653-33.538Q418.155-264.23 348.886-333.5q-69.27-69.27-166.501-84.423-20.077-4.462-33.538-18.961-13.461-14.5-13.461-33.346 0-19.076 13.884-33.23 13.884-14.153 33.115-10.922 136.769 15.384 234.384 112.999 97.615 97.615 112.999 234.384 3.231 19.23-10.538 33.115Q505.461-120 484.385-120Z"/></svg>
+      </a>
+    
+    <div id="nav-menu-btn" class="nav-icon">
+      <svg xmlns="http://www.w3.org/2000/svg" height="20" viewBox="0 -960 960 960" width="20"><path d="M177.37-252.282q-17.453 0-29.477-11.964-12.024-11.963-12.024-29.326t12.024-29.537q12.024-12.174 29.477-12.174h605.26q17.453 0 29.477 11.964 12.024 11.963 12.024 29.326t-12.024 29.537q-12.024 12.174-29.477 12.174H177.37Zm0-186.218q-17.453 0-29.477-11.963-12.024-11.964-12.024-29.326 0-17.363 12.024-29.537T177.37-521.5h605.26q17.453 0 29.477 11.963 12.024 11.964 12.024 29.326 0 17.363-12.024 29.537T782.63-438.5H177.37Zm0-186.217q-17.453 0-29.477-11.964-12.024-11.963-12.024-29.326t12.024-29.537q12.024-12.174 29.477-12.174h605.26q17.453 0 29.477 11.964 12.024 11.963 12.024 29.326t-12.024 29.537q-12.024 12.174-29.477 12.174H177.37Z"/></svg>
+    </div>
+  </nav>
+</navbar>
+<div id="nav-dropdown" class="hidden">
+  <div id="dropdown-link-list">
+    
+      <a class="nav-dropdown-link" href="/">主页</a>
+    
+      <a class="nav-dropdown-link" href="/archives">档案</a>
+    
+      <a class="nav-dropdown-link" href="/about">关于我</a>
+    
+    
+      <a class="nav-dropdown-link" href="/atom.xml" title="RSS Feed">RSS</a>
+     
+    </div>
+</div>
+<script>
+  let dropdownBtn = document.getElementById("nav-menu-btn");
+  let dropdownEle = document.getElementById("nav-dropdown");
+  dropdownBtn.onclick = function() {
+    dropdownEle.classList.toggle("hidden");
+  }
+</script>
+    </div>
+    <div id="sidebar-wrapper">
+      <sidebar id="sidebar">
+  
+    <div class="widget-wrap">
+  <div class="info-card">
+    <div class="avatar">
+      
+        <image src=/pic.jpg></image>
+      
+      <div class="img-dim"></div>
+    </div>
+    <div class="info">
+      <div class="username">WYK </div>
+      <div class="dot"></div>
+      <div class="subtitle">This is the subtitle </div>
+      <div class="link-list">
+        
+          <a class="link-btn" target="_blank" rel="noopener" href="https://twitter.com" title="Twitter"><i class="fa-brands fa-twitter"></i></a>
+        
+          <a class="link-btn" target="_blank" rel="noopener" href="https://store.steampowered.com" title="Steam"><i class="fa-brands fa-steam"></i></a>
+        
+          <a class="link-btn" target="_blank" rel="noopener" href="https://github.com" title="GitHub"><i class="fa-brands fa-github"></i></a>
+         
+      </div>  
+    </div>
+  </div>
+</div>
+
+  
+  <div class="sticky">
+    
+      
+
+
+  <div class="widget-wrap">
+    <div class="widget">
+      <h3 class="widget-title">Categories</h3>
+      <div class="category-box">
+            <a class="category-link" href="/categories/%E7%BC%96%E8%AF%91%E5%8E%9F%E7%90%86/">
+                编译原理
+                <div class="category-count">1</div>
+            </a>
+        
+            <a class="category-link" href="/categories/Games-104/">
+                Games 104
+                <div class="category-count">1</div>
+            </a>
+        
+            <a class="category-link" href="/categories/The-Missing-Semester/">
+                The Missing Semester
+                <div class="category-count">3</div>
+            </a>
+        
+            <a class="category-link" href="/categories/lua/">
+                lua
+                <div class="category-count">4</div>
+            </a>
+        
+            <a class="category-link" href="/categories/%E8%AE%A1%E5%88%92/">
+                计划
+                <div class="category-count">1</div>
+            </a>
+        
+            <a class="category-link" href="/categories/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/">
+                虚幻引擎
+                <div class="category-count">2</div>
+            </a>
+        </div>
+    </div>
+  </div>
+
+
+    
+      
+  <div class="widget-wrap">
+    <div class="widget">
+      <h3 class="widget-title">Tags</h3>
+      <ul class="widget-tag-list" itemprop="keywords"><li class="widget-tag-list-item"><a class="widget-tag-list-link" href="/tags/C/" rel="tag">C++</a></li><li class="widget-tag-list-item"><a class="widget-tag-list-link" href="/tags/lua/" rel="tag">lua</a></li><li class="widget-tag-list-item"><a class="widget-tag-list-link" href="/tags/%E6%B8%B8%E6%88%8F%E5%BC%95%E6%93%8E/" rel="tag">游戏引擎</a></li><li class="widget-tag-list-item"><a class="widget-tag-list-link" href="/tags/%E7%BC%96%E8%AF%91%E5%8E%9F%E7%90%86/" rel="tag">编译原理</a></li><li class="widget-tag-list-item"><a class="widget-tag-list-link" href="/tags/%E8%AE%A1%E5%88%92/" rel="tag">计划</a></li></ul>
+    </div>
+  </div>
+
+
+    
+      
+  <div class="widget-wrap">
+    <div class="widget">
+      <h3 class="widget-title">Archives</h3>
+      
+      
+        <a class="archive-link" href="/archives/2024/07 ">
+          July 2024 
+          <div class="archive-count">1 </div>
+        </a>
+      
+        <a class="archive-link" href="/archives/2024/06 ">
+          June 2024 
+          <div class="archive-count">5 </div>
+        </a>
+      
+        <a class="archive-link" href="/archives/2024/05 ">
+          May 2024 
+          <div class="archive-count">10 </div>
+        </a>
+      
+    </div>
+  </div>
+
+
+    
+      
+  <div class="widget-wrap">
+    <div class="widget">
+      <h3 class="widget-title">Recent Posts</h3>
+      <ul>
+        
+          <a class="recent-link" href="/2024/07/02/C++/X.VisualStudio%E4%BD%BF%E7%94%A8/" title="X.Viusal Studio使用" >
+            <div class="recent-link-text">
+              X.Viusal Studio使用
+            </div>
+          </a>
+        
+          <a class="recent-link" href="/2024/06/26/lua/lua-%E5%8D%8F%E7%A8%8B/" title="lua-Table" >
+            <div class="recent-link-text">
+              lua-Table
+            </div>
+          </a>
+        
+          <a class="recent-link" href="/2024/06/24/lua/lua-%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1/" title="lua-面向对象" >
+            <div class="recent-link-text">
+              lua-面向对象
+            </div>
+          </a>
+        
+          <a class="recent-link" href="/2024/06/15/lua/lua-%E5%85%83%E8%A1%A8%E5%92%8C%E5%85%83%E6%96%B9%E6%B3%95/" title="lua-元表和元方法" >
+            <div class="recent-link-text">
+              lua-元表和元方法
+            </div>
+          </a>
+        
+          <a class="recent-link" href="/2024/06/11/lua/lua-%E8%BF%AD%E4%BB%A3%E5%99%A8%E3%80%81%E6%A8%A1%E5%9D%97%E3%80%81%E9%97%AD%E5%8C%85/" title="lua-迭代器、模块、闭包" >
+            <div class="recent-link-text">
+              lua-迭代器、模块、闭包
+            </div>
+          </a>
+        
+      </ul>
+    </div>
+  </div>
+
+    
+  </div>
+</sidebar>
+    </div>
+    <div id="content-body">
+       
+
+
+<article id="post-C++/C++基础" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  
+    
+   
+  <div class="article-inner">
+    <div class="article-main">
+      <header class="article-header">
+        
+<div class="main-title-bar">
+  <div class="main-title-dot"></div>
+  
+    
+      <h1 class="p-name article-title" itemprop="headline name">
+        1. C++ 基础
+      </h1>
+    
+  
+</div>
+
+        <div class='meta-info-bar'>
+          <div class="meta-info">
+  <time class="dt-published" datetime="2024-05-27T01:30:41.000Z" itemprop="datePublished">2024-05-27</time>
+</div>
+          <div class="need-seperator meta-info">
+            <div class="meta-cate-flex">
+  
+    Uncategorized 
+   
+</div>
+  
+          </div>
+          <div class="wordcount need-seperator meta-info">
+            4.2k words 
+          </div>
+        </div>
+        
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/C/" rel="tag">C++</a></li></ul>
+
+      </header>
+      <div class="e-content article-entry" itemprop="articleBody">
+        
+          <h1 id="VS相关"><a href="#VS相关" class="headerlink" title="VS相关"></a>VS相关</h1><h2 id="解决方案"><a href="#解决方案" class="headerlink" title="解决方案"></a>解决方案</h2><h1 id="工作流程"><a href="#工作流程" class="headerlink" title="工作流程"></a>工作流程</h1><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;iostream&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">	std::cout&lt;&lt;<span class="string">&quot;Hello World&quot;</span>&lt;&lt;endl;</span><br><span class="line">	std::cin.<span class="built_in">get</span>();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><strong>预处理指令</strong>：预处理器接收源代码，并处理源代码中的预处理指令。预处理指令是以 <code>#</code>开头的指令，例如 <code>#include</code>、<code>#define</code>等。预处理器会处理这些指令，例如包含头文件、处理宏定义等，然后生成预处理后的源代码。</p>
+<p><strong>编译</strong>：编译器接收预处理后的源代码，然后将源代码翻译成汇编代码。编译器在这个过程中会进行语法检查、类型检查、优化等操作。</p>
+<p><strong>汇编</strong>：将文本文件转换为机器码，.cpp文件会被编译，但.h文件不会，.h文件会在预处理阶段被“copy”到.cpp文件中，编译的结果是一个object文件，在windows系统中，是.obj文件</p>
+<p><strong>链接</strong>：链接器接收多个目标文件，然后将这些目标文件链接成一个可执行文件。链接器在这个过程中会解析目标文件中的符号（例如函数和变量的名称），并将这些符号链接到它们在可执行文件中的地址。此过程会将所有obj缝合，构建依赖关系，并形成exe文件。</p>
+<h1 id="数据类型"><a href="#数据类型" class="headerlink" title="数据类型"></a>数据类型</h1><p><strong>整数类型</strong> ：</p>
+<ul>
+<li><code>short</code>: 通常占用2字节，取值范围通常为-32768到32767。</li>
+<li><code>int</code>: 通常占用4字节，取值范围通常为-2147483648到2147483647。</li>
+<li><code>long</code>: 在32位系统上通常占用4字节，在64位系统上通常占用8字节。</li>
+<li><code>long long</code>: 通常占用8字节，取值范围通常为-9223372036854775808到9223372036854775807。</li>
+</ul>
+<p><strong>字符类型</strong> ：</p>
+<ul>
+<li><code>char</code>: 占用1字节，取值范围通常为-128到127或0到255。</li>
+<li><code>wchar_t</code>: 用于表示宽字符，通常占用2或4字节。</li>
+</ul>
+<p><strong>浮点数类型</strong> ：</p>
+<ul>
+<li><code>float</code>: 占用4字节。</li>
+<li><code>double</code>: 占用8字节。</li>
+<li><code>long double</code>: 占用的字节数依赖于具体的实现，通常为8字节或12字节或16字节。</li>
+</ul>
+<p><strong>布尔类型</strong> ：</p>
+<ul>
+<li><code>bool</code>: 占用1字节，取值为 <code>true</code>或 <code>false</code>。</li>
+</ul>
+<p><strong>空类型</strong> ：</p>
+<ul>
+<li><code>void</code>: 无值，通常用于表示函数无返回值或指针无指向类型。</li>
+</ul>
+<h1 id="函数"><a href="#函数" class="headerlink" title="函数"></a>函数</h1><p>函数基本结构</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="function">return_type <span class="title">function_name</span><span class="params">( parameter list )</span> </span>&#123;</span><br><span class="line">   <span class="comment">//body of the function</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<ul>
+<li><code>return_type</code>：这是函数返回的数据类型。如果函数不返回值，则返回类型为 <code>void</code>。</li>
+<li><code>function_name</code>：这是函数的名称。函数名和参数列表共同构成了函数签名。</li>
+<li><code>parameter list</code>：这是传递给函数的参数列表，参数可以是任何类型，包括基本类型、复合类型、指针、引用等。参数列表可以为空。</li>
+<li><code>body of the function</code>：这是函数的主体，包含了函数的具体实现。</li>
+</ul>
+<p>函数可以被定义在其他函数之外（全局函数），也可以被定义在类或结构体中（成员函数）。函数可以被其他函数调用，也可以递归地调用自身。</p>
+<p>函数可以被声明为 <code>inline</code>，这会建议编译器将函数体直接插入到每个调用点，以减少函数调用的开销。</p>
+<p>函数可以被声明为 <code>constexpr</code>，这表示函数可以在编译时计算结果，这对于模板元编程和编译时计算非常有用。</p>
+<p>函数可以被声明为 <code>virtual</code>，这表示函数可以被子类覆盖。如果函数被声明为 <code>pure virtual</code>，则该函数没有默认实现，必须由子类提供实现。</p>
+<h1 id="头文件"><a href="#头文件" class="headerlink" title="头文件"></a>头文件</h1><p>头文件是一种源代码文件，通常包含函数声明、宏定义、类型定义（如类、结构体和枚举的定义）等。头文件的主要目的是提供接口，使得源代码文件可以共享和重用代码。</p>
+<p>头文件通常具有 <code>.h</code>或 <code>.hpp</code>扩展名（在C++中）。当你在源代码文件中使用 <code>#include</code>预处理指令来包含头文件时，预处理器会将整个头文件的内容复制到该指令的位置。</p>
+<p>例如，如果你有一个名为 <code>my_functions.h</code>的头文件，其中包含了一些函数的声明，你可以在另一个源代码文件中使用以下指令来包含这个头文件：</p>
+<p><strong>#include</strong> <strong>“my_functions.h”</strong></p>
+<p>这样，你就可以在这个源代码文件中调用 <code>my_functions.h</code>中声明的函数了。</p>
+<p>注意，为了防止头文件的内容在同一编译单元中被多次包含，通常会在头文件中使用预处理指令 <code>#ifndef</code>、<code>#define</code>和 <code>#endif</code>来设置包含保护。例如：</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">ifndef</span> MY_FUNCTIONS_H</span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> MY_FUNCTIONS_H</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// function declarations, type definitions, etc.</span></span><br><span class="line"></span><br><span class="line"><span class="meta">#<span class="keyword">endif</span></span></span><br></pre></td></tr></table></figure>
+<p>这样，即使在同一源代码文件中多次包含这个头文件，头文件的内容也只会被包含一次。</p>
+<p><strong>#pragma once 是使得头文件只被包含一次</strong></p>
+<p>“” 一般用于相对位置，但也可包含&lt;&gt;的作用</p>
+<p>&lt;&gt;用于包含编译器定义的文件目录</p>
+<h1 id="指针"><a href="#指针" class="headerlink" title="指针"></a>指针</h1><p>指针本质上就是一个整数，该整数指定了内存地址（存放变量的起始地址），指针的类型仅仅指定了访问时所取的内存长度</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">int</span> x = <span class="number">10</span>;</span><br><span class="line"><span class="type">int</span>* p = &amp;x;  <span class="comment">// p是一个指向x的指针// 解引用p，获取x的值</span></span><br><span class="line"><span class="type">int</span> y = *p;  <span class="comment">// y现在是10// 通过解引用p来修改x的值</span></span><br><span class="line">*p = <span class="number">20</span>;  <span class="comment">// x现在是20</span></span><br></pre></td></tr></table></figure>
+<h1 id="引用"><a href="#引用" class="headerlink" title="引用"></a>引用</h1><p>引用可以被理解为指针的一种语法糖，和指针没有本质区别，可被理解为指针的简化写法</p>
+<h1 id="类"><a href="#类" class="headerlink" title="类"></a>类</h1><p>类（class）是一种用户定义的数据类型，它封装了数据和操作数据的函数。类提供了面向对象编程的基础，包括封装、继承和多态</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">MyClass</span> &#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="built_in">MyClass</span>(<span class="type">int</span> a) : <span class="built_in">a</span>(a) &#123;&#125;  <span class="comment">// 构造函数  </span></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">getA</span><span class="params">()</span> <span class="type">const</span> </span>&#123; <span class="keyword">return</span> a; &#125;  <span class="comment">// 成员函数  </span></span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">setA</span><span class="params">(<span class="type">int</span> a)</span> </span>&#123; <span class="keyword">this</span>-&gt;a = a; &#125;  <span class="comment">// 成员函数private:</span></span><br><span class="line">    <span class="type">int</span> a;  <span class="comment">// 数据成员</span></span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<h2 id="类和结构体"><a href="#类和结构体" class="headerlink" title="类和结构体"></a>类和结构体</h2><p>最主要区别在于默认的访问权限，class为私有，struct为公有</p>
+<p>当需要一个全公开的数据结构，倾向于使用结构体</p>
+<h2 id="构造、析构"><a href="#构造、析构" class="headerlink" title="构造、析构"></a>构造、析构</h2><ul>
+<li>构造函数是一种特殊的成员函数，它在创建类的新对象时被调用。构造函数的名称与类的名称相同，没有返回类型</li>
+<li>析构函数是一种特殊的成员函数，它在一个对象即将被销毁时被调用。析构函数的名称是类的名称前面加上一个波浪符（~）</li>
+</ul>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">MyClass</span> &#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="built_in">MyClass</span>() &#123;</span><br><span class="line">        std::cout &lt;&lt; <span class="string">&quot;Object is created&quot;</span> &lt;&lt; std::endl;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    ~<span class="built_in">MyClass</span>() &#123;  <span class="comment">// 析构函数</span></span><br><span class="line">        std::cout &lt;&lt; <span class="string">&quot;Object is destroyed&quot;</span> &lt;&lt; std::endl;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<h2 id="友元函数和友元类"><a href="#友元函数和友元类" class="headerlink" title="友元函数和友元类"></a>友元函数和友元类</h2><ol>
+<li><strong>友元函数</strong> ：友元函数是定义在类外部，但有权访问类的所有私有和保护成员的函数。友元函数不是类的成员函数，也不受类的访问控制规则约束，但需要在类内部进行声明。</li>
+</ol>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">MyClass</span> &#123;</span><br><span class="line"><span class="keyword">private</span>:</span><br><span class="line">    <span class="type">int</span> secret = <span class="number">0</span>;<span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">friend</span> <span class="type">void</span> <span class="title">revealSecret</span><span class="params">(MyClass&amp; mc)</span></span>;  <span class="comment">// 声明友元函数</span></span><br><span class="line">&#125;;</span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">revealSecret</span><span class="params">(MyClass&amp; mc)</span> </span>&#123;  <span class="comment">// 定义友元函数</span></span><br><span class="line">    std::cout &lt;&lt; mc.secret &lt;&lt; std::endl;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<ol>
+<li><strong>友元类</strong> ：友元类的所有成员函数都可以访问其友元类的私有和保护成员。声明类B为类A的友元，只需要在类A的定义中包含 <code>friend class B;</code>。</li>
+</ol>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">A</span> &#123;</span><br><span class="line"><span class="keyword">private</span>:</span><br><span class="line">    <span class="type">int</span> secret = <span class="number">0</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="keyword">friend</span> <span class="keyword">class</span> <span class="title class_">B</span>;  <span class="comment">// 声明B为A的友元类</span></span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">B</span> &#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="type">void</span> <span class="title">revealSecret</span><span class="params">(A&amp; a)</span> </span>&#123;  <span class="comment">// B可以访问A的私有成员</span></span><br><span class="line">        std::cout &lt;&lt; a.secret &lt;&lt; std::endl;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<p>友元提供了一种逃避C++的封装性的机制。</p>
+<p>然而，过度使用友元可能会导致代码的维护性和可读性降低，因此应谨慎使用。</p>
+<h2 id="访问控制、可见性"><a href="#访问控制、可见性" class="headerlink" title="访问控制、可见性"></a>访问控制、可见性</h2><p>public：公有成员在类的内部和外部都是可见的</p>
+<p>private：私有成员只在类的内部可见。你不能在类的外部访问或修改私有成员。</p>
+<p>protect：受保护成员在类的内部和其派生类中可见</p>
+<h1 id="static"><a href="#static" class="headerlink" title="static"></a>static</h1><ol>
+<li><strong>静态局部变量</strong> ：在函数内部，<code>static</code>关键字可以用来声明静态局部变量。这些变量在程序的生命周期内只被初始化一次，而不是每次调用函数时都被初始化。它们的值在函数调用之间保持不变。</li>
+</ol>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="type">void</span> <span class="title">func</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="type">static</span> <span class="type">int</span> x = <span class="number">0</span>;</span><br><span class="line">    x++;</span><br><span class="line">    std::cout &lt;&lt; x &lt;&lt; std::endl;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<ol>
+<li><strong>静态类成员</strong> ：在类中，<code>static</code>关键字可以用来声明静态成员变量和静态成员函数。静态成员变量在所有类的实例中共享，而静态成员函数没有 <code>this</code>指针，只能访问类的静态成员。</li>
+</ol>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">MyClass</span> &#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="type">static</span> <span class="type">int</span> x;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="type">static</span> <span class="type">void</span> <span class="title">func</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        x++;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="type">int</span> MyClass::x = <span class="number">0</span>;  <span class="comment">// 静态成员变量需要在类外部初始化</span></span><br></pre></td></tr></table></figure>
+<ol>
+<li><strong>静态全局变量和函数</strong> ：在全局作用域中，<code>static</code>关键字可以用来限制变量或函数的链接范围到当前文件。这意味着，静态全局变量或函数在其他文件中是不可见的。</li>
+</ol>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">static</span> <span class="type">int</span> x = <span class="number">0</span>;  <span class="comment">// 只在当前文件可见</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">static</span> <span class="type">void</span> <span class="title">func</span><span class="params">()</span> </span>&#123;  <span class="comment">// 只在当前文件可见</span></span><br><span class="line">    x++;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>这些是 <code>static</code>关键字在C++中的主要用法。需要注意的是，<code>static</code>关键字的具体含义取决于它的上下文。</p>
+<h1 id="enum枚举类"><a href="#enum枚举类" class="headerlink" title="enum枚举类"></a>enum枚举类</h1><p>枚举（enum）是一种用户定义的类型，它由一组命名的整数常量组成。</p>
+<p>枚举类（enum class）是C++11引入的一种新的枚举类型，它提供了更强的类型安全和更好的作用域规则。</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">enum class</span> <span class="title class_">Color</span> &#123;</span><br><span class="line">    Red,</span><br><span class="line">    Green,</span><br><span class="line">    Blue</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+        
+      </div>
+
+         
+    </div>
+    
+     
+  </div>
+  
+    
+<nav id="article-nav">
+  <a class="article-nav-btn left "
+    
+      href="/2024/05/27/lua/lua-%E5%9F%BA%E7%A1%80%E8%AF%AD%E6%B3%95/"
+      title="lua基础语法"
+     >
+    <i class="fa-solid fa-angle-left"></i>
+    <p class="title-text">
+      
+        lua基础语法
+        
+    </p>
+  </a>
+  <a class="article-nav-btn right "
+    
+      href="/2024/05/24/The%20Missing%20Semester/The%20Missing%20Semester%20-%2001%20copy%202/"
+      title="git"
+     >
+
+    <p class="title-text">
+      
+        git
+        
+    </p>
+    <i class="fa-solid fa-angle-right"></i>
+  </a>
+</nav>
+
+
+  
+</article>
+
+
+
+
+
+    </div>
+    <div id="footer-wrapper">
+      <footer id="footer">
+  
+  <div id="footer-info" class="inner">
+    
+    &copy; 2024 WYK<br>
+    Powered by <a href="https://hexo.io/" target="_blank">Hexo</a> & Theme <a target="_blank" rel="noopener" href="https://github.com/saicaca/hexo-theme-vivia">Vivia</a>
+  </div>
+</footer>
+
+    </div>
+    <div class="back-to-top-wrapper">
+    <button id="back-to-top-btn" class="back-to-top-btn hide" onclick="topFunction()">
+        <i class="fa-solid fa-angle-up"></i>
+    </button>
+</div>
+
+<script>
+    function topFunction() {
+        window.scroll({ top: 0, behavior: 'smooth' });
+    }
+    let btn = document.getElementById('back-to-top-btn');
+    function scrollFunction() {
+        if (document.body.scrollTop > 600 || document.documentElement.scrollTop > 600) {
+            btn.classList.remove('hide')
+        } else {
+            btn.classList.add('hide')
+        }
+    }
+    window.onscroll = function() {
+        scrollFunction();
+    }
+</script>
+
+  </div>
+  <script src="/js/light-dark-switch.js"></script>
+</body>
+</html>

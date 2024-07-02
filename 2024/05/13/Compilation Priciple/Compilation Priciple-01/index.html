@@ -20,12 +20,12 @@
   <link rel="preload" href="/css/fonts/Roboto-Regular.ttf" as="font" type="font/ttf" crossorigin="anonymous">
   <link rel="preload" href="/css/fonts/Roboto-Bold.ttf" as="font" type="font/ttf" crossorigin="anonymous">
 
-  <meta name="description" content="编译器  将源代码翻译成目标代码，如C++编译为x86，Arm架构的计算机等    解释器  将源代码解释，生成计算结果    编译器高层结构  编译器是一个高层模块化的软件系统 一个典型的无优化的简单编译器结构    一个简单编译器实例   源语言：加法表达式Sum  两种语法形式：  整形数字 n 加法 e1 + e2      栈式计算机(例如jvm)  一个操作数栈 两条指令：  压栈指">
+  <meta name="description" content="编译器 将源代码翻译成目标代码，如C++编译为x86，Arm架构的计算机等  解释器 将源代码解释，生成计算结果  编译器高层结构 编译器是一个高层模块化的软件系统 一个典型的无优化的简单编译器结构  一个简单编译器实例 源语言：加法表达式Sum  两种语法形式： 整形数字 n 加法 e1 + e2     栈式计算机(例如jvm)  一个操作数栈 两条指令： 压栈指令 push n 加法指令 a">
 <meta property="og:type" content="article">
 <meta property="og:title" content="编译原理-01">
 <meta property="og:url" content="https://scorpio-gyh.github.io/2024/05/13/Compilation%20Priciple/Compilation%20Priciple-01/index.html">
 <meta property="og:site_name" content="Scorpio-Gyh_WYK">
-<meta property="og:description" content="编译器  将源代码翻译成目标代码，如C++编译为x86，Arm架构的计算机等    解释器  将源代码解释，生成计算结果    编译器高层结构  编译器是一个高层模块化的软件系统 一个典型的无优化的简单编译器结构    一个简单编译器实例   源语言：加法表达式Sum  两种语法形式：  整形数字 n 加法 e1 + e2      栈式计算机(例如jvm)  一个操作数栈 两条指令：  压栈指">
+<meta property="og:description" content="编译器 将源代码翻译成目标代码，如C++编译为x86，Arm架构的计算机等  解释器 将源代码解释，生成计算结果  编译器高层结构 编译器是一个高层模块化的软件系统 一个典型的无优化的简单编译器结构  一个简单编译器实例 源语言：加法表达式Sum  两种语法形式： 整形数字 n 加法 e1 + e2     栈式计算机(例如jvm)  一个操作数栈 两条指令： 压栈指令 push n 加法指令 a">
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="https://scorpio-gyh.github.io/2024/05/13/Compilation%20Priciple/Compilation%20Priciple-01/1.png">
 <meta property="og:image" content="https://scorpio-gyh.github.io/2024/05/13/Compilation%20Priciple/Compilation%20Priciple-01/2.png">
@@ -221,7 +221,7 @@
       
         <a class="archive-link" href="/archives/2024/07 ">
           July 2024 
-          <div class="archive-count">3 </div>
+          <div class="archive-count">1 </div>
         </a>
       
         <a class="archive-link" href="/archives/2024/06 ">
@@ -245,21 +245,9 @@
       <h3 class="widget-title">Recent Posts</h3>
       <ul>
         
-          <a class="recent-link" href="/2024/07/02/C++/3.C++%E5%A4%B4%E6%96%87%E4%BB%B6/" title="3. C++ 基础变量和函数" >
-            <div class="recent-link-text">
-              3. C++ 基础变量和函数
-            </div>
-          </a>
-        
-          <a class="recent-link" href="/2024/07/02/C++/X.VisualStudio%E4%BD%BF%E7%94%A8/X.VisualStudio%E4%BD%BF%E7%94%A8/" title="X.Viusal Studio使用" >
+          <a class="recent-link" href="/2024/07/02/C++/X.VisualStudio%E4%BD%BF%E7%94%A8/" title="X.Viusal Studio使用" >
             <div class="recent-link-text">
               X.Viusal Studio使用
-            </div>
-          </a>
-        
-          <a class="recent-link" href="/2024/07/02/C++/2.C++%E5%9F%BA%E7%A1%80%E5%8F%98%E9%87%8F%E5%92%8C%E5%87%BD%E6%95%B0/" title="2. C++ 基础变量和函数" >
-            <div class="recent-link-text">
-              2. C++ 基础变量和函数
             </div>
           </a>
         
@@ -272,6 +260,18 @@
           <a class="recent-link" href="/2024/06/24/lua/lua-%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1/" title="lua-面向对象" >
             <div class="recent-link-text">
               lua-面向对象
+            </div>
+          </a>
+        
+          <a class="recent-link" href="/2024/06/15/lua/lua-%E5%85%83%E8%A1%A8%E5%92%8C%E5%85%83%E6%96%B9%E6%B3%95/" title="lua-元表和元方法" >
+            <div class="recent-link-text">
+              lua-元表和元方法
+            </div>
+          </a>
+        
+          <a class="recent-link" href="/2024/06/11/lua/lua-%E8%BF%AD%E4%BB%A3%E5%99%A8%E3%80%81%E6%A8%A1%E5%9D%97%E3%80%81%E9%97%AD%E5%8C%85/" title="lua-迭代器、模块、闭包" >
+            <div class="recent-link-text">
+              lua-迭代器、模块、闭包
             </div>
           </a>
         
@@ -328,51 +328,37 @@
       </header>
       <div class="e-content article-entry" itemprop="articleBody">
         
-          <h1 id="编译器"><a class="markdownIt-Anchor" href="#编译器"></a> 编译器</h1>
-<ul>
-<li>将源代码翻译成目标代码，如C++编译为x86，Arm架构的计算机等<br />
-<img src="1.png" alt="1" /></li>
+          <h1 id="编译器"><a href="#编译器" class="headerlink" title="编译器"></a>编译器</h1><ul>
+<li>将源代码翻译成目标代码，如C++编译为x86，Arm架构的计算机等<br><img src="1.png" alt="1"></li>
 </ul>
-<h1 id="解释器"><a class="markdownIt-Anchor" href="#解释器"></a> 解释器</h1>
-<ul>
-<li>将源代码解释，生成计算结果<br />
-<img src="2.png" alt="2" /></li>
+<h1 id="解释器"><a href="#解释器" class="headerlink" title="解释器"></a>解释器</h1><ul>
+<li>将源代码解释，生成计算结果<br><img src="2.png" alt="2"></li>
 </ul>
-<h1 id="编译器高层结构"><a class="markdownIt-Anchor" href="#编译器高层结构"></a> 编译器高层结构</h1>
-<ul>
+<h1 id="编译器高层结构"><a href="#编译器高层结构" class="headerlink" title="编译器高层结构"></a>编译器高层结构</h1><ul>
 <li>编译器是一个高层模块化的软件系统</li>
-<li>一个典型的无优化的简单编译器结构<br />
-<img src="3.png" alt="3" /></li>
+<li>一个典型的无优化的简单编译器结构<br><img src="3.png" alt="3"></li>
 </ul>
-<h1 id="一个简单编译器实例"><a class="markdownIt-Anchor" href="#一个简单编译器实例"></a> 一个简单编译器实例</h1>
+<h1 id="一个简单编译器实例"><a href="#一个简单编译器实例" class="headerlink" title="一个简单编译器实例"></a>一个简单编译器实例</h1><ul>
+<li><p>源语言：加法表达式Sum</p>
 <ul>
-<li>
-<p>源语言：加法表达式Sum</p>
-<ul>
-<li>两种语法形式：
-<ul>
+<li>两种语法形式：<ul>
 <li>整形数字 n</li>
 <li>加法 e1 + e2</li>
 </ul>
 </li>
 </ul>
 </li>
-<li>
-<p>栈式计算机(例如jvm)</p>
+<li><p>栈式计算机(例如jvm)</p>
 <ul>
 <li>一个操作数栈</li>
-<li>两条指令：
-<ul>
+<li>两条指令：<ul>
 <li>压栈指令 push n</li>
 <li>加法指令 add</li>
 </ul>
 </li>
 </ul>
 </li>
-<li>
-<p>任务：编译程序1 + 2 + 3到栈式计算机<br />
-<img src="4.png" alt="4" /></p>
-</li>
+<li>任务：编译程序1 + 2 + 3到栈式计算机<br><img src="4.png" alt="4"></li>
 </ul>
 
         

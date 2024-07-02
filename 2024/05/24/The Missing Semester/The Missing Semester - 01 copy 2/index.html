@@ -20,12 +20,12 @@
   <link rel="preload" href="/css/fonts/Roboto-Regular.ttf" as="font" type="font/ttf" crossorigin="anonymous">
   <link rel="preload" href="/css/fonts/Roboto-Bold.ttf" as="font" type="font/ttf" crossorigin="anonymous">
 
-  <meta name="description" content="中文讲义：计算机教育中缺失的一课 · the missing semester of your cs education (missing-semester-cn.github.io)  Git的数据结构  文件、文件夹模型  文件夹：树 文件：“blob”对象   历史记录模型 git通过有向无环图来构建数据 跟踪历史文件夹，形成文件夹快照 fork：从某个历史节点分叉，创建对象副本 merg">
+  <meta name="description" content="中文讲义：计算机教育中缺失的一课 · the missing semester of your cs education (missing-semester-cn.github.io)Git的数据结构文件、文件夹模型 文件夹：树 文件：“blob”对象  历史记录模型git通过有向无环图来构建数据 跟踪历史文件夹，形成文件夹快照 fork：从某个历史节点分叉，创建对象副本 merge：合并不同分支">
 <meta property="og:type" content="article">
 <meta property="og:title" content="git">
 <meta property="og:url" content="https://scorpio-gyh.github.io/2024/05/24/The%20Missing%20Semester/The%20Missing%20Semester%20-%2001%20copy%202/index.html">
 <meta property="og:site_name" content="Scorpio-Gyh_WYK">
-<meta property="og:description" content="中文讲义：计算机教育中缺失的一课 · the missing semester of your cs education (missing-semester-cn.github.io)  Git的数据结构  文件、文件夹模型  文件夹：树 文件：“blob”对象   历史记录模型 git通过有向无环图来构建数据 跟踪历史文件夹，形成文件夹快照 fork：从某个历史节点分叉，创建对象副本 merg">
+<meta property="og:description" content="中文讲义：计算机教育中缺失的一课 · the missing semester of your cs education (missing-semester-cn.github.io)Git的数据结构文件、文件夹模型 文件夹：树 文件：“blob”对象  历史记录模型git通过有向无环图来构建数据 跟踪历史文件夹，形成文件夹快照 fork：从某个历史节点分叉，创建对象副本 merge：合并不同分支">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2024-05-24T08:20:08.000Z">
 <meta property="article:modified_time" content="2024-05-24T09:47:48.559Z">
@@ -215,7 +215,7 @@
       
         <a class="archive-link" href="/archives/2024/07 ">
           July 2024 
-          <div class="archive-count">3 </div>
+          <div class="archive-count">1 </div>
         </a>
       
         <a class="archive-link" href="/archives/2024/06 ">
@@ -239,21 +239,9 @@
       <h3 class="widget-title">Recent Posts</h3>
       <ul>
         
-          <a class="recent-link" href="/2024/07/02/C++/3.C++%E5%A4%B4%E6%96%87%E4%BB%B6/" title="3. C++ 基础变量和函数" >
-            <div class="recent-link-text">
-              3. C++ 基础变量和函数
-            </div>
-          </a>
-        
-          <a class="recent-link" href="/2024/07/02/C++/X.VisualStudio%E4%BD%BF%E7%94%A8/X.VisualStudio%E4%BD%BF%E7%94%A8/" title="X.Viusal Studio使用" >
+          <a class="recent-link" href="/2024/07/02/C++/X.VisualStudio%E4%BD%BF%E7%94%A8/" title="X.Viusal Studio使用" >
             <div class="recent-link-text">
               X.Viusal Studio使用
-            </div>
-          </a>
-        
-          <a class="recent-link" href="/2024/07/02/C++/2.C++%E5%9F%BA%E7%A1%80%E5%8F%98%E9%87%8F%E5%92%8C%E5%87%BD%E6%95%B0/" title="2. C++ 基础变量和函数" >
-            <div class="recent-link-text">
-              2. C++ 基础变量和函数
             </div>
           </a>
         
@@ -266,6 +254,18 @@
           <a class="recent-link" href="/2024/06/24/lua/lua-%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1/" title="lua-面向对象" >
             <div class="recent-link-text">
               lua-面向对象
+            </div>
+          </a>
+        
+          <a class="recent-link" href="/2024/06/15/lua/lua-%E5%85%83%E8%A1%A8%E5%92%8C%E5%85%83%E6%96%B9%E6%B3%95/" title="lua-元表和元方法" >
+            <div class="recent-link-text">
+              lua-元表和元方法
+            </div>
+          </a>
+        
+          <a class="recent-link" href="/2024/06/11/lua/lua-%E8%BF%AD%E4%BB%A3%E5%99%A8%E3%80%81%E6%A8%A1%E5%9D%97%E3%80%81%E9%97%AD%E5%8C%85/" title="lua-迭代器、模块、闭包" >
+            <div class="recent-link-text">
+              lua-迭代器、模块、闭包
             </div>
           </a>
         
@@ -320,26 +320,19 @@
       </header>
       <div class="e-content article-entry" itemprop="articleBody">
         
-          <h1 id="中文讲义计算机教育中缺失的一课-the-missing-semester-of-your-cs-education-missing-semester-cngithubio"><a class="markdownIt-Anchor" href="#中文讲义计算机教育中缺失的一课-the-missing-semester-of-your-cs-education-missing-semester-cngithubio"></a> 中文讲义：<a target="_blank" rel="noopener" href="https://missing-semester-cn.github.io/">计算机教育中缺失的一课 · the missing semester of your cs education (missing-semester-cn.github.io)</a></h1>
-<h1 id="git的数据结构"><a class="markdownIt-Anchor" href="#git的数据结构"></a> Git的数据结构</h1>
-<h2 id="文件-文件夹模型"><a class="markdownIt-Anchor" href="#文件-文件夹模型"></a> 文件、文件夹模型</h2>
-<ul>
+          <h1 id="中文讲义：计算机教育中缺失的一课-·-the-missing-semester-of-your-cs-education-missing-semester-cn-github-io"><a href="#中文讲义：计算机教育中缺失的一课-·-the-missing-semester-of-your-cs-education-missing-semester-cn-github-io" class="headerlink" title="中文讲义：计算机教育中缺失的一课 · the missing semester of your cs education (missing-semester-cn.github.io)"></a>中文讲义：<a target="_blank" rel="noopener" href="https://missing-semester-cn.github.io/">计算机教育中缺失的一课 · the missing semester of your cs education (missing-semester-cn.github.io)</a></h1><h1 id="Git的数据结构"><a href="#Git的数据结构" class="headerlink" title="Git的数据结构"></a>Git的数据结构</h1><h2 id="文件、文件夹模型"><a href="#文件、文件夹模型" class="headerlink" title="文件、文件夹模型"></a>文件、文件夹模型</h2><ul>
 <li>文件夹：树</li>
 <li>文件：“blob”对象</li>
 </ul>
-<h2 id="历史记录模型"><a class="markdownIt-Anchor" href="#历史记录模型"></a> 历史记录模型</h2>
-<p>git通过有向无环图来构建数据</p>
+<h2 id="历史记录模型"><a href="#历史记录模型" class="headerlink" title="历史记录模型"></a>历史记录模型</h2><p>git通过有向无环图来构建数据</p>
 <p>跟踪历史文件夹，形成文件夹快照</p>
 <p>fork：从某个历史节点分叉，创建对象副本</p>
 <p>merge：合并不同分支</p>
-<h2 id="模型的具体实现"><a class="markdownIt-Anchor" href="#模型的具体实现"></a> 模型的具体实现</h2>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">type blob = array&lt;byte&gt;</span><br><span class="line">type tree = map&lt;string,tree|blob&gt;</span><br><span class="line">type commit = struct &#123;</span><br><span class="line">	parents: array&lt;commit&gt;</span><br><span class="line">	author: string</span><br><span class="line">	message:string</span><br><span class="line">	snapshot:tree</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">type object = blob|tree|commit</span><br></pre></td></tr></table></figure>
+<h2 id="模型的具体实现"><a href="#模型的具体实现" class="headerlink" title="模型的具体实现"></a>模型的具体实现</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">type blob = array&lt;byte&gt;</span><br><span class="line">type tree = map&lt;string,tree|blob&gt;</span><br><span class="line">type commit = struct &#123;</span><br><span class="line">	parents: array&lt;commit&gt;</span><br><span class="line">	author: string</span><br><span class="line">	message:string</span><br><span class="line">	snapshot:tree</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">type object = blob|tree|commit</span><br></pre></td></tr></table></figure>
 <p>每一个object通过SHA-1哈希函数存储在一个哈希表中，映射到磁盘上</p>
 <p>git中的所有内容，都有自己的哈希值，用于寻址</p>
 <p>git可以更新，添加，但不能更改历史内容</p>
-<h1 id="暂存区"><a class="markdownIt-Anchor" href="#暂存区"></a> 暂存区</h1>
-<p>所有的改动都会被保存在暂存区上<br />
-当提交时，可以手动add哪些内容需要提交</p>
+<h1 id="暂存区"><a href="#暂存区" class="headerlink" title="暂存区"></a>暂存区</h1><p>所有的改动都会被保存在暂存区上<br>当提交时，可以手动add哪些内容需要提交</p>
 <p>许多集成了Git的IDE（如VS Code）和Git GUI工具在用户选择提交时，通常会默认将所有修改过的文件添加到暂存区并一起提交。这是为了方便用户操作，避免了手动添加文件到暂存区的步骤。</p>
 
         
@@ -355,13 +348,13 @@
 <nav id="article-nav">
   <a class="article-nav-btn left "
     
-      href="/2024/05/27/C++/1.C++%E5%B7%A5%E4%BD%9C%E6%B5%81%E7%A8%8B/"
-      title="1. C++ 工作流程"
+      href="/2024/05/27/C++/C++%E5%9F%BA%E7%A1%80/"
+      title="1. C++ 基础"
      >
     <i class="fa-solid fa-angle-left"></i>
     <p class="title-text">
       
-        1. C++ 工作流程
+        1. C++ 基础
         
     </p>
   </a>
