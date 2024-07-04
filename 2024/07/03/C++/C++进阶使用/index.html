@@ -1,0 +1,589 @@
+<!DOCTYPE html>
+
+
+<html theme="dark" showBanner="true" hasBanner="true" > 
+<link href="https://cdn.staticfile.org/font-awesome/6.4.2/css/fontawesome.min.css" rel="stylesheet">
+<link href="https://cdn.staticfile.org/font-awesome/6.4.2/css/brands.min.css" rel="stylesheet">
+<link href="https://cdn.staticfile.org/font-awesome/6.4.2/css/solid.min.css" rel="stylesheet">
+<script src="/js/color.global.min.js" ></script>
+<script src="/js/load-settings.js" ></script>
+<head>
+  <meta charset="utf-8">
+  
+  
+  
+
+  
+  <title>1. C++ 基础 | Scorpio-Gyh_WYK</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <link rel="preload" href="/css/fonts/Roboto-Regular.ttf" as="font" type="font/ttf" crossorigin="anonymous">
+  <link rel="preload" href="/css/fonts/Roboto-Bold.ttf" as="font" type="font/ttf" crossorigin="anonymous">
+
+  <meta name="description" content="多返回值处理 在C++中，有几种方法可以返回多个值： 使用std::pair或std::tuple ：这是一种常见的方法，特别是当你需要返回的值的数量是固定的，并且不太多时。例如： 12345#include &lt;utility&gt;  &#x2F;&#x2F; for std::pairstd::pair&lt;int, double&gt; foo() &#123;    return &#123;1,">
+<meta property="og:type" content="article">
+<meta property="og:title" content="1. C++ 基础">
+<meta property="og:url" content="https://scorpio-gyh.github.io/2024/07/03/C++/C++%E8%BF%9B%E9%98%B6%E4%BD%BF%E7%94%A8/index.html">
+<meta property="og:site_name" content="Scorpio-Gyh_WYK">
+<meta property="og:description" content="多返回值处理 在C++中，有几种方法可以返回多个值： 使用std::pair或std::tuple ：这是一种常见的方法，特别是当你需要返回的值的数量是固定的，并且不太多时。例如： 12345#include &lt;utility&gt;  &#x2F;&#x2F; for std::pairstd::pair&lt;int, double&gt; foo() &#123;    return &#123;1,">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://scorpio-gyh.github.io/2024/07/03/C++/C++%E8%BF%9B%E9%98%B6%E4%BD%BF%E7%94%A8/1720079318158.png">
+<meta property="article:published_time" content="2024-07-03T01:30:41.000Z">
+<meta property="article:modified_time" content="2024-07-04T08:52:10.440Z">
+<meta property="article:author" content="John Doe">
+<meta property="article:tag" content="C++">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://scorpio-gyh.github.io/2024/07/03/C++/C++%E8%BF%9B%E9%98%B6%E4%BD%BF%E7%94%A8/1720079318158.png">
+  
+    <link rel="alternate" href="/atom.xml" title="Scorpio-Gyh_WYK" type="application/atom+xml">
+  
+  
+    <link rel="icon" media="(prefers-color-scheme: light)" href="/images/favicon-light-32.png" sizes="32x32">
+    <link rel="icon" media="(prefers-color-scheme: light)" href="/images/favicon-light-128.png" sizes="128x128">
+    <link rel="icon" media="(prefers-color-scheme: light)" href="/images/favicon-light-180.png" sizes="180x180">
+    <link rel="icon" media="(prefers-color-scheme: light)" href="/images/favicon-light-192.png" sizes="192x192">
+    <link rel="icon" media="(prefers-color-scheme: dark)" href="/images/favicon-dark-32.png" sizes="32x32">
+    <link rel="icon" media="(prefers-color-scheme: dark)" href="/images/favicon-dark-128.png" sizes="128x128">
+    <link rel="icon" media="(prefers-color-scheme: dark)" href="/images/favicon-dark-180.png" sizes="180x180">
+    <link rel="icon" media="(prefers-color-scheme: dark)" href="/images/favicon-dark-192.png" sizes="192x192">
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  <link href="https://cdn.bootcss.com/KaTeX/0.7.1/katex.min.css" rel="stylesheet">
+<!-- hexo injector head_end start -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css">
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/hexo-math@4.0.0/dist/style.css">
+<!-- hexo injector head_end end --><meta name="generator" content="Hexo 7.2.0"></head>
+
+<body>
+  
+  
+    
+<div id="banner" class="">
+  <img src="/background.png" itemprop="image">
+  <div id="banner-dim"></div>
+</div>
+ 
+   
+  <div id="main-grid" class="  ">
+    <div id="nav" class=""  >
+      <navbar id="navbar">
+  <nav id="title-nav">
+    <a href="/">
+      <div id="vivia-logo">
+        <div class="dot"></div>
+        <div class="dot"></div>
+        <div class="dot"></div>
+        <div class="dot"></div>
+      </div>
+      <div>Scorpio-Gyh_WYK </div>
+    </a>
+  </nav>
+  <nav id="main-nav">
+    
+      <a class="main-nav-link" href="/">主页</a>
+    
+      <a class="main-nav-link" href="/archives">档案</a>
+    
+      <a class="main-nav-link" href="/about">关于我</a>
+    
+  </nav>
+  <nav id="sub-nav">
+    <a id="theme-btn" class="nav-icon">
+      <span class="light-mode-icon"><svg xmlns="http://www.w3.org/2000/svg" height="20" viewBox="0 -960 960 960" width="20"><path d="M438.5-829.913v-48q0-17.452 11.963-29.476 11.964-12.024 29.326-12.024 17.363 0 29.537 12.024t12.174 29.476v48q0 17.452-11.963 29.476-11.964 12.024-29.326 12.024-17.363 0-29.537-12.024T438.5-829.913Zm0 747.826v-48q0-17.452 11.963-29.476 11.964-12.024 29.326-12.024 17.363 0 29.537 12.024t12.174 29.476v48q0 17.452-11.963 29.476-11.964 12.024-29.326 12.024-17.363 0-29.537-12.024T438.5-82.087ZM877.913-438.5h-48q-17.452 0-29.476-11.963-12.024-11.964-12.024-29.326 0-17.363 12.024-29.537t29.476-12.174h48q17.452 0 29.476 11.963 12.024 11.964 12.024 29.326 0 17.363-12.024 29.537T877.913-438.5Zm-747.826 0h-48q-17.452 0-29.476-11.963-12.024-11.964-12.024-29.326 0-17.363 12.024-29.537T82.087-521.5h48q17.452 0 29.476 11.963 12.024 11.964 12.024 29.326 0 17.363-12.024 29.537T130.087-438.5Zm660.174-290.87-34.239 32q-12.913 12.674-29.565 12.174-16.653-.5-29.327-13.174-12.674-12.673-12.554-28.826.12-16.152 12.794-28.826l33-35q12.913-12.674 30.454-12.674t30.163 12.847q12.709 12.846 12.328 30.826-.38 17.98-13.054 30.653ZM262.63-203.978l-32 34q-12.913 12.674-30.454 12.674t-30.163-12.847q-12.709-12.846-12.328-30.826.38-17.98 13.054-30.653l33.239-31q12.913-12.674 29.565-12.174 16.653.5 29.327 13.174 12.674 12.673 12.554 28.826-.12 16.152-12.794 28.826Zm466.74 33.239-32-33.239q-12.674-12.913-12.174-29.565.5-16.653 13.174-29.327 12.673-12.674 28.826-13.054 16.152-.38 28.826 12.294l35 33q12.674 12.913 12.674 30.454t-12.847 30.163q-12.846 12.709-30.826 12.328-17.98-.38-30.653-13.054ZM203.978-697.37l-34-33q-12.674-12.913-13.174-29.945-.5-17.033 12.174-29.707t31.326-13.293q18.653-.62 31.326 13.054l32 34.239q11.674 12.913 11.174 29.565-.5 16.653-13.174 29.327-12.673 12.674-28.826 12.554-16.152-.12-28.826-12.794ZM480-240q-100 0-170-70t-70-170q0-100 70-170t170-70q100 0 170 70t70 170q0 100-70 170t-170 70Zm-.247-82q65.703 0 111.475-46.272Q637-414.544 637-480.247t-45.525-111.228Q545.95-637 480.247-637t-111.475 45.525Q323-545.95 323-480.247t45.525 111.975Q414.05-322 479.753-322ZM481-481Z"/></svg></span>
+      <span class="dark-mode-icon"><svg xmlns="http://www.w3.org/2000/svg" height="20" viewBox="0 -960 960 960" width="20"><path d="M480.239-116.413q-152.63 0-258.228-105.478Q116.413-327.37 116.413-480q0-130.935 77.739-227.435t206.304-125.043q43.022-9.631 63.87 10.869t3.478 62.805q-8.891 22.043-14.315 44.463-5.424 22.42-5.424 46.689 0 91.694 64.326 155.879 64.325 64.186 156.218 64.186 24.369 0 46.978-4.946 22.609-4.945 44.413-14.076 42.826-17.369 62.967 1.142 20.142 18.511 10.511 61.054Q807.174-280 712.63-198.206q-94.543 81.793-232.391 81.793Zm0-95q79.783 0 143.337-40.217 63.554-40.218 95.793-108.283-15.608 4.044-31.097 5.326-15.49 1.283-31.859.805-123.706-4.066-210.777-90.539-87.071-86.473-91.614-212.092-.24-16.369.923-31.978 1.164-15.609 5.446-30.978-67.826 32.478-108.282 96.152Q211.652-559.543 211.652-480q0 111.929 78.329 190.258 78.329 78.329 190.258 78.329ZM466.13-465.891Z"/></svg></span>
+    </a>
+    
+      <a id="nav-rss-link" class="nav-icon mobile-hide" href="/atom.xml" title="RSS Feed">
+        <svg xmlns="http://www.w3.org/2000/svg" height="20" viewBox="0 -960 960 960" width="20"><path d="M198-120q-25.846 0-44.23-18.384-18.384-18.385-18.384-44.23 0-25.846 18.384-44.23 18.384-18.385 44.23-18.385 25.846 0 44.23 18.385 18.384 18.384 18.384 44.23 0 25.845-18.384 44.23Q223.846-120 198-120Zm538.385 0q-18.846 0-32.923-13.769-14.076-13.769-15.922-33.23-8.692-100.616-51.077-188.654-42.385-88.039-109.885-155.539-67.5-67.501-155.539-109.885Q283-663.462 182.385-672.154q-19.461-1.846-33.23-16.23-13.769-14.385-13.769-33.846t14.076-32.922q14.077-13.461 32.923-12.23 120.076 8.692 226.038 58.768 105.961 50.077 185.73 129.846 79.769 79.769 129.846 185.731 50.077 105.961 58.769 226.038 1.231 18.846-12.538 32.922Q756.461-120 736.385-120Zm-252 0q-18.231 0-32.423-13.461t-18.653-33.538Q418.155-264.23 348.886-333.5q-69.27-69.27-166.501-84.423-20.077-4.462-33.538-18.961-13.461-14.5-13.461-33.346 0-19.076 13.884-33.23 13.884-14.153 33.115-10.922 136.769 15.384 234.384 112.999 97.615 97.615 112.999 234.384 3.231 19.23-10.538 33.115Q505.461-120 484.385-120Z"/></svg>
+      </a>
+    
+    <div id="nav-menu-btn" class="nav-icon">
+      <svg xmlns="http://www.w3.org/2000/svg" height="20" viewBox="0 -960 960 960" width="20"><path d="M177.37-252.282q-17.453 0-29.477-11.964-12.024-11.963-12.024-29.326t12.024-29.537q12.024-12.174 29.477-12.174h605.26q17.453 0 29.477 11.964 12.024 11.963 12.024 29.326t-12.024 29.537q-12.024 12.174-29.477 12.174H177.37Zm0-186.218q-17.453 0-29.477-11.963-12.024-11.964-12.024-29.326 0-17.363 12.024-29.537T177.37-521.5h605.26q17.453 0 29.477 11.963 12.024 11.964 12.024 29.326 0 17.363-12.024 29.537T782.63-438.5H177.37Zm0-186.217q-17.453 0-29.477-11.964-12.024-11.963-12.024-29.326t12.024-29.537q12.024-12.174 29.477-12.174h605.26q17.453 0 29.477 11.964 12.024 11.963 12.024 29.326t-12.024 29.537q-12.024 12.174-29.477 12.174H177.37Z"/></svg>
+    </div>
+  </nav>
+</navbar>
+<div id="nav-dropdown" class="hidden">
+  <div id="dropdown-link-list">
+    
+      <a class="nav-dropdown-link" href="/">主页</a>
+    
+      <a class="nav-dropdown-link" href="/archives">档案</a>
+    
+      <a class="nav-dropdown-link" href="/about">关于我</a>
+    
+    
+      <a class="nav-dropdown-link" href="/atom.xml" title="RSS Feed">RSS</a>
+     
+    </div>
+</div>
+<script>
+  let dropdownBtn = document.getElementById("nav-menu-btn");
+  let dropdownEle = document.getElementById("nav-dropdown");
+  dropdownBtn.onclick = function() {
+    dropdownEle.classList.toggle("hidden");
+  }
+</script>
+    </div>
+    <div id="sidebar-wrapper">
+      <sidebar id="sidebar">
+  
+    <div class="widget-wrap">
+  <div class="info-card">
+    <div class="avatar">
+      
+        <image src=/pic.jpg></image>
+      
+      <div class="img-dim"></div>
+    </div>
+    <div class="info">
+      <div class="username">WYK </div>
+      <div class="dot"></div>
+      <div class="subtitle">This is the subtitle </div>
+      <div class="link-list">
+        
+          <a class="link-btn" target="_blank" rel="noopener" href="https://twitter.com" title="Twitter"><i class="fa-brands fa-twitter"></i></a>
+        
+          <a class="link-btn" target="_blank" rel="noopener" href="https://store.steampowered.com" title="Steam"><i class="fa-brands fa-steam"></i></a>
+        
+          <a class="link-btn" target="_blank" rel="noopener" href="https://github.com" title="GitHub"><i class="fa-brands fa-github"></i></a>
+         
+      </div>  
+    </div>
+  </div>
+</div>
+
+  
+  <div class="sticky">
+    
+      
+
+
+  <div class="widget-wrap">
+    <div class="widget">
+      <h3 class="widget-title">Categories</h3>
+      <div class="category-box">
+            <a class="category-link" href="/categories/%E7%BC%96%E8%AF%91%E5%8E%9F%E7%90%86/">
+                编译原理
+                <div class="category-count">1</div>
+            </a>
+        
+            <a class="category-link" href="/categories/Games-104/">
+                Games 104
+                <div class="category-count">1</div>
+            </a>
+        
+            <a class="category-link" href="/categories/The-Missing-Semester/">
+                The Missing Semester
+                <div class="category-count">3</div>
+            </a>
+        
+            <a class="category-link" href="/categories/lua/">
+                lua
+                <div class="category-count">4</div>
+            </a>
+        
+            <a class="category-link" href="/categories/%E8%AE%A1%E5%88%92/">
+                计划
+                <div class="category-count">1</div>
+            </a>
+        
+            <a class="category-link" href="/categories/%E8%99%9A%E5%B9%BB%E5%BC%95%E6%93%8E/">
+                虚幻引擎
+                <div class="category-count">2</div>
+            </a>
+        
+            <a class="category-link" href="/categories/C/">
+                C++
+                <div class="category-count">2</div>
+            </a>
+        </div>
+    </div>
+  </div>
+
+
+    
+      
+  <div class="widget-wrap">
+    <div class="widget">
+      <h3 class="widget-title">Tags</h3>
+      <ul class="widget-tag-list" itemprop="keywords"><li class="widget-tag-list-item"><a class="widget-tag-list-link" href="/tags/C/" rel="tag">C++</a></li><li class="widget-tag-list-item"><a class="widget-tag-list-link" href="/tags/lua/" rel="tag">lua</a></li><li class="widget-tag-list-item"><a class="widget-tag-list-link" href="/tags/%E6%B8%B8%E6%88%8F%E5%BC%95%E6%93%8E/" rel="tag">游戏引擎</a></li><li class="widget-tag-list-item"><a class="widget-tag-list-link" href="/tags/%E7%BC%96%E8%AF%91%E5%8E%9F%E7%90%86/" rel="tag">编译原理</a></li><li class="widget-tag-list-item"><a class="widget-tag-list-link" href="/tags/%E8%AE%A1%E5%88%92/" rel="tag">计划</a></li></ul>
+    </div>
+  </div>
+
+
+    
+      
+  <div class="widget-wrap">
+    <div class="widget">
+      <h3 class="widget-title">Archives</h3>
+      
+      
+        <a class="archive-link" href="/archives/2024/07 ">
+          July 2024 
+          <div class="archive-count">2 </div>
+        </a>
+      
+        <a class="archive-link" href="/archives/2024/06 ">
+          June 2024 
+          <div class="archive-count">6 </div>
+        </a>
+      
+        <a class="archive-link" href="/archives/2024/05 ">
+          May 2024 
+          <div class="archive-count">9 </div>
+        </a>
+      
+    </div>
+  </div>
+
+
+    
+      
+  <div class="widget-wrap">
+    <div class="widget">
+      <h3 class="widget-title">Recent Posts</h3>
+      <ul>
+        
+          <a class="recent-link" href="/2024/07/03/C++/C++%E8%BF%9B%E9%98%B6%E4%BD%BF%E7%94%A8/" title="1. C++ 基础" >
+            <div class="recent-link-text">
+              1. C++ 基础
+            </div>
+          </a>
+        
+          <a class="recent-link" href="/2024/07/02/C++/X.VisualStudio%E4%BD%BF%E7%94%A8/" title="X.Viusal Studio使用" >
+            <div class="recent-link-text">
+              X.Viusal Studio使用
+            </div>
+          </a>
+        
+          <a class="recent-link" href="/2024/06/27/C++/C++%E5%9F%BA%E7%A1%80/" title="1. C++ 基础" >
+            <div class="recent-link-text">
+              1. C++ 基础
+            </div>
+          </a>
+        
+          <a class="recent-link" href="/2024/06/26/lua/lua-%E5%8D%8F%E7%A8%8B/" title="lua-Table" >
+            <div class="recent-link-text">
+              lua-Table
+            </div>
+          </a>
+        
+          <a class="recent-link" href="/2024/06/24/lua/lua-%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1/" title="lua-面向对象" >
+            <div class="recent-link-text">
+              lua-面向对象
+            </div>
+          </a>
+        
+      </ul>
+    </div>
+  </div>
+
+    
+  </div>
+</sidebar>
+    </div>
+    <div id="content-body">
+       
+
+
+<article id="post-C++/C++进阶使用" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  
+    
+   
+  <div class="article-inner">
+    <div class="article-main">
+      <header class="article-header">
+        
+<div class="main-title-bar">
+  <div class="main-title-dot"></div>
+  
+    
+      <h1 class="p-name article-title" itemprop="headline name">
+        1. C++ 基础
+      </h1>
+    
+  
+</div>
+
+        <div class='meta-info-bar'>
+          <div class="meta-info">
+  <time class="dt-published" datetime="2024-07-03T01:30:41.000Z" itemprop="datePublished">2024-07-03</time>
+</div>
+          <div class="need-seperator meta-info">
+            <div class="meta-cate-flex">
+  
+  <a class="meta-cate-link" href="/categories/C/">C++</a>
+   
+</div>
+  
+          </div>
+          <div class="wordcount need-seperator meta-info">
+            11k words 
+          </div>
+        </div>
+        
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/C/" rel="tag">C++</a></li></ul>
+
+      </header>
+      <div class="e-content article-entry" itemprop="articleBody">
+        
+          <h1 id="多返回值处理"><a class="markdownIt-Anchor" href="#多返回值处理"></a> 多返回值处理</h1>
+<p>在C++中，有几种方法可以返回多个值：</p>
+<p><strong>使用std::pair或std::tuple</strong> ：这是一种常见的方法，特别是当你需要返回的值的数量是固定的，并且不太多时。例如：</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;utility&gt;</span>  <span class="comment">// for std::pair</span></span></span><br><span class="line"></span><br><span class="line"><span class="function">std::pair&lt;<span class="type">int</span>, <span class="type">double</span>&gt; <span class="title">foo</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> &#123;<span class="number">1</span>, <span class="number">2.3</span>&#125;;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>或者使用 <code>std::tuple</code>来返回更多的值：</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;tuple&gt;</span>  <span class="comment">// for std::tuple</span></span></span><br><span class="line"></span><br><span class="line"><span class="function">std::tuple&lt;<span class="type">int</span>, <span class="type">double</span>, std::string&gt; <span class="title">bar</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> &#123;<span class="number">1</span>, <span class="number">2.3</span>, <span class="string">&quot;hello&quot;</span>&#125;;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><strong>使用std::vector或std::array</strong> ：当你需要返回的值的数量是固定的，并且所有的值都是同一类型时，你可以使用 <code>std::vector</code>或 <code>std::array</code>。例如：</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;vector&gt;</span>  <span class="comment">// for std::vector</span></span></span><br><span class="line"></span><br><span class="line"><span class="function">std::vector&lt;<span class="type">int</span>&gt; <span class="title">foo</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> &#123;<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>&#125;;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><strong>使用结构体或类</strong> ：如果你需要返回的值有逻辑上的关联，你可以定义一个结构体或类来存储这些值。例如：</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">struct</span> <span class="title class_">Result</span> &#123;</span><br><span class="line">    <span class="type">int</span> a;</span><br><span class="line">    <span class="type">double</span> b;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="function">Result <span class="title">foo</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> &#123;<span class="number">1</span>, <span class="number">2.3</span>&#125;;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h1 id="模板"><a class="markdownIt-Anchor" href="#模板"></a> 模板</h1>
+<p>在C++中，模板是一种特性，允许程序员编写通用的代码，这些代码可以处理多种数据类型。</p>
+<p>模板可以应用于函数（称为函数模板）和类（称为类模板）。</p>
+<ul>
+<li><strong>函数模板</strong> ：函数模板是一种函数，它可以用多种类型的参数进行调用。例如，你可以编写一个函数模板来实现一个通用的交换函数：</li>
+</ul>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">template</span> &lt;<span class="keyword">typename</span> T&gt;</span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">swap</span><span class="params">(T&amp; a, T&amp; b)</span> </span>&#123;</span><br><span class="line">    T temp = a;</span><br><span class="line">    a = b;</span><br><span class="line">    b = temp;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>在这个例子中，<code>T</code>是一个模板参数，表示一个类型。你可以用任何类型的参数调用 <code>swap</code>函数，只要这个类型支持赋值操作。</p>
+<ul>
+<li><strong>类模板</strong> ：类模板是一种类，它可以用多种类型的参数进行实例化。例如，你可以编写一个类模板来实现一个通用的对（pair）：</li>
+</ul>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">template</span> &lt;<span class="keyword">typename</span> T1, <span class="keyword">typename</span> T2&gt;</span><br><span class="line"><span class="keyword">struct</span> <span class="title class_">Pair</span> &#123;</span><br><span class="line">    T1 first;</span><br><span class="line">    T2 second;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<ul>
+<li><strong>可变参数模板</strong>#include <code>&lt;iostream&gt;</code></li>
+</ul>
+<h1 id="内存管理堆-栈"><a class="markdownIt-Anchor" href="#内存管理堆-栈"></a> 内存管理：堆、栈</h1>
+<p>在C++中，内存主要分为两部分：堆（Heap）和栈（Stack）。</p>
+<p><strong>栈（Stack）</strong> ：</p>
+<p>栈是由编译器自动分配和释放的，存放函数的参数值，局部变量等。其操作方式类似于数据结构中的栈。</p>
+<ul>
+<li>栈内存分配和释放非常快速，由编译器自动管理，无需手动操作。</li>
+<li>栈空间有限，Windows下一般为1MB。如果分配的数据过大，比如大数组，可能会导致栈溢出。</li>
+<li>栈上的对象在其作用域结束后会自动释放。</li>
+</ul>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="type">void</span> <span class="title">some_function</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="type">int</span> i;  <span class="comment">// 局部变量，存放在栈上</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><strong>堆（Heap）</strong> ：</p>
+<p>堆是由程序员分配和释放的，如果程序员不释放，程序结束时可能由OS回收。在C++中，利用new和delete进行动态内存分配。</p>
+<ul>
+<li>堆空间大，受限于计算机系统中有效的虚拟内存。</li>
+<li>分配方式类似于链表。</li>
+<li>分配速度较慢，并且容易产生内存碎片。</li>
+<li>不正确的使用堆会导致内存泄漏或者指针错误。</li>
+</ul>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">int</span>* p = <span class="keyword">new</span> <span class="type">int</span>;  <span class="comment">// 在堆上分配内存</span></span><br><span class="line"><span class="keyword">delete</span> p;  <span class="comment">// 释放堆上的内存</span></span><br></pre></td></tr></table></figure>
+<p>总结，栈和堆都是程序运行时使用的内存，但它们的分配方式、生命周期和大小都有所不同。栈由编译器自动管理，用于存放小而快速的局部变量；堆由程序员手动管理，用于存放大的数据或者生命周期不确定的数据。</p>
+<h1 id="宏"><a class="markdownIt-Anchor" href="#宏"></a> 宏</h1>
+<p><strong>本质上就是文本替换</strong></p>
+<p>在C++中，宏是预处理器（preprocessor）的一部分，它在编译阶段之前对代码进行处理。宏有多种用途，包括：</p>
+<p><strong>定义常量</strong> ：宏常用于定义常量，这样可以在代码中多次使用这个常量，而不需要每次都写出它的值。</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">define</span> PI 3.14159</span></span><br></pre></td></tr></table></figure>
+<p><strong>条件编译</strong> ：宏可以用于条件编译，即根据特定的条件决定是否编译某部分代码。这在处理平台差异、调试和测试等情况时非常有用。</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">ifdef</span> DEBUG</span></span><br><span class="line">    <span class="comment">// 这部分代码只在DEBUG被定义时编译</span></span><br><span class="line"><span class="meta">#<span class="keyword">endif</span></span></span><br></pre></td></tr></table></figure>
+<p><strong>简化代码</strong> ：宏可以用于简化复杂的代码，或者创建“函数式”的代码片段。但是，这种用法应该谨慎使用，因为宏不会进行类型检查，而且可能会引入复杂的副作用。</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">define</span> SQUARE(x) ((x) * (x))</span></span><br></pre></td></tr></table></figure>
+<p>虽然宏在某些情况下很有用，但是它也有一些缺点，比如类型不安全、可能引入复杂的副作用、不易调试等。因此，现代C++编程中，宏的使用被其他特性所取代，比如常量可以用 <code>const</code>或 <code>constexpr</code>定义，条件编译可以用模板和配置文件处理，简化代码可以用内联函数或者模板</p>
+<h1 id="auto"><a class="markdownIt-Anchor" href="#auto"></a> auto</h1>
+<p><code>auto</code>是C++11引入的一个关键字，用于自动类型推导。在声明变量时，如果使用 <code>auto</code>作为类型，编译器会自动推导出变量的实际类型。</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">auto</span> i = <span class="number">42</span>;  <span class="comment">// i的类型被推导为int</span></span><br><span class="line"><span class="keyword">auto</span> d = <span class="number">42.0</span>;  <span class="comment">// d的类型被推导为double</span></span><br><span class="line"><span class="keyword">auto</span> s = <span class="string">&quot;hello&quot;</span>;  <span class="comment">// s的类型被推导为const char*</span></span><br><span class="line"></span><br><span class="line">std::vector&lt;<span class="type">int</span>&gt; vec = &#123;<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>&#125;;</span><br><span class="line"><span class="keyword">auto</span> begin = vec.<span class="built_in">begin</span>();  <span class="comment">// begin的类型被推导为std::vector&lt;int&gt;::iterator</span></span><br></pre></td></tr></table></figure>
+<p>需要注意的是，<code>auto</code>推导的类型会忽略顶层const和引用，如果需要保留这些类型修饰符，可以使用 <code>const auto&amp;</code>或者 <code>auto&amp;&amp;</code>。</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">const</span> <span class="type">int</span> ci = <span class="number">42</span>;</span><br><span class="line"><span class="keyword">auto</span> a = ci;  <span class="comment">// a的类型被推导为int，忽略了const</span></span><br><span class="line"><span class="type">const</span> <span class="keyword">auto</span>&amp; b = ci;  <span class="comment">// b的类型被推导为const int&amp;</span></span><br></pre></td></tr></table></figure>
+<p>另外，<code>auto</code>也可以用于函数返回类型的推导，这在处理复杂的模板函数时非常有用。</p>
+<h1 id="函数指针"><a class="markdownIt-Anchor" href="#函数指针"></a> 函数指针</h1>
+<h2 id="基础指针"><a class="markdownIt-Anchor" href="#基础指针"></a> 基础指针</h2>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="type">void</span> <span class="title">hello</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    std::cout &lt;&lt; <span class="string">&quot;Hello, world!&quot;</span> &lt;&lt; std::endl;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="built_in">void</span> (*fp)();  <span class="comment">// 声明一个函数指针，指向一个没有参数也没有返回值的函数</span></span><br><span class="line">    fp = hello;  <span class="comment">// 让函数指针指向hello函数</span></span><br><span class="line">    <span class="built_in">fp</span>();  <span class="comment">// 通过函数指针调用函数</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="type">int</span> <span class="title">add</span><span class="params">(<span class="type">int</span> x, <span class="type">int</span> y)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> x + y;</span><br><span class="line">&#125;<span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="built_in">int</span> (*fp)(<span class="type">int</span>, <span class="type">int</span>);  <span class="comment">// 声明一个函数指针，指向一个有两个int参数并返回int的函数</span></span><br><span class="line">    fp = add;  <span class="comment">// 让函数指针指向add函数</span></span><br><span class="line">    <span class="type">int</span> sum = <span class="built_in">fp</span>(<span class="number">2</span>, <span class="number">3</span>);  <span class="comment">// 通过函数指针调用函数</span></span><br><span class="line">    std::cout &lt;&lt; sum &lt;&lt; std::endl;  <span class="comment">// 输出5</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="stdfunction"><a class="markdownIt-Anchor" href="#stdfunction"></a> std::function</h2>
+<p><code>std::function</code>是C++11引入的一个模板类，它可以用来存储任何可以调用的对象，包括函数、函数指针、成员函数指针、函数对象和lambda表达式。</p>
+<p>以下是一些 <code>std::function</code>的使用例子：</p>
+<p><strong>存储函数</strong> ：</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="type">double</span> <span class="title">square</span><span class="params">(<span class="type">double</span> x)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> x * x;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">std::function&lt;<span class="type">double</span>(<span class="type">double</span>)&gt; func = square;</span><br><span class="line">std::cout &lt;&lt; <span class="built_in">func</span>(<span class="number">10</span>) &lt;&lt; std::endl;  <span class="comment">// 输出100</span></span><br></pre></td></tr></table></figure>
+<p><strong>存储函数指针</strong> ：</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">double</span> (*fp)(<span class="type">double</span>) = square;</span><br><span class="line">std::function&lt;<span class="type">double</span>(<span class="type">double</span>)&gt; func = fp;</span><br><span class="line">std::cout &lt;&lt; <span class="built_in">func</span>(<span class="number">10</span>) &lt;&lt; std::endl;  <span class="comment">// 输出100</span></span><br></pre></td></tr></table></figure>
+<p><strong>存储成员函数指针</strong> ：</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">struct</span> <span class="title class_">Foo</span> &#123;</span><br><span class="line">    <span class="function"><span class="type">double</span> <span class="title">square</span><span class="params">(<span class="type">double</span> x)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> x * x;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">Foo foo;</span><br><span class="line">std::function&lt;<span class="type">double</span>(Foo*, <span class="type">double</span>)&gt; func = &amp;Foo::square;</span><br><span class="line">std::cout &lt;&lt; <span class="built_in">func</span>(&amp;foo, <span class="number">10</span>) &lt;&lt; std::endl;  <span class="comment">// 输出100</span></span><br></pre></td></tr></table></figure>
+<p><strong>存储函数对象</strong> ：</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">struct</span> <span class="title class_">Square</span> &#123;</span><br><span class="line">    <span class="function"><span class="type">double</span> <span class="title">operator</span><span class="params">()</span><span class="params">(<span class="type">double</span> x)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> x * x;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">std::function&lt;<span class="type">double</span>(<span class="type">double</span>)&gt; func = <span class="built_in">Square</span>();</span><br><span class="line">std::cout &lt;&lt; <span class="built_in">func</span>(<span class="number">10</span>) &lt;&lt; std::endl;  <span class="comment">// 输出100</span></span><br></pre></td></tr></table></figure>
+<p><strong>存储lambda表达式</strong> ：</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">std::function&lt;<span class="type">double</span>(<span class="type">double</span>)&gt; func = [](<span class="type">double</span> x) &#123;</span><br><span class="line">    <span class="keyword">return</span> x * x;</span><br><span class="line">&#125;;</span><br><span class="line">std::cout &lt;&lt; <span class="built_in">func</span>(<span class="number">10</span>) &lt;&lt; std::endl;  <span class="comment">// 输出100</span></span><br></pre></td></tr></table></figure>
+<p><code>std::function</code>的主要优点是灵活性，它可以存储任何可以调用的对象。但是，这种灵活性也有代价，<code>std::function</code>的使用可能会比直接使用函数指针或函数对象有更大的开销。因此，在性能敏感的代码中，你可能需要考虑直接使用函数指针或函数对象。</p>
+<h2 id="bind"><a class="markdownIt-Anchor" href="#bind"></a> bind</h2>
+<h2 id="函数回调"><a class="markdownIt-Anchor" href="#函数回调"></a> 函数回调</h2>
+<p>直接使用函数指针传递参数</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;iostream&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">callback</span><span class="params">(<span class="type">int</span> x, <span class="type">void</span> (*fp)(<span class="type">int</span>))</span> </span>&#123;</span><br><span class="line">    <span class="built_in">fp</span>(x);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">print</span><span class="params">(<span class="type">int</span> x)</span> </span>&#123;</span><br><span class="line">    std::cout &lt;&lt; x &lt;&lt; std::endl;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="built_in">callback</span>(<span class="number">10</span>, print);  <span class="comment">// 输出10</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>使用bind</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;functional&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="keyword">struct</span> <span class="title class_">Foo</span> &#123;</span><br><span class="line">    <span class="function"><span class="type">void</span> <span class="title">print</span><span class="params">(<span class="type">int</span> x)</span> </span>&#123;</span><br><span class="line">        std::cout &lt;&lt; x &lt;&lt; std::endl;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">callback</span><span class="params">(<span class="type">int</span> x, <span class="type">const</span> std::function&lt;<span class="type">void</span>(<span class="type">int</span>)&gt;&amp; fp)</span> </span>&#123;</span><br><span class="line">    <span class="built_in">fp</span>(x);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    Foo foo;</span><br><span class="line">    <span class="keyword">auto</span> fp = std::<span class="built_in">bind</span>(&amp;Foo::print, &amp;foo, std::placeholders::_1);</span><br><span class="line">    <span class="built_in">callback</span>(<span class="number">10</span>, fp);  <span class="comment">// 输出10</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h1 id="多线程"><a class="markdownIt-Anchor" href="#多线程"></a> 多线程</h1>
+<h2 id="线程启动和创建"><a class="markdownIt-Anchor" href="#线程启动和创建"></a> 线程启动和创建</h2>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;thread&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">hello</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    std::cout &lt;&lt; <span class="string">&quot;Hello, world!\n&quot;</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="function">std::thread <span class="title">t</span><span class="params">(hello)</span></span>;</span><br><span class="line">    t.<span class="built_in">join</span>();  <span class="comment">// 等待线程结束</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<h2 id="生产者-消费者模型"><a class="markdownIt-Anchor" href="#生产者-消费者模型"></a> 生产者-消费者模型</h2>
+<h2 id="锁及条件变量"><a class="markdownIt-Anchor" href="#锁及条件变量"></a> 锁及条件变量</h2>
+<p>条件变量（std::condition_variable）和互斥锁（std::mutex）都是C++中用于线程同步的工具<br />
+互斥锁（std::mutex）：互斥锁用于保护共享数据，防止多个线程同时访问。当一个线程拥有一个互斥锁时，其他试图拥有该锁的线程将被阻塞，直到拥有锁的线程释放锁。<br />
+条件变量（std::condition_variable）：条件变量用于线程间的同步。一个或多个线程可以等待某个条件变量，直到另一个线程修改了共享数据并通知条件变量。<br />
+这两者通常一起使用：一个线程修改共享数据，并使用条件变量通知其他线程；其他线程使用互斥锁保护共享数据，并等待条件变量。<br />
+条件变量是对锁的进一步精确控制的补充</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;queue&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;thread&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;mutex&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;condition_variable&gt;</span></span></span><br><span class="line"></span><br><span class="line">std::queue&lt;<span class="type">int</span>&gt; produced_nums;</span><br><span class="line">std::mutex mtx;</span><br><span class="line">std::condition_variable cv;</span><br><span class="line"><span class="type">bool</span> done = <span class="literal">false</span>;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">producer</span><span class="params">(<span class="type">int</span> n)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">0</span>; i &lt; n; ++i) &#123;</span><br><span class="line">        std::this_thread::<span class="built_in">sleep_for</span>(std::chrono::<span class="built_in">milliseconds</span>(<span class="number">900</span>));  <span class="comment">// 生产者比消费者慢</span></span><br><span class="line">        <span class="function">std::lock_guard&lt;std::mutex&gt; <span class="title">lock</span><span class="params">(mtx)</span></span>;</span><br><span class="line">        std::cout &lt;&lt; <span class="string">&quot;producing &quot;</span> &lt;&lt; i &lt;&lt; std::endl;</span><br><span class="line">        produced_nums.<span class="built_in">push</span>(i);</span><br><span class="line">        cv.<span class="built_in">notify_all</span>();  <span class="comment">// 通知等待的消费者</span></span><br><span class="line">    &#125;</span><br><span class="line">    done = <span class="literal">true</span>;</span><br><span class="line">    cv.<span class="built_in">notify_all</span>();  <span class="comment">// 通知消费者停止</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">consumer</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="keyword">while</span> (!done) &#123;</span><br><span class="line">        <span class="function">std::unique_lock&lt;std::mutex&gt; <span class="title">lock</span><span class="params">(mtx)</span></span>;</span><br><span class="line">        cv.<span class="built_in">wait</span>(lock, []&#123; <span class="keyword">return</span> !produced_nums.<span class="built_in">empty</span>() || done; &#125;);  <span class="comment">// 等待直到有数据可消费或者生产者停止</span></span><br><span class="line">        <span class="keyword">while</span> (!produced_nums.<span class="built_in">empty</span>()) &#123;</span><br><span class="line">            std::cout &lt;&lt; <span class="string">&quot;consuming &quot;</span> &lt;&lt; produced_nums.<span class="built_in">front</span>() &lt;&lt; std::endl;</span><br><span class="line">            produced_nums.<span class="built_in">pop</span>();</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="function">std::thread <span class="title">producer_thread</span><span class="params">(producer, <span class="number">10</span>)</span></span>;  <span class="comment">// 生产10个数据</span></span><br><span class="line">    <span class="function">std::thread <span class="title">consumer_thread</span><span class="params">(consumer)</span></span>;</span><br><span class="line"></span><br><span class="line">    producer_thread.<span class="built_in">join</span>();</span><br><span class="line">    consumer_thread.<span class="built_in">join</span>();</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h1 id="lambda表达式"><a class="markdownIt-Anchor" href="#lambda表达式"></a> lambda表达式</h1>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">auto</span> lambda = [](<span class="type">int</span> x, <span class="type">int</span> y) &#123; <span class="keyword">return</span> x + y; &#125;;</span><br></pre></td></tr></table></figure>
+<ol>
+<li><strong>空捕获列表</strong> ：<code>[]</code>。这表示lambda表达式不捕获任何外部变量。</li>
+<li><strong>值捕获</strong> ：<code>[var]</code>。这表示lambda表达式以值方式捕获外部变量 <code>var</code>。这意味着 <code>var</code>的当前值在lambda表达式创建时就被复制了，后续对 <code>var</code>的修改不会影响到lambda表达式内部的值。</li>
+<li><strong>引用捕获</strong> ：<code>[&amp;var]</code>。这表示lambda表达式以引用方式捕获外部变量 <code>var</code>。这意味着lambda表达式内部可以访问和修改 <code>var</code>的值，这些修改会影响到lambda表达式外部的 <code>var</code>。</li>
+<li><strong>捕获所有外部变量</strong> ：<code>[=]</code>表示以值方式捕获所有外部变量，<code>[&amp;]</code>表示以引用方式捕获所有外部变量。</li>
+<li><strong>混合捕获</strong> ：你可以在捕获列表中混合使用值捕获和引用捕获。例如，<code>[var1, &amp;var2]</code>表示以值方式捕获 <code>var1</code>，以引用方式捕获 <code>var2</code>。</li>
+<li><strong>默认捕获模式</strong> ：你可以设置一个默认的捕获模式（值或引用），然后为特定的变量设置不同的模式。例如，<code>[=, &amp;var]</code>表示默认以值方式捕获所有变量，但是以引用方式捕获 <code>var</code>。</li>
+<li><strong>捕获this指针</strong> ：<code>[this]</code>表示捕获当前对象的this指针。这在成员函数中创建lambda表达式时很有用，因为它允许lambda表达式访问当前对象的成员。</li>
+<li><strong>捕获初始化</strong> ：从C++14开始，你可以在捕获列表中初始化新的变量。例如，<code>[x = 42]</code>在捕获列表中创建了一个新的变量 <code>x</code>，并初始化为42。</li>
+</ol>
+<h1 id="命名空间"><a class="markdownIt-Anchor" href="#命名空间"></a> 命名空间</h1>
+<p>在C++中，命名空间是用于组织代码的一种方式，它可以避免命名冲突。命名空间可以包含变量、函数、类和其他命名空间。</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">namespace</span> MyNamespace &#123;</span><br><span class="line">    <span class="type">int</span> myVar = <span class="number">42</span>;</span><br><span class="line">    <span class="function"><span class="type">void</span> <span class="title">myFunction</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="comment">// 函数实现</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>成员访问</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">int</span> var = MyNamespace::myVar;</span><br><span class="line">MyNamespace::<span class="built_in">myFunction</span>();</span><br></pre></td></tr></table></figure>
+<p>命名空间引入</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">using</span> MyNamespace::myVar;  <span class="comment">// 引入特定成员</span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> MyNamespace;  <span class="comment">// 引入整个命名空间</span></span><br></pre></td></tr></table></figure>
+<p>过度使用 <code>using namespace</code>可能会导致命名冲突，因此在大型项目中通常不推荐这样做。</p>
+<p>命名空间可以嵌套：</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">namespace</span> Outer &#123;</span><br><span class="line">    <span class="type">int</span> outerVar = <span class="number">42</span>;</span><br><span class="line">    <span class="keyword">namespace</span> Inner &#123;</span><br><span class="line">        <span class="type">int</span> innerVar = <span class="number">24</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>嵌套命名空间引入</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">int</span> var1 = Outer::outerVar;</span><br><span class="line"><span class="type">int</span> var2 = Outer::Inner::innerVar;</span><br></pre></td></tr></table></figure>
+<h1 id="计时"><a class="markdownIt-Anchor" href="#计时"></a> 计时</h1>
+<p><code>std::chrono</code>是C++标准库中的一个命名空间，它提供了一套用于表示和处理时间的工具。</p>
+<ol>
+<li><strong>Durations（持续时间）</strong> ：<code>std::chrono::duration</code>是一个模板类，用于表示一段时间。它有两个模板参数：一个表示时间的数值，另一个表示这个数值的单位（例如秒、毫秒等）。例如，<code>std::chrono::duration&lt;int, std::milli&gt;</code>表示以毫秒为单位的时间。</li>
+<li><strong>Time points（时间点）</strong> ：<code>std::chrono::time_point</code>是一个模板类，用于表示一个时间点。它有两个模板参数：一个表示时钟（见下文），另一个表示从时钟的起点到这个时间点的持续时间。</li>
+<li><strong>Clocks（时钟）</strong> ：<code>std::chrono</code>提供了几种不同的时钟，用于获取当前时间和测量时间。例如，<code>std::chrono::system_clock</code>表示系统的实时时钟，<code>std::chrono::steady_clock</code>表示一个始终向前的时钟（即不受系统时间调整的影响）。</li>
+</ol>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;chrono&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="keyword">auto</span> start = std::chrono::high_resolution_clock::<span class="built_in">now</span>();</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 这里放你想要测量的代码</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">auto</span> end = std::chrono::high_resolution_clock::<span class="built_in">now</span>();</span><br><span class="line">    std::chrono::duration&lt;<span class="type">double</span>&gt; diff = end - start;</span><br><span class="line"></span><br><span class="line">    std::cout &lt;&lt; <span class="string">&quot;Time to run the code: &quot;</span> &lt;&lt; diff.<span class="built_in">count</span>() &lt;&lt; <span class="string">&quot; s\n&quot;</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<p>为了实现更快速地计时，通常会将其封装在一个timer类中，并通过在构造和析构函数中赋值的方式快速调用</p>
+<h1 id="联合体variant"><a class="markdownIt-Anchor" href="#联合体variant"></a> 联合体/Variant</h1>
+<p>联合体（Union）是一种特殊的数据类型，它允许在相同的内存位置存储不同的数据类型。你可以把联合体看作是一个结构体，其中所有的成员共享同一块内存。</p>
+<p>联合体的大小等于其最大成员的大小。也就是说，联合体的大小足够大，可以存储其任何成员。但是，任何时候只有一个成员的值是有效的。</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">union</span> <span class="title class_">MyUnion</span> &#123;</span><br><span class="line">    <span class="type">int</span> i;</span><br><span class="line">    <span class="type">double</span> d;</span><br><span class="line">    <span class="type">char</span> c;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<p><code>std::variant</code>是C++17引入的一种新特性，它是 <code>union</code>的安全版本。<code>std::variant</code>可以存放多种类型的数据，一次只能存放一种，但是它会记住当前存放的是哪种类型的数据。</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">std::variant&lt;<span class="type">int</span>, <span class="type">double</span>, std::string&gt; data;</span><br><span class="line">data = <span class="number">10</span>;  <span class="comment">// 现在，data存放的是一个int</span></span><br><span class="line">data = <span class="number">3.14</span>;  <span class="comment">// 现在，data存放的是一个double</span></span><br><span class="line">data = <span class="string">&quot;Hello&quot;</span>;  <span class="comment">// 现在，data存放的是一个std::string</span></span><br></pre></td></tr></table></figure>
+<h1 id="强制类型转换"><a class="markdownIt-Anchor" href="#强制类型转换"></a> 强制类型转换</h1>
+<p>在C++中，有四种强制类型转换（也称为类型转换操作符）：</p>
+<ol>
+<li><strong>static_cast</strong> ：这是最常用的类型转换操作符。它可以在任何的数据类型之间进行转换，但是转换的类型需要是相关的或者兼容的。例如，你可以将一个整数转换为一个浮点数，或者将一个派生类的指针转换为基类的指针。它在编译期实现转换，不会进行类型检查</li>
+</ol>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">int</span> i = <span class="number">42</span>;</span><br><span class="line"><span class="type">double</span> d = <span class="built_in">static_cast</span>&lt;<span class="type">double</span>&gt;(i);  <span class="comment">// 将int转换为double</span></span><br></pre></td></tr></table></figure>
+<ol start="2">
+<li><strong>dynamic_cast</strong> ：这个操作符主要用于处理多态。运行时转换，会进行类型检查当你需要将一个基类的指针（或引用）转换为派生类的指针（或引用）时，可以使用 <code>dynamic_cast</code>。如果转换失败，<code>dynamic_cast</code>会返回 <code>nullptr</code>。</li>
+</ol>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Base* basePtr = <span class="keyword">new</span> <span class="built_in">Derived</span>();</span><br><span class="line">Derived* derivedPtr = <span class="built_in">dynamic_cast</span>&lt;Derived*&gt;(basePtr);  <span class="comment">// 将Base*转换为Derived*</span></span><br></pre></td></tr></table></figure>
+<ol start="3">
+<li><strong>const_cast</strong> ：这个操作符用于移除常量性。也就是说，你可以使用 <code>const_cast</code>将一个 <code>const</code>类型的指针（或引用）转换为非 <code>const</code>类型的指针（或引用）。</li>
+</ol>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">const</span> <span class="type">int</span>* constPtr = <span class="keyword">new</span> <span class="built_in">int</span>(<span class="number">42</span>);</span><br><span class="line"><span class="type">int</span>* ptr = <span class="built_in">const_cast</span>&lt;<span class="type">int</span>*&gt;(constPtr);  <span class="comment">// 移除const</span></span><br></pre></td></tr></table></figure>
+<ol start="4">
+<li><strong>reinterpret_cast</strong> ：这个操作符用于进行低级别的类型转换。它会产生一个新的值，这个值在位级别上与原值相同，但是类型可能完全不同。<code>reinterpret_cast</code>通常用于进行一些依赖于实现的、不可移植的操作。</li>
+</ol>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">int</span> i = <span class="number">42</span>;</span><br><span class="line"><span class="type">int</span>* ptr = &amp;i;</span><br><span class="line"><span class="type">long</span> address = <span class="built_in">reinterpret_cast</span>&lt;<span class="type">long</span>&gt;(ptr);  <span class="comment">// 将int*转换为long</span></span><br></pre></td></tr></table></figure>
+<h1 id="条件和操作断点"><a class="markdownIt-Anchor" href="#条件和操作断点"></a> 条件和操作断点</h1>
+<p>在不终止程序的情况下调试</p>
+<p><img src="/2024/07/03/C++/C++%E8%BF%9B%E9%98%B6%E4%BD%BF%E7%94%A8/1720079318158.png" alt="1720079318158" /></p>
+<h1 id="预编译头文件"><a class="markdownIt-Anchor" href="#预编译头文件"></a> 预编译头文件</h1>
+<p>在Visual Studio中使用预编译头文件的一个例子：</p>
+<p>首先，你需要创建一个预编译头文件，例如&quot;pch.h&quot;，并在其中包含你想要预编译的头文件：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"></span><br></pre></td></tr></table></figure>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// pch.h</span></span><br><span class="line"><span class="meta">#<span class="keyword">ifndef</span> PCH_H</span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> PCH_H</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 添加你想要预编译的头文件</span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;vector&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;string&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="meta">#<span class="keyword">endif</span> <span class="comment">// PCH_H</span></span></span><br></pre></td></tr></table></figure>
+<p>然后，你需要创建一个源文件&quot;pch.cpp&quot;，并在其中包含&quot;pch.h&quot;：</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// pch.cpp</span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&quot;pch.h&quot;</span></span></span><br></pre></td></tr></table></figure>
+<h1 id="结构化绑定"><a class="markdownIt-Anchor" href="#结构化绑定"></a> 结构化绑定</h1>
+<p>结构化绑定（Structured Binding）是C++17引入的一种新特性，它允许你一次性声明多个变量，并将它们初始化为某个对象的成员或元素。</p>
+<p>例如，你可以使用结构化绑定来解构一个 <code>std::pair</code>或 <code>std::tuple</code>：</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">std::pair&lt;<span class="type">int</span>, std::string&gt; p = &#123;<span class="number">42</span>, <span class="string">&quot;Hello&quot;</span>&#125;;</span><br><span class="line"><span class="keyword">auto</span> [num, str] = p;  <span class="comment">// num是int，str是std::string</span></span><br></pre></td></tr></table></figure>
+<p>你也可以使用结构化绑定来解构一个数组：</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">int</span> arr[] = &#123;<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>&#125;;</span><br><span class="line"><span class="keyword">auto</span> [x, y, z] = arr;  <span class="comment">// x, y, z都是int</span></span><br></pre></td></tr></table></figure>
+<p>此外，你还可以使用结构化绑定来解构一个结构体：</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">struct</span> <span class="title class_">Point</span> &#123;</span><br><span class="line">    <span class="type">int</span> x;</span><br><span class="line">    <span class="type">int</span> y;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">Point p = &#123;<span class="number">1</span>, <span class="number">2</span>&#125;;</span><br><span class="line"><span class="keyword">auto</span> [x, y] = p;  <span class="comment">// x, y都是int</span></span><br></pre></td></tr></table></figure>
+<p>在这些例子中，<code>auto [x, y]</code>和 <code>auto [x, y, z]</code>就是结构化绑定。它们会创建新的变量 <code>x</code>、<code>y</code>和 <code>z</code>，并将它们初始化为 <code>p</code>或 <code>arr</code>的成员或元素。</p>
+<p>需要注意的是，结构化绑定创建的变量是新的变量，它们并不是原对象的引用。如果你想要创建引用，你可以使用 <code>auto&amp;</code>或 <code>auto&amp;&amp;</code>：</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">auto</span>&amp; [x, y] = p;  <span class="comment">// x, y都是对p的成员的引用</span></span><br></pre></td></tr></table></figure>
+<h1 id="optional返回值处理"><a class="markdownIt-Anchor" href="#optional返回值处理"></a> optional返回值处理</h1>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="function">std::optional&lt;<span class="type">int</span>&gt; <span class="title">find</span><span class="params">(<span class="type">const</span> std::vector&lt;<span class="type">int</span>&gt;&amp; vec, <span class="type">int</span> target)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">0</span>; i &lt; vec.<span class="built_in">size</span>(); ++i) &#123;</span><br><span class="line">        <span class="keyword">if</span> (vec[i] == target) &#123;</span><br><span class="line">            <span class="keyword">return</span> i;  <span class="comment">// 找到目标，返回其索引</span></span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> std::<span class="literal">nullopt</span>;  <span class="comment">// 找不到目标，返回空的optional</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">auto</span> idx = <span class="built_in">find</span>(vec, target);</span><br><span class="line"><span class="keyword">if</span> (idx.<span class="built_in">has_value</span>()) &#123;</span><br><span class="line">    std::cout &lt;&lt; <span class="string">&quot;Found at index &quot;</span> &lt;&lt; idx.<span class="built_in">value</span>() &lt;&lt; <span class="string">&#x27;\n&#x27;</span>;</span><br><span class="line">&#125; <span class="keyword">else</span> &#123;</span><br><span class="line">    std::cout &lt;&lt; <span class="string">&quot;Not found\n&quot;</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+        
+      </div>
+
+         
+    </div>
+    
+     
+  </div>
+  
+    
+<nav id="article-nav">
+  <a class="article-nav-btn left  disabled "
+     >
+    <i class="fa-solid fa-angle-left"></i>
+    <p class="title-text">
+        
+    </p>
+  </a>
+  <a class="article-nav-btn right "
+    
+      href="/2024/07/02/C++/X.VisualStudio%E4%BD%BF%E7%94%A8/"
+      title="X.Viusal Studio使用"
+     >
+
+    <p class="title-text">
+      
+        X.Viusal Studio使用
+        
+    </p>
+    <i class="fa-solid fa-angle-right"></i>
+  </a>
+</nav>
+
+
+  
+</article>
+
+
+
+
+
+    </div>
+    <div id="footer-wrapper">
+      <footer id="footer">
+  
+  <div id="footer-info" class="inner">
+    
+    &copy; 2024 WYK<br>
+    Powered by <a href="https://hexo.io/" target="_blank">Hexo</a> & Theme <a target="_blank" rel="noopener" href="https://github.com/saicaca/hexo-theme-vivia">Vivia</a>
+  </div>
+</footer>
+
+    </div>
+    <div class="back-to-top-wrapper">
+    <button id="back-to-top-btn" class="back-to-top-btn hide" onclick="topFunction()">
+        <i class="fa-solid fa-angle-up"></i>
+    </button>
+</div>
+
+<script>
+    function topFunction() {
+        window.scroll({ top: 0, behavior: 'smooth' });
+    }
+    let btn = document.getElementById('back-to-top-btn');
+    function scrollFunction() {
+        if (document.body.scrollTop > 600 || document.documentElement.scrollTop > 600) {
+            btn.classList.remove('hide')
+        } else {
+            btn.classList.add('hide')
+        }
+    }
+    window.onscroll = function() {
+        scrollFunction();
+    }
+</script>
+
+  </div>
+  <script src="/js/light-dark-switch.js"></script>
+</body>
+</html>

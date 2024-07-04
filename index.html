@@ -187,6 +187,11 @@
                 虚幻引擎
                 <div class="category-count">2</div>
             </a>
+        
+            <a class="category-link" href="/categories/C/">
+                C++
+                <div class="category-count">2</div>
+            </a>
         </div>
     </div>
   </div>
@@ -211,17 +216,17 @@
       
         <a class="archive-link" href="/archives/2024/07 ">
           July 2024 
-          <div class="archive-count">1 </div>
+          <div class="archive-count">2 </div>
         </a>
       
         <a class="archive-link" href="/archives/2024/06 ">
           June 2024 
-          <div class="archive-count">5 </div>
+          <div class="archive-count">6 </div>
         </a>
       
         <a class="archive-link" href="/archives/2024/05 ">
           May 2024 
-          <div class="archive-count">10 </div>
+          <div class="archive-count">9 </div>
         </a>
       
     </div>
@@ -235,9 +240,21 @@
       <h3 class="widget-title">Recent Posts</h3>
       <ul>
         
+          <a class="recent-link" href="/2024/07/03/C++/C++%E8%BF%9B%E9%98%B6%E4%BD%BF%E7%94%A8/" title="1. C++ 基础" >
+            <div class="recent-link-text">
+              1. C++ 基础
+            </div>
+          </a>
+        
           <a class="recent-link" href="/2024/07/02/C++/X.VisualStudio%E4%BD%BF%E7%94%A8/" title="X.Viusal Studio使用" >
             <div class="recent-link-text">
               X.Viusal Studio使用
+            </div>
+          </a>
+        
+          <a class="recent-link" href="/2024/06/27/C++/C++%E5%9F%BA%E7%A1%80/" title="1. C++ 基础" >
+            <div class="recent-link-text">
+              1. C++ 基础
             </div>
           </a>
         
@@ -253,18 +270,6 @@
             </div>
           </a>
         
-          <a class="recent-link" href="/2024/06/15/lua/lua-%E5%85%83%E8%A1%A8%E5%92%8C%E5%85%83%E6%96%B9%E6%B3%95/" title="lua-元表和元方法" >
-            <div class="recent-link-text">
-              lua-元表和元方法
-            </div>
-          </a>
-        
-          <a class="recent-link" href="/2024/06/11/lua/lua-%E8%BF%AD%E4%BB%A3%E5%99%A8%E3%80%81%E6%A8%A1%E5%9D%97%E3%80%81%E9%97%AD%E5%8C%85/" title="lua-迭代器、模块、闭包" >
-            <div class="recent-link-text">
-              lua-迭代器、模块、闭包
-            </div>
-          </a>
-        
       </ul>
     </div>
   </div>
@@ -275,6 +280,85 @@
     </div>
     <div id="content-body">
       
+   
+
+
+<article id="post-C++/C++进阶使用" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+   
+  <div class="article-inner">
+    <div class="article-main">
+      <header class="article-header">
+        
+<div class="main-title-bar">
+  <div class="main-title-dot"></div>
+  
+    
+      <h1 itemprop="name">
+        <a class="p-name article-title" href="/2024/07/03/C++/C++%E8%BF%9B%E9%98%B6%E4%BD%BF%E7%94%A8/">1. C++ 基础</a>
+      </h1>
+    
+  
+</div>
+
+        <div class='meta-info-bar'>
+          <div class="meta-info">
+  <time class="dt-published" datetime="2024-07-03T01:30:41.000Z" itemprop="datePublished">2024-07-03</time>
+</div>
+          <div class="need-seperator meta-info">
+            <div class="meta-cate-flex">
+  
+  <a class="meta-cate-link" href="/categories/C/">C++</a>
+   
+</div>
+  
+          </div>
+          <div class="wordcount need-seperator meta-info">
+            11k words 
+          </div>
+        </div>
+        
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/C/" rel="tag">C++</a></li></ul>
+
+      </header>
+      <div class="e-content article-entry" itemprop="articleBody">
+        
+          <div class="truncate-text">
+            
+               多返回值处理
+在C++中，有几种方法可以返回多个值：
+使用std::pair或std::tuple ：这是一种常见的方法，特别是当你需要返回的值的数量是固定的，并且不太多时。例如：
+12345#include &lt;utility&gt;  // for std::pairstd::pair&lt;int, double&gt; foo() &#123;    return &#123;1, 2.3&#125;;&#125;
+或者使用 std::tuple来返回更多的值：
+12345#include &lt;tuple&gt;  // for std::tuplestd::tuple&lt;int, double, std::string&gt; bar() &#123;    return &#123;1, 2.3, &quot;hello&quot;&#125;;&#125;
+使用std::vector或std::array ：当你需要返回的值的数量是固定的，并且所有的值都是同一类型时，你可以使用 std::vector或 std::array。例如：
+12345#inc...
+            
+          </div>
+        
+      </div>
+
+         
+    </div>
+    
+     
+    <a class="right-panel  non-pic  "
+      
+      href="/2024/07/03/C++/C++%E8%BF%9B%E9%98%B6%E4%BD%BF%E7%94%A8/" 
+    >
+       
+      <i class="fa-solid fa-angle-right non-pic"></i>
+       
+    </a>
+     
+  </div>
+  
+</article>
+
+
+
+
+
+
    
 
 
@@ -346,6 +430,85 @@ F11 ：步入。调试器将执行当前行的代码，并在下一行或函数�
     <a class="right-panel  non-pic  "
       
       href="/2024/07/02/C++/X.VisualStudio%E4%BD%BF%E7%94%A8/" 
+    >
+       
+      <i class="fa-solid fa-angle-right non-pic"></i>
+       
+    </a>
+     
+  </div>
+  
+</article>
+
+
+
+
+
+
+   
+
+
+<article id="post-C++/C++基础" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+   
+  <div class="article-inner">
+    <div class="article-main">
+      <header class="article-header">
+        
+<div class="main-title-bar">
+  <div class="main-title-dot"></div>
+  
+    
+      <h1 itemprop="name">
+        <a class="p-name article-title" href="/2024/06/27/C++/C++%E5%9F%BA%E7%A1%80/">1. C++ 基础</a>
+      </h1>
+    
+  
+</div>
+
+        <div class='meta-info-bar'>
+          <div class="meta-info">
+  <time class="dt-published" datetime="2024-06-27T01:30:41.000Z" itemprop="datePublished">2024-06-27</time>
+</div>
+          <div class="need-seperator meta-info">
+            <div class="meta-cate-flex">
+  
+  <a class="meta-cate-link" href="/categories/C/">C++</a>
+   
+</div>
+  
+          </div>
+          <div class="wordcount need-seperator meta-info">
+            9.2k words 
+          </div>
+        </div>
+        
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/C/" rel="tag">C++</a></li></ul>
+
+      </header>
+      <div class="e-content article-entry" itemprop="articleBody">
+        
+          <div class="truncate-text">
+            
+               VS相关
+ 解决方案
+ 工作流程
+123456#include &lt;iostream&gt;int main()&#123;	std::cout&lt;&lt;&quot;Hello World&quot;&lt;&lt;endl;	std::cin.get();&#125;
+预处理指令：预处理器接收源代码，并处理源代码中的预处理指令。预处理指令是以 #开头的指令，例如 #include、#define等。预处理器会处理这些指令，例如包含头文件、处理宏定义等，然后生成预处理后的源代码。
+编译：编译器接收预处理后的源代码，然后将源代码翻译成汇编代码。编译器在这个过程中会进行语法检查、类型检查、优化等操作。
+汇编：将文本文件转换为机器码，.cpp文件会被编译，但.h文件不会，.h文件会在预处理阶段被“copy”到.cpp文件中，编译的结果是一个object文件，在windows系统中，是.obj文件
+链接：链接器接收多个目标文件，然后将这些目标文件链接成一个可执行文件。链接器在这个过程中会解析目标文件中的符号（例如函数和变量的名称），并将这些符号链接到它们在可执行文件中的地址。...
+            
+          </div>
+        
+      </div>
+
+         
+    </div>
+    
+     
+    <a class="right-panel  non-pic  "
+      
+      href="/2024/06/27/C++/C++%E5%9F%BA%E7%A1%80/" 
     >
        
       <i class="fa-solid fa-angle-right non-pic"></i>
@@ -911,85 +1074,6 @@ Lua变量为动态类型，可随时改变类型
    
 
 
-<article id="post-C++/C++基础" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-   
-  <div class="article-inner">
-    <div class="article-main">
-      <header class="article-header">
-        
-<div class="main-title-bar">
-  <div class="main-title-dot"></div>
-  
-    
-      <h1 itemprop="name">
-        <a class="p-name article-title" href="/2024/05/27/C++/C++%E5%9F%BA%E7%A1%80/">1. C++ 基础</a>
-      </h1>
-    
-  
-</div>
-
-        <div class='meta-info-bar'>
-          <div class="meta-info">
-  <time class="dt-published" datetime="2024-05-27T01:30:41.000Z" itemprop="datePublished">2024-05-27</time>
-</div>
-          <div class="need-seperator meta-info">
-            <div class="meta-cate-flex">
-  
-    Uncategorized 
-   
-</div>
-  
-          </div>
-          <div class="wordcount need-seperator meta-info">
-            9.2k words 
-          </div>
-        </div>
-        
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/C/" rel="tag">C++</a></li></ul>
-
-      </header>
-      <div class="e-content article-entry" itemprop="articleBody">
-        
-          <div class="truncate-text">
-            
-               VS相关
- 解决方案
- 工作流程
-123456#include &lt;iostream&gt;int main()&#123;	std::cout&lt;&lt;&quot;Hello World&quot;&lt;&lt;endl;	std::cin.get();&#125;
-预处理指令：预处理器接收源代码，并处理源代码中的预处理指令。预处理指令是以 #开头的指令，例如 #include、#define等。预处理器会处理这些指令，例如包含头文件、处理宏定义等，然后生成预处理后的源代码。
-编译：编译器接收预处理后的源代码，然后将源代码翻译成汇编代码。编译器在这个过程中会进行语法检查、类型检查、优化等操作。
-汇编：将文本文件转换为机器码，.cpp文件会被编译，但.h文件不会，.h文件会在预处理阶段被“copy”到.cpp文件中，编译的结果是一个object文件，在windows系统中，是.obj文件
-链接：链接器接收多个目标文件，然后将这些目标文件链接成一个可执行文件。链接器在这个过程中会解析目标文件中的符号（例如函数和变量的名称），并将这些符号链接到它们在可执行文件中的地址。...
-            
-          </div>
-        
-      </div>
-
-         
-    </div>
-    
-     
-    <a class="right-panel  non-pic  "
-      
-      href="/2024/05/27/C++/C++%E5%9F%BA%E7%A1%80/" 
-    >
-       
-      <i class="fa-solid fa-angle-right non-pic"></i>
-       
-    </a>
-     
-  </div>
-  
-</article>
-
-
-
-
-
-
-   
-
-
 <article id="post-The Missing Semester/The Missing Semester - 01 copy 2" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
    
   <div class="article-inner">
@@ -1053,91 +1137,6 @@ git可以更新，添加，但...
     <a class="right-panel  non-pic  "
       
       href="/2024/05/24/The%20Missing%20Semester/The%20Missing%20Semester%20-%2001%20copy%202/" 
-    >
-       
-      <i class="fa-solid fa-angle-right non-pic"></i>
-       
-    </a>
-     
-  </div>
-  
-</article>
-
-
-
-
-
-
-   
-
-
-<article id="post-The Missing Semester/The Missing Semester - 01 copy" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-   
-  <div class="article-inner">
-    <div class="article-main">
-      <header class="article-header">
-        
-<div class="main-title-bar">
-  <div class="main-title-dot"></div>
-  
-    
-      <h1 itemprop="name">
-        <a class="p-name article-title" href="/2024/05/21/The%20Missing%20Semester/The%20Missing%20Semester%20-%2001%20copy/">Shell工具和脚本</a>
-      </h1>
-    
-  
-</div>
-
-        <div class='meta-info-bar'>
-          <div class="meta-info">
-  <time class="dt-published" datetime="2024-05-21T10:48:41.099Z" itemprop="datePublished">2024-05-21</time>
-</div>
-          <div class="need-seperator meta-info">
-            <div class="meta-cate-flex">
-  
-  <a class="meta-cate-link" href="/categories/The-Missing-Semester/">The Missing Semester</a>
-   
-</div>
-  
-          </div>
-          <div class="wordcount need-seperator meta-info">
-            560 words 
-          </div>
-        </div>
-        
-      </header>
-      <div class="e-content article-entry" itemprop="articleBody">
-        
-          <div class="truncate-text">
-            
-              中文讲义：计算机教育中缺失的一课 · the missing semester of your cs education (missing-semester-cn.github.io)变量声明注意不能有空格
-1234var1=barecho $fooecho &quot;value is $foo&quot;    # value is barecho &#x27;value is $foo&#x27;    # value is $foo
-脚本示例
-如果有一个mcd.sh文件，它是如下定义的：
-1234mcd ()&#123;	mkdir -p &quot;$1&quot;	cd &quot;$1&quot;&#125;
-这表示：定义名为mcd的函数，接收一个参数，创建文件夹并进入该路径
-随后，在Shell中使用
-12source mcd.shmcd test
-即可使用该脚本
-各种关键字有很多作用
-$_ 上一个参数
-!! 上一个命令
-$? 错误代码
-$@ 展开所有参数
-Shell命令支持通配符，类似正则表达式，但存在一定区别
-展开关键字foo{a,b,c} = fooa foo...
-            
-          </div>
-        
-      </div>
-
-         
-    </div>
-    
-     
-    <a class="right-panel  non-pic  "
-      
-      href="/2024/05/21/The%20Missing%20Semester/The%20Missing%20Semester%20-%2001%20copy/" 
     >
        
       <i class="fa-solid fa-angle-right non-pic"></i>
